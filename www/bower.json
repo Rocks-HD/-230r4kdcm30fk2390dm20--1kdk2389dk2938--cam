@@ -1,0 +1,38 @@
+{
+  "name": "Camara-EDO",
+  "version": "0.0.0",
+  "description": "Câmara",
+  "main": "index.html",
+  "keywords": [
+    "Câmara - Estamos de Olho"
+  ],
+  "authors": [
+    "Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>",
+    "Fabricio Lopes Dantas <fabriciold28@gmail.com>",
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "source",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md",
+    "examples",
+    "samples",
+    "js/library"
+  ],
+  "directory": "js/modules/",
+  "moduleType": [],
+  "private": true
+}

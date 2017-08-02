@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Camara</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' 'unsafe-eval' *; media-src 'self' 'unsafe-inline' 'unsafe-eval' *; img-src 'self' 'unsafe-inline' 'unsafe-eval' *">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="./js/library/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="./js/modules/mobileapp/layouts/css/mobile.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="cordova.js" type="text/javascript"></script>
+        <script src="./js/library/compile-header.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">        
+            setTimeout(function() {
+                $(".carregando").hide();
+                $(".areaPrincipal").removeClass('hidden');
+            }, 5000);
+            
+            var APPLICATION_ENV = document.URL.indexOf("host.camaraapp") !== -1 ? 'development' : 'production';
+            var arrayArquivos   = {
+                    'development' : [
+                        './js/library/compile-footer.js',
+                        './js/modules/mobileapp/configs/app.js',
+                        './js/modules/mobileapp/services/BaseService.js',
+                        './js/modules/mobileapp/services/LayoutService.js',
+                        './js/modules/mobileapp/services/UtilsService.js',
+                        './js/modules/mobileapp/controllers/HomeController.js',
+                        './js/modules/mobileapp/configs/routes.js',
+                        './js/modules/mobileapp/functions/Development.js'
+                    ],
+                    'production' : [
+                        './js-min/modules/mobileapp/compile-footer.js',
+                        './js-min/modules/mobileapp/production.js',
+                        './js-min/modules/mobileapp/functions.js'
+                    ]
+            };
+            
+            $(document).ready(function() {
+                $.each(arrayArquivos[APPLICATION_ENV], function(i, e) {
+                    $("body").append('<script type="text/javascript" src="'+e+'"><\/script>');
+                });
+            });            
+        </script>        
+        
+        
+        
+        
+    </head>
+    
+    <body ng-app="camara" id="context">
+        
+        <!-- Remover na produção style="display: none;" -->
+        <div class="carregando" style="display: none;">Carregando...</div>        
+        
+        <!-- Corpo do projeto -->
+        <div ng-view=""></div>
+        <!-- Corpo do projeto -->
+
+        
+    </body>
+</html>            

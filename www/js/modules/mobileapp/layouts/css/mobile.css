@@ -1,0 +1,94 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/07/2017, 11:08:56
+    Author     : FABRICIO LOPES DANTAS
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+html, body{min-height: 100%; margin:0; padding: 0; font-family: "Open Sans", sans-serif;}
+
+h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:1.7em;}
+.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+.btn-verde:focus{background-color:#3f7f3c; border:1px solid #000;}
+.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#184071; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+.btn-azul-escuro:focus{background-color:#133454; border:1px solid #000;}
+.ver-mais-azul{background-color:#184071; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+
+/*BARRA DE NAVEGAÇÃO - MENU*/
+header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;}
+header #btn-menu{position:relative; width:60px; height: 60px; background-color:white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: -20px; z-index: 400;}
+header #btn-menu span{font-size: 30px; color:#5ab946;}
+header #logo{font-size: 30px; color:#9ae588;}
+/*FIM DA BARRA DE NAVEGAÇÃO - MENU*/ 
+
+/*MENU PRINCIPAL*/
+nav.menu-principal{display:none; background-color:rgba(0,0,0,0.9); padding:30px 0; font-size:10px; color:white; text-transform: uppercase; font-weight: bold; position: absolute; z-index: 300; width:100%;}
+/*FIM DO MENU PRINCIPAL*/
+
+div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
+div.conteudo-conheca-titulo h2 span{color:#8cc061;}
+div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:30%;}
+div.filtros-conheca .option{color:white; font-size:14px; text-transform: uppercase; line-height: 2.1em; margin-top:10px;}
+div.filtros-conheca .option .text-option{font-size:12px; float: left; display: block; margin-top: -4px; margin-left:4px;}
+div.filtros-conheca input,select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf;}
+div.filtros-conheca input[type=text]{width:100%; background-image:url(/js/modules/mobileapp/layouts/imagens/icones/ico-lupa.svg); background-repeat: no-repeat; background-position: center right;}
+div.filtros-conheca input[type=radio]{color:white; border:none; background-color:white; width:15px; height: 15px; float: left;}
+div.filtros-conheca select{width:50%; margin-top:10px; font-size:12px; float: left;}
+
+div.lista-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; height:210px; position: relative; width:100%; overflow: hidden; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; }
+div.lista-deputados .div-interna{width:800px; position:relative; overflow: hidden; display:block;}
+div.lista-deputados .box-deputado{font-family: "Open Sans Condensed", sans-serif; font-weight: bold; text-transform: uppercase; width:10%; text-align: center; float:left; margin-left:10px; margin-right:10px;}
+div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; background-color:white; width:100%;}
+div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
+div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
+
+div.informativo-deputado{background-color:#4d4d4d; padding-top:15px; padding-bottom:10px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic; line-height: 0.8em;}
+div.informativo-deputado .text-verde{color:#90C73E;}
+
+div.setas-de-verificao{}
+div.setas-de-verificao img{width:100%; margin-top:-120px; z-index: 300; position: absolute;}
+
+div.compare-os-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; height: 200px; text-align: center;}
+div.compare-os-deputados .cx-deputado-1{width:114px; height: 152px; border:1px solid #989898; background-color:white; float:left; margin-left:25px; }
+div.compare-os-deputados .cx-deputado-2{width:114px; height: 152px; border:1px solid #989898; background-color:white; float:right; margin-right:25px;}
+div.btn-compare{}
+div.btn-compare p{font-family:"Open Sans", sans-serif; font-size:48px; font-weight: 800; color:#8cc061; margin-bottom:-5px;}
+
+div.conteudo-opine-titulo{background-color:#184071; margin-top:15px;}
+div.conteudo-opine-titulo h2 span{color:#77b2e0;}
+div.texto-opine{padding:15px; color:white; font-family:"Open Sans Condensed"; font-size:12px; background:#599fd6; text-align:center;}
+div.texto-opine p{text-align: justify;}
+
+div.conteudo-ranking-titulo{background-color:#601b58; margin-top:15px;}
+div.conteudo-ranking-titulo h2 span{color:#a93b95;}
+div.texto-ranking{padding:15px; color:#515151; font-family:"Open Sans Condensed"; font-size:12px; background:#e6e6e5; text-align:center;}
+div.texto-ranking p{text-align: justify;}
+
+div.rodape{display: flex; align-items: center; background:blue; margin-top:20px; background-image: linear-gradient(135deg, #8ac53f 10%, #469543 100%); padding:15px;}
+div.rodape img{width:100%;}
+
+div.filtro-opine{padding-top:15px; padding-bottom:30px; background-color:#367ab5;background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:20%;}
+div.filtro-opine span{color:white; text-transform: uppercase;}
+div.filtro-opine select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf; width:100%;}
+div.tabela-opine{font-size:10px;}
+div.tabela-opine th{padding:15px; background-color:#184071; color:white; text-align: center;}
+div.tabela-opine tr:nth-child(2n){background-color:#f1f1f1;}
+div.tabela-opine td{padding:15px; text-align: center;}
+div.tabela-opine td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:18px;}
+div.tabela-opine td img{width:50px;}
+
+div.filtro-ranking{padding-top:15px; padding-bottom:20px; background-color:#3c0d3c; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:60%;}
+div.filtro-ranking span{color:white; text-transform: uppercase;}
+div.filtro-ranking select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf; width:100%; margin-top: 5px; margin-bottom: 5px;}
+div.tabela-ranking{font-size:10px;}
+div.tabela-ranking th{padding:15px; background-color:#601b58; color:white; text-align: center;}
+div.tabela-ranking tr:nth-child(2n){background-color:#f1f1f1;}
+div.tabela-ranking td{padding:15px; text-align: center;}
+div.tabela-ranking td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:20px; color:#a93b95;}
+div.tabela-ranking td img{width:50px;}
