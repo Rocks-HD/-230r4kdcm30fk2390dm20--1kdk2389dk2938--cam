@@ -37,8 +37,8 @@ angular.module('camara')
         .when('/', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/home.html',
             controller: 'HomeController'
-        }).when('/opniao', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/opniao.html',
+        }).when('/opiniao', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/opiniao.html',
             controller: 'HomeController'
         }).when('/ranking', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',

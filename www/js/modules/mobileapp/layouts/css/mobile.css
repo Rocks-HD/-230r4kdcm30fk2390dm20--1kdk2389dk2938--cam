@@ -10,7 +10,7 @@ and open the template in the editor.
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
-html, body{min-height: 100%; margin:0; padding: 0; font-family: "Open Sans", sans-serif;}
+html, body{min-height: 100%; margin:0; padding: 0; font-family: "Open Sans", sans-serif; font-size:12px;}
 
 h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:1.7em;}
 .btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
@@ -35,7 +35,7 @@ div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-conheca-titulo h2 span{color:#8cc061;}
 div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:30%;}
 div.filtros-conheca .option{color:white; font-size:14px; text-transform: uppercase; line-height: 2.1em; margin-top:10px;}
-div.filtros-conheca .option .text-option{font-size:12px; float: left; display: block; margin-top: -4px; margin-left:4px;}
+div.filtros-conheca .option .text-option{font-size:11px; float: left; display: block; margin-top: -4px; margin-left:4px;}
 div.filtros-conheca input,select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf;}
 div.filtros-conheca input[type=text]{width:100%; background-image:url(/js/modules/mobileapp/layouts/imagens/icones/ico-lupa.svg); background-repeat: no-repeat; background-position: center right;}
 div.filtros-conheca input[type=radio]{color:white; border:none; background-color:white; width:15px; height: 15px; float: left;}
@@ -48,17 +48,13 @@ div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; bac
 div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
 div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
 
-div.informativo-deputado{background-color:#4d4d4d; padding-top:15px; padding-bottom:10px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic; line-height: 0.8em;}
+div.informativo-deputado{background-color:#4d4d4d; padding-top:15px; padding-bottom:10px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic;}
 div.informativo-deputado .text-verde{color:#90C73E;}
 
-div.setas-de-verificao{}
-div.setas-de-verificao img{width:100%; margin-top:-120px; z-index: 300; position: absolute;}
-
-div.compare-os-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; height: 200px; text-align: center;}
-div.compare-os-deputados .cx-deputado-1{width:114px; height: 152px; border:1px solid #989898; background-color:white; float:left; margin-left:25px; }
-div.compare-os-deputados .cx-deputado-2{width:114px; height: 152px; border:1px solid #989898; background-color:white; float:right; margin-right:25px;}
-div.btn-compare{}
-div.btn-compare p{font-family:"Open Sans", sans-serif; font-size:48px; font-weight: 800; color:#8cc061; margin-bottom:-5px;}
+div.compare-os-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; }
+div.compare-os-deputados img{width:85%; border:1px solid #ccc; background-color:white;}
+div.compare-os-deputados .btn-comparar{margin-top:7%;}
+div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
 
 div.conteudo-opine-titulo{background-color:#184071; margin-top:15px;}
 div.conteudo-opine-titulo h2 span{color:#77b2e0;}
@@ -76,19 +72,36 @@ div.rodape img{width:100%;}
 div.filtro-opine{padding-top:15px; padding-bottom:30px; background-color:#367ab5;background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:20%;}
 div.filtro-opine span{color:white; text-transform: uppercase;}
 div.filtro-opine select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf; width:100%;}
-div.tabela-opine{font-size:10px;}
-div.tabela-opine th{padding:15px; background-color:#184071; color:white; text-align: center;}
+div.tabela-opine table{font-size:10px; width:100%;}
+div.tabela-opine th{padding:10px; background-color:#184071; color:white; text-align: center;}
 div.tabela-opine tr:nth-child(2n){background-color:#f1f1f1;}
-div.tabela-opine td{padding:15px; text-align: center;}
+div.tabela-opine td{padding:10px; text-align: center; font-size:10px;}
 div.tabela-opine td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:18px;}
 div.tabela-opine td img{width:50px;}
 
 div.filtro-ranking{padding-top:15px; padding-bottom:20px; background-color:#3c0d3c; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:60%;}
 div.filtro-ranking span{color:white; text-transform: uppercase;}
 div.filtro-ranking select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf; width:100%; margin-top: 5px; margin-bottom: 5px;}
-div.tabela-ranking{font-size:10px;}
-div.tabela-ranking th{padding:15px; background-color:#601b58; color:white; text-align: center;}
+div.tabela-ranking table{font-size:10px; width:100%;}
+div.tabela-ranking th{padding:10px; background-color:#601b58; color:white; text-align: center;}
 div.tabela-ranking tr:nth-child(2n){background-color:#f1f1f1;}
-div.tabela-ranking td{padding:15px; text-align: center;}
+div.tabela-ranking td{padding:10px; text-align: center; font-size:10px;}
 div.tabela-ranking td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:20px; color:#a93b95;}
 div.tabela-ranking td img{width:50px;}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) and (max-width:991px) {
+
+
+}
+
+@media (min-width: 992px) and (max-width:1199px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
