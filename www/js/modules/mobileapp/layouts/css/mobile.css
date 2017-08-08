@@ -14,9 +14,9 @@ html, body{min-height: 100%; margin:0; padding: 0; font-family: "Open Sans", san
 
 h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:1.7em;}
 .btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
-.btn-verde:focus{background-color:#3f7f3c; border:1px solid #000;}
+.btn-verde:focus{background-color:#3f7f3c; border:1px solid #2d5d2b;}
 .btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#184071; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
-.btn-azul-escuro:focus{background-color:#133454; border:1px solid #000;}
+.btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
 .ver-mais-azul{background-color:#184071; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 .ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 
@@ -61,6 +61,9 @@ div.conteudo-opine-titulo h2 span{color:#77b2e0;}
 div.texto-opine{padding:15px; color:white; font-family:"Open Sans Condensed"; font-size:12px; background:#599fd6; text-align:center;}
 div.texto-opine p{text-align: justify;}
 
+div.conteudo-compara-titulo{background-color:#323232; margin-top:15px;}
+div.conteudo-compara-titulo h2 span{color:#7F7F7F;}
+
 div.conteudo-ranking-titulo{background-color:#601b58; margin-top:15px;}
 div.conteudo-ranking-titulo h2 span{color:#a93b95;}
 div.texto-ranking{padding:15px; color:#515151; font-family:"Open Sans Condensed"; font-size:12px; background:#e6e6e5; text-align:center;}
@@ -79,6 +82,10 @@ div.tabela-opine td{padding:10px; text-align: center; font-size:10px;}
 div.tabela-opine td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:18px;}
 div.tabela-opine td img{width:50px;}
 
+.icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:56px;}
+.icon-ico-a-favor-1:hover{color:#8AC53F;}
+.icon-ico-contra-2:hover{color:#ED1F24;}
+
 div.filtro-ranking{padding-top:15px; padding-bottom:20px; background-color:#3c0d3c; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:60%;}
 div.filtro-ranking span{color:white; text-transform: uppercase;}
 div.filtro-ranking select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf; width:100%; margin-top: 5px; margin-bottom: 5px;}
@@ -88,6 +95,24 @@ div.tabela-ranking tr:nth-child(2n){background-color:#f1f1f1;}
 div.tabela-ranking td{padding:10px; text-align: center; font-size:10px;}
 div.tabela-ranking td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:20px; color:#a93b95;}
 div.tabela-ranking td img{width:50px;}
+div.tabela-ranking td img:first-child{border:1px solid #dfdfdf; padding:2px; background-color:white;}
+
+div.tabela-compara{}
+div.tabela-compara .x{position: absolute; width:100%; text-align: center; font-size:4.9em; font-weight: bolder; margin-top:10%;}
+
+div.tabela-compara table{text-align: center; font-size:12px; width:100%;}
+div.tabela-compara table img{width:75%; margin-bottom:5px;}
+div.tabela-compara table tr td{padding:15px;}
+div.tabela-compara table tr td:first-child{background-color:#e5e5e5; text-transform: uppercase; line-height: 1.2em; width:50%}
+div.tabela-compara table tr td:first-child img{border:10px solid #0FB7EB;}
+div.tabela-compara table tr td:nth-child(2) img{border:10px solid #3DB549;}
+div.tabela-compara table tr td:first-child span.dep1{color:#0FB7EB; display: block; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size: 2em;}
+div.tabela-compara table tr td:nth-child(2) span.dep2{color:#3DB549; display: block; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size: 2em;}
+div.tabela-compara table tr td:nth-child(2){background-color:#CCCCCB; text-transform: uppercase; line-height: 1.2em; width:50%;}
+div.tabela-compara table tr td.muda-mes{background-color: #4D4D4D; color:white; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size:20px;}
+div.tabela-compara table tr td.muda-mes span{font-size: 0.9em; margin:0 10px;}
+div.tabela-compara table tr td.muda-mes span:hover{color:#5AB946}
+
 
 @media screen and (max-width: 767px) {
 
