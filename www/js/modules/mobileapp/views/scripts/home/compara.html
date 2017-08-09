@@ -41,8 +41,31 @@
                 <td colspan="2" class="muda-mes"><span class="glyphicon glyphicon-chevron-left"></span> JULHO/2017 <span class="glyphicon glyphicon-chevron-right"></td>
             </tr>
             <tr>
-                <td><p><strong>Presenças no mês</strong></p><span class="dep1">97%</span></td>
-                <td><p><strong>Presenças no mês</strong></p><span class="dep2">57%</span></td>
+                <td><strong>Presenças no mês</strong><br><span class="dep1">97%</span></td>
+                <td><strong>Presenças no mês</strong><br><span class="dep2">57%</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding:15px 0; background-color:#323232;"><div class="grafico-compara-deputados"><p>Gastos no mês</p><canvas id="myChart"></div></canvas></td>
+            </tr>
+            <tr>
+                <td><strong>Proposições apresentadas</strong><br><span class="dep1">0</span></td>
+                <td><strong>Proposições apresentadas</strong><br><span class="dep2">1</span></td>
+            </tr>
+            <tr>
+                <td><strong>Situação</strong><br><span class="dep1">Em exercício</span></td>
+                <td><strong>Situação</strong><br><span class="dep2">Afastado</span></td>
+            </tr>
+            <tr>
+                <td><strong>Escolaridade</strong><br><span class="dep1">Nível Médio</span></td>
+                <td><strong>Escolaridade</strong><br><span class="dep2">Nível Superior</span></td>
+            </tr>
+            <tr>
+                <td><strong>Quantidade de comissões (titular)</strong><br><span class="dep1">5</span></td>
+                <td><strong>Quantidade de comissões (titular)</strong><br><span class="dep2">4</span></td>
+            </tr>
+            <tr>
+                <td><strong>Quantidade de cargos ocupados</strong><br><span class="dep1">2</span></td>
+                <td><strong>Quantidade de cargos ocupados</strong><br><span class="dep2">0</span></td>
             </tr>
         </table>
     </div>
@@ -58,3 +81,29 @@
         </div>
     </div>    
 </div>
+
+<script>
+Chart.defaults.global.defaultFontColor = 'white';
+Chart.defaults.global.defaultFontFamily = 'Open Sans';
+Chart.defaults.global.defaultFontSize = 8;
+Chart.defaults.global.defaultFontStyle = 'bolder';
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["FABRICIO DANTAS", "BRUNO DA COSTA"],
+        datasets: [{
+            data: [60, 40],
+            backgroundColor: [
+                '#0FB7EB',
+                '#3DB549'
+            ],
+            borderColor: [
+                'white',
+                'white'
+            ],
+            borderWidth: 1
+        }]
+    },
+});
+</script>

@@ -99,17 +99,23 @@ div.tabela-ranking td img:first-child{border:1px solid #dfdfdf; padding:2px; bac
 
 div.tabela-compara{}
 div.tabela-compara .x{position: absolute; width:100%; text-align: center; font-size:4.9em; font-weight: bolder; margin-top:10%;}
+div.tabela-compara .grafico-compara-deputados{background-color:#323232; padding:0; color:white !important;}
+div.tabela-compara .grafico-compara-deputados p{font-family: "Open Sans Condensed", sans-serif; font-weight: 700;}
 
 div.tabela-compara table{text-align: center; font-size:12px; width:100%;}
 div.tabela-compara table img{width:75%; margin-bottom:5px;}
+div.tabela-compara table tr{border-top:5px solid white;}
+div.tabela-compara table tr:nth-child(1){border-top:none;}
+div.tabela-compara table tr:nth-child(2){border-top:none;}
+div.tabela-compara table tr:nth-child(3){border-top:none;}
 div.tabela-compara table tr td{padding:15px;}
-div.tabela-compara table tr td:first-child{background-color:#e5e5e5; text-transform: uppercase; line-height: 1.2em; width:50%}
+div.tabela-compara table tr td:first-child{background-color:#e5e5e5; text-transform: uppercase; width:50%}
 div.tabela-compara table tr td:first-child img{border:10px solid #0FB7EB;}
 div.tabela-compara table tr td:nth-child(2) img{border:10px solid #3DB549;}
 div.tabela-compara table tr td:first-child span.dep1{color:#0FB7EB; display: block; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size: 2em;}
 div.tabela-compara table tr td:nth-child(2) span.dep2{color:#3DB549; display: block; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size: 2em;}
-div.tabela-compara table tr td:nth-child(2){background-color:#CCCCCB; text-transform: uppercase; line-height: 1.2em; width:50%;}
-div.tabela-compara table tr td.muda-mes{background-color: #4D4D4D; color:white; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size:20px;}
+div.tabela-compara table tr td:nth-child(2){background-color:#CCCCCB; text-transform: uppercase; width:50%;}
+div.tabela-compara table tr td.muda-mes{background-color: #323232; color:white; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size:20px;}
 div.tabela-compara table tr td.muda-mes span{font-size: 0.9em; margin:0 10px;}
 div.tabela-compara table tr td.muda-mes span:hover{color:#5AB946}
 
