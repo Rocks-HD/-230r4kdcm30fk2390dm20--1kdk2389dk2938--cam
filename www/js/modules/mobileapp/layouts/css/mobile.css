@@ -61,6 +61,13 @@ div.conteudo-opine-titulo h2 span{color:#77b2e0;}
 div.texto-opine{padding:15px; color:white; font-family:"Open Sans Condensed"; font-size:12px; background:#599fd6; text-align:center;}
 div.texto-opine p{text-align: justify;}
 
+div.conteudo-conheca-titulo{background-color:#2B6230; margin-top:15px;}
+div.conteudo-conheca-titulo h2 span{color:#8AC53F;}
+div.conteudo-conheca-dados{background:red; display:flex; align-items: center;}
+div.conteudo-conheca-dados .foto{background:yellow; text-align: center; padding:30px 0;}
+div.conteudo-conheca-dados .nome{background:yellow; text-align: center;}
+div.conteudo-conheca-dados .dados{background:yellow;}
+
 div.conteudo-compara-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-compara-titulo h2 span{color:#7F7F7F;}
 
@@ -118,6 +125,8 @@ div.tabela-compara table tr td:nth-child(2){background-color:#CCCCCB; text-trans
 div.tabela-compara table tr td.muda-mes{background-color: #323232; color:white; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size:20px;}
 div.tabela-compara table tr td.muda-mes span{font-size: 0.9em; margin:0 10px;}
 div.tabela-compara table tr td.muda-mes span:hover{color:#5AB946}
+
+div.tabela-conheca table{width:100%;}
 
 
 @media screen and (max-width: 767px) {

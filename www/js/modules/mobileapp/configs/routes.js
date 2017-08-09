@@ -43,6 +43,9 @@ angular.module('camara')
         }).when('/ranking', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',
             controller: 'HomeController'
+        }).when('/conheca', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/conheca.html',
+            controller: 'HomeController'
         }).when('/compara', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/compara.html',
             controller: 'HomeController'
