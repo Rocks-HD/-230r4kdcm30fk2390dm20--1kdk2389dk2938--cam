@@ -63,10 +63,13 @@ div.texto-opine p{text-align: justify;}
 
 div.conteudo-conheca-titulo{background-color:#2B6230; margin-top:15px;}
 div.conteudo-conheca-titulo h2 span{color:#8AC53F;}
-div.conteudo-conheca-dados{background:red; display:flex; align-items: center;}
-div.conteudo-conheca-dados .foto{background:yellow; text-align: center; padding:30px 0;}
-div.conteudo-conheca-dados .nome{background:yellow; text-align: center;}
-div.conteudo-conheca-dados .dados{background:yellow;}
+div.conteudo-conheca-dados{background:#f1f1f1; display:flex; align-items: center;}
+div.conteudo-conheca-dados .foto{background:#5AB946; text-align: center; padding:30px 0;}
+div.conteudo-conheca-dados .nome{ text-align: center;}
+div.conteudo-conheca-dados .nome h3{font-family: "Open Sans Condensed", sans-serif; color: #2B6230; font-weight: 700; margin:0; }
+div.conteudo-conheca-dados .nome h5{font-family: "Open Sans Condensed", sans-serif; color: #5AB946; font-weight: 700; margin:0; }
+div.conteudo-conheca-dados .dados{font-size:11px; line-height: 1.1em; margin-top:15px;}
+div.conteudo-conheca-dados .dados p{margin:0; margin-bottom:5px;}
 
 div.conteudo-compara-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-compara-titulo h2 span{color:#7F7F7F;}
