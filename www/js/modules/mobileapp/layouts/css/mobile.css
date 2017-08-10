@@ -10,15 +10,70 @@ and open the template in the editor.
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
-html, body{min-height: 100%; margin:0; padding: 0; font-family: "Open Sans", sans-serif; font-size:12px;}
+html, body{min-height: 100%; margin:0; padding: 0; font-family: "Open Sans", sans-serif;}
+p{margin:0;}
 
-h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:1.7em;}
-.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:170%;}
+h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; font-size:90%; text-transform: uppercase; position: relative; z-index: 300}
+.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 16px;}
 .btn-verde:focus{background-color:#3f7f3c; border:1px solid #2d5d2b;}
-.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#184071; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 16px}
 .btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
-.ver-mais-azul{background-color:#184071; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-azul{background-color:#07546B; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 .ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+
+/*CLASSES GENÉRICAS*/
+.img-100{width:100%;}
+
+.icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:56px;}
+.icon-ico-a-favor-1:hover{color:#8AC53F;}
+.icon-ico-contra-2:hover{color:#ED1F24;}
+
+.caixa-muda-mes{background-color:#333; color:white; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size:150%;}
+.caixa-muda-mes span{margin: 0 10px;}
+.caixa-muda-mes span:hover{color:#5AB946;}
+
+.borda-verde-clara{border: 5px solid #5AB946;}
+.borda-azul-clara{border: 5px solid #0FB7EB;}
+.borda-roxa-clara{border: 5px solid #C449B2;}
+
+.texto-maiusculo{text-transform: uppercase;}
+.texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
+.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
+.texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
+.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
+.texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
+.texto-explicativo{color:#111; font-size:12px; text-align: justify;}
+.texto-pequeno{font-size:80%;}
+
+.fundo-cinza-claro{background-color:#f5f5f5;}
+.fundo-cinza-escuro{background-color:#dfdfdf;}
+.fundo-preto{background-color:#333;}
+
+.graficos{background-color:#111;}
+
+.filtro{padding-top:15px; padding-bottom: 30px;}
+.filtro p{color:white; text-transform: uppercase; font-weight: bolder;}
+.filtro select{width:100%;}
+
+.linha-zebrada{display: flex; align-items: center; background:#f5f5f5;}
+.linha-zebrada:nth-child(2n+1){background-color:#dfdfdf;}
+
+.titulo-cinza{background-color:#333;}
+.titulo-cinza h2 span{color:#ccc;}
+.titulo-azul{background-color:#07546B}
+.titulo-azul h2 span{color:#0FB7EB}
+.titulo-roxo{background-color:#601B58;}
+.titulo-roxo h2 span{color:#C449B2;}
+.titulo-verde{background-color:#2B6230;}
+.titulo-verde h2 span{color:#8AC53F;}
+
+.padding-vertical{padding-top:15px; padding-bottom: 15px;}
+.margin-vertical{margin-top:10px; margin-bottom: 10px;}
+/*FIM DE CLASSES GENÉRICAS*/
+
+/*TELAS*/
+/*FIM DE TELAS*/
 
 /*BARRA DE NAVEGAÇÃO - MENU*/
 header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;}
@@ -48,89 +103,16 @@ div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; bac
 div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
 div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
 
-div.informativo-deputado{background-color:#1d1d1d; padding-top:15px; padding-bottom:10px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic;}
+div.informativo-deputado{background-color:#1d1d1d; padding-top:15px; padding-bottom:15px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic;}
 div.informativo-deputado .text-verde{color:#90C73E;}
-
-div.compare-os-deputados{background-color:#d2d2d2; padding-top:15px; padding-bottom: 15px; }
-div.compare-os-deputados img{width:100%; border:2px dashed #dcdcdc; background-color:white;}
-div.compare-os-deputados .btn-comparar{margin-top:7%;}
-div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
 
 div.conteudo-opine-titulo{background-color:#184071; margin-top:15px;}
 div.conteudo-opine-titulo h2 span{color:#77b2e0;}
 div.texto-opine{padding:15px; color:white; font-family:"Open Sans Condensed"; font-size:12px; background:#599fd6; text-align:center;}
 div.texto-opine p{text-align: justify;}
 
-div.conteudo-conheca-titulo{background-color:#2B6230; margin-top:15px;}
-div.conteudo-conheca-titulo h2 span{color:#8AC53F;}
-div.conteudo-conheca-dados{background:#f1f1f1; display:flex; align-items: center;}
-div.conteudo-conheca-dados .foto{background:#5AB946; text-align: center; padding:30px 0;}
-div.conteudo-conheca-dados .nome{ text-align: center;}
-div.conteudo-conheca-dados .nome h3{font-family: "Open Sans Condensed", sans-serif; color: #2B6230; font-weight: 700; margin:0; }
-div.conteudo-conheca-dados .nome h5{font-family: "Open Sans Condensed", sans-serif; color: #5AB946; font-weight: 700; margin:0; }
-div.conteudo-conheca-dados .dados{font-size:11px; line-height: 1.1em; margin-top:15px;}
-div.conteudo-conheca-dados .dados p{margin:0; margin-bottom:5px;}
-
-div.conteudo-compara-titulo{background-color:#323232; margin-top:15px;}
-div.conteudo-compara-titulo h2 span{color:#7F7F7F;}
-
-div.conteudo-ranking-titulo{background-color:#601b58; margin-top:15px;}
-div.conteudo-ranking-titulo h2 span{color:#a93b95;}
-div.texto-ranking{padding:15px; color:#515151; font-family:"Open Sans Condensed"; font-size:12px; background:#e6e6e5; text-align:center;}
-div.texto-ranking p{text-align: justify;}
-
 div.rodape{display: flex; align-items: center; background:blue; margin-top:20px; background-image: linear-gradient(135deg, #8ac53f 10%, #469543 100%); padding:15px;}
 div.rodape img{width:100%;}
-
-div.filtro-opine{padding-top:15px; padding-bottom:30px; background-color:#367ab5;background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:20%;}
-div.filtro-opine span{color:white; text-transform: uppercase;}
-div.filtro-opine select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf; width:100%;}
-div.tabela-opine table{font-size:10px; width:100%;}
-div.tabela-opine th{padding:10px; background-color:#184071; color:white; text-align: center;}
-div.tabela-opine tr:nth-child(2n){background-color:#f1f1f1;}
-div.tabela-opine td{padding:10px; text-align: center; font-size:10px;}
-div.tabela-opine td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:18px;}
-div.tabela-opine td img{width:50px;}
-
-.icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:56px;}
-.icon-ico-a-favor-1:hover{color:#8AC53F;}
-.icon-ico-contra-2:hover{color:#ED1F24;}
-
-div.filtro-ranking{padding-top:15px; padding-bottom:20px; background-color:#3c0d3c; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:60%;}
-div.filtro-ranking span{color:white; text-transform: uppercase;}
-div.filtro-ranking select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf; width:100%; margin-top: 5px; margin-bottom: 5px;}
-div.tabela-ranking table{font-size:10px; width:100%;}
-div.tabela-ranking th{padding:10px; background-color:#601b58; color:white; text-align: center;}
-div.tabela-ranking tr:nth-child(2n){background-color:#f1f1f1;}
-div.tabela-ranking td{padding:10px; text-align: center; font-size:10px;}
-div.tabela-ranking td:first-child{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size:20px; color:#a93b95;}
-div.tabela-ranking td img{width:50px;}
-div.tabela-ranking td img:first-child{border:1px solid #dfdfdf; padding:2px; background-color:white;}
-
-div.tabela-compara{}
-div.tabela-compara .x{position: absolute; width:100%; text-align: center; font-size:4.9em; font-weight: bolder; margin-top:10%;}
-div.tabela-compara .grafico-compara-deputados{background-color:#323232; padding:0; color:white !important;}
-div.tabela-compara .grafico-compara-deputados p{font-family: "Open Sans Condensed", sans-serif; font-weight: 700;}
-
-div.tabela-compara table{text-align: center; font-size:12px; width:100%;}
-div.tabela-compara table img{width:75%; margin-bottom:5px;}
-div.tabela-compara table tr{border-top:5px solid white;}
-div.tabela-compara table tr:nth-child(1){border-top:none;}
-div.tabela-compara table tr:nth-child(2){border-top:none;}
-div.tabela-compara table tr:nth-child(3){border-top:none;}
-div.tabela-compara table tr td{padding:15px;}
-div.tabela-compara table tr td:first-child{background-color:#e5e5e5; text-transform: uppercase; width:50%}
-div.tabela-compara table tr td:first-child img{border:10px solid #0FB7EB;}
-div.tabela-compara table tr td:nth-child(2) img{border:10px solid #3DB549;}
-div.tabela-compara table tr td:first-child span.dep1{color:#0FB7EB; display: block; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size: 2em;}
-div.tabela-compara table tr td:nth-child(2) span.dep2{color:#3DB549; display: block; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; font-size: 2em;}
-div.tabela-compara table tr td:nth-child(2){background-color:#CCCCCB; text-transform: uppercase; width:50%;}
-div.tabela-compara table tr td.muda-mes{background-color: #323232; color:white; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size:20px;}
-div.tabela-compara table tr td.muda-mes span{font-size: 0.9em; margin:0 10px;}
-div.tabela-compara table tr td.muda-mes span:hover{color:#5AB946}
-
-div.tabela-conheca table{width:100%;}
-
 
 @media screen and (max-width: 767px) {
 
