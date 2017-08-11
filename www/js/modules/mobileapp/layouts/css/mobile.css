@@ -26,6 +26,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .min-height{min-height: 35%;}
 
 .img-100{width:100%; height: auto;}
+.img-50{width:50%; height: auto;}
 
 .icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:56px;}
 .icon-ico-a-favor-1:hover{color:#8AC53F;}
