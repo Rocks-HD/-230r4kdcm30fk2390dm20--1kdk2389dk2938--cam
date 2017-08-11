@@ -157,13 +157,13 @@ div.rodape img{width:100%;}
 }
 
 @media (min-width: 992px) and (max-width:1199px) {
-.a-favor{min-height: 105px; background-position: center;}
-.contra{min-height: 105px; background-position: center;}
-.ausente{min-height: 105px; background-position: center;}
+.a-favor{min-height: 135px; background-position: center;}
+.contra{min-height: 135px; background-position: center;}
+.ausente{min-height: 135px; background-position: center;}
 }
 
 @media (min-width: 1200px) {
-.a-favor{min-height: 105px; background-position: center;}
-.contra{min-height: 105px; background-position: center;}
-.ausente{min-height: 105px; background-position: center;}
+.a-favor{min-height: 165px; background-position: center;}
+.contra{min-height: 165px; background-position: center;}
+.ausente{min-height: 165px; background-position: center;}
 }
