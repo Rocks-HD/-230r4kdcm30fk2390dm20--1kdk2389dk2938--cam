@@ -22,36 +22,51 @@
 
     </div>
 
-    <div class="container-fluid">
-        <div class="row conteudo-conheca-titulo">
-            <div class="col-xs-12">
+    <div class="container-fluid conheca-seu-deputado">
+        <div class="row">
+            <div class="col-xs-12 padding-vertical titulo-verde">
                 <h2><span>CONHEÇA</span> SEU DEPUTADO</h2> 
             </div>
         </div>
-        <div class="row conteudo-conheca-dados">
-            <div class="col-xs-6 foto">
-                <img src="/js/modules/mobileapp/layouts/imagens/fotos/01.jpg" alt=""/>
-            </div>
-            <div class="col-xs-6">
-                <div class="nome">
-                    <h3>João Lopes Dantas</h3>
-                    <h5>PT/GO</h5>
-                </div>
-                <div class="dados">
-                    <p><b>Nascimento:</b> <span>14/03/1980</span></p>
-                    <p><b>Escolaridade:</b> <span>Superior Completo</span></p>
-                    <p><b>E-mail:</b> <span>fabriciold28@gmail.com</span></p>
-                    <p><b>Telefone:</b> <span>61 XXXXX-XXXX</span></p>
+        <div class="row">
+            <div class="col-xs-12 fundo-cinza-claro padding-vertical">
+                <img src="/js/modules/mobileapp/layouts/imagens/fotos/01.jpg" alt="João Santana" class="borda-verde-clara pull-left margin-right-15"/>
+                <div class="dados-do-deputado">
+                    <h3 class="texto-grande texto-verde-claro">JOÃO LOPES DANTAS (PT/GO)</h3>
+                    <span><strong>Nascimento:</strong> 14/03/1980</span><br>
+                    <span><strong>Telefone:</strong> 61 33455666</span><br>
+                    <span><strong>E-mail:</strong> fabricio.dantas@buriti.df.gov.br</span><br>
                 </div>
             </div>
         </div>
-    </div>
-    
-    
-    
-    <div class="tabela-conheca">
+        
+        <div class="row caixa-muda-mes padding-vertical text-center">
+            <div class="col-xs-12">
+                <span class="glyphicon glyphicon-chevron-left"></span>GASTOS - JULHO/2017 <span class="glyphicon glyphicon-chevron-right"></span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-12 graficos padding-vertical text-center">
+                <canvas id="myChart"></canvas>
+                <div class="texto-branco texto-grande padding-vertical">R$ 34.000,90</div>
+            </div>
+        </div>
+        
+        <div class="row caixa-muda-mes padding-vertical text-center margin-top-15">
+            <div class="col-xs-12">
+                GASTOS - MÊS A MÊS
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-12 graficos padding-vertical text-center">
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
         
     </div>
+
 
     
     <div class="container-fluid rodape">
@@ -75,7 +90,7 @@ var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ["FABRICIO DANTAS", "BRUNO DA COSTA"],
+        labels: ["Combustível", "Passagens Aéreas"],
         datasets: [{
             data: [60, 40],
             backgroundColor: [
@@ -89,5 +104,24 @@ var myChart = new Chart(ctx, {
             borderWidth: 1
         }]
     },
+});
+
+var ctx2 = document.getElementById('myChart2').getContext('2d');
+var chart = new Chart(ctx2, {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+        labels: ["JAN", "FEV", "MAR", "ABR", "MAIO", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"],
+        datasets: [{
+            label: "Gastos",
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderColor: 'rgba(255, 255, 132)',
+            data: [30000, 40000, 23000, 24000, 44000, 12000, 34000, 34000, 22000, 44000, 45000, 12000],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
 });
 </script>

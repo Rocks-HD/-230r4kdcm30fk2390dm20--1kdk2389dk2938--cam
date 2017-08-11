@@ -15,15 +15,17 @@ p{margin:0;}
 
 h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:170%;}
 h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; font-size:90%; text-transform: uppercase; position: relative; z-index: 300}
-.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 16px;}
+.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 13px;}
 .btn-verde:focus{background-color:#3f7f3c; border:1px solid #2d5d2b;}
-.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 16px}
+.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 13px;}
 .btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
 .ver-mais-azul{background-color:#07546B; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 .ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 
 /*CLASSES GENÉRICAS*/
-.img-100{width:100%;}
+.min-height{min-height: 35%;}
+
+.img-100{width:100%; height: auto;}
 
 .icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:56px;}
 .icon-ico-a-favor-1:hover{color:#8AC53F;}
@@ -45,10 +47,12 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-explicativo{color:#111; font-size:12px; text-align: justify;}
 .texto-pequeno{font-size:80%;}
+.texto-grande{font-size:180%;}
 
 .fundo-cinza-claro{background-color:#f5f5f5;}
 .fundo-cinza-escuro{background-color:#dfdfdf;}
 .fundo-preto{background-color:#333;}
+.fundo-verde{background-color:#5AB946;}
 
 .graficos{background-color:#111;}
 
@@ -70,13 +74,17 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 .padding-vertical{padding-top:15px; padding-bottom: 15px;}
 .margin-vertical{margin-top:10px; margin-bottom: 10px;}
+.margin-right-15{margin-right: 15px;}
+.margin-top-15{margin-top: 15px;}
 /*FIM DE CLASSES GENÉRICAS*/
 
 /*TELAS*/
+.conheca-seu-deputado{}
+.conheca-seu-deputado .dados-do-deputado{word-wrap: break-word; font-size: 12px;}
 /*FIM DE TELAS*/
 
 /*BARRA DE NAVEGAÇÃO - MENU*/
-header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;}
+header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center; margin-bottom:15px;}
 header #btn-menu{position:relative; width:60px; height: 60px; background-color:white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: -20px; z-index: 400;}
 header #btn-menu span{font-size: 30px; color:#5ab946;}
 header #logo{font-size: 30px; color:#9ae588;}
@@ -85,6 +93,11 @@ header #logo{font-size: 30px; color:#9ae588;}
 /*MENU PRINCIPAL*/
 nav.menu-principal{display:none; background-color:rgba(0,0,0,0.9); padding:30px 0; font-size:10px; color:white; text-transform: uppercase; font-weight: bold; position: absolute; z-index: 300; width:100%;}
 /*FIM DO MENU PRINCIPAL*/
+
+div.compare-os-deputados{background-color:#d2d2d2; padding-top:15px; padding-bottom: 15px; }
+div.compare-os-deputados img{width:100%; border:2px dashed #dcdcdc; background-color:white;}
+div.compare-os-deputados .btn-comparar{margin-top:7%;}
+div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
 
 div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-conheca-titulo h2 span{color:#8cc061;}
