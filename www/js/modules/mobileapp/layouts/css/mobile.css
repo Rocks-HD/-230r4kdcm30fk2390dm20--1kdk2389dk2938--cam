@@ -20,9 +20,24 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 13px;}
 .btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
 .ver-mais-azul{background-color:#07546B; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-azul:hover{background-color:#073D49}; 
 .ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-roxo:hover{background-color:#3f123c;}
+.ver-mais-verde{background-color:#2B6230; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-verde:hover{background-color:#1B3F1D;}
 
 /*CLASSES GENÉRICAS*/
+.a-favor{border:2px solid white; background-color:#cce4b4; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-a-favor.svg); background-size: contain; background-repeat: no-repeat;}
+.a-favor h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#5AB946; font-size: 130%;}
+.a-favor h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#2B6230;}
+.contra{border:2px solid white; background-color:#f9c5ca; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-contra.svg); background-size: contain; background-repeat: no-repeat;}
+.contra h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#ed1f24; font-size: 130%;}
+.contra h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#b21f24;}
+.ausente{border:2px solid white; background-color:#b3b3b3; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-ausente.svg); background-size: contain; background-repeat: no-repeat;}
+.ausente h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#FFFFFF; font-size: 130%;}
+.ausente h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#666;}
+
+
 .min-height{min-height: 35%;}
 
 .img-100{width:100%; height: auto;}
@@ -48,6 +63,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-explicativo{color:#111; font-size:12px; text-align: justify;}
 .texto-pequeno{font-size:80%;}
+.texto-medio{font-size:110%;}
 .texto-grande{font-size:180%;}
 
 .fundo-cinza-claro{background-color:#f5f5f5;}
@@ -82,6 +98,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 /*TELAS*/
 .conheca-seu-deputado{}
 .conheca-seu-deputado .dados-do-deputado{word-wrap: break-word; font-size: 12px;}
+.conheca-seu-deputado .posicao-do-deputado{border: 2px solid white;}
 /*FIM DE TELAS*/
 
 /*BARRA DE NAVEGAÇÃO - MENU*/
@@ -133,14 +150,20 @@ div.rodape img{width:100%;}
 }
 
 @media (min-width: 768px) and (max-width:991px) {
-
+.a-favor{min-height: 105px; background-position: center;}
+.contra{min-height: 105px; background-position: center;}
+.ausente{min-height: 105px; background-position: center;}
 
 }
 
 @media (min-width: 992px) and (max-width:1199px) {
-
+.a-favor{min-height: 105px; background-position: center;}
+.contra{min-height: 105px; background-position: center;}
+.ausente{min-height: 105px; background-position: center;}
 }
 
 @media (min-width: 1200px) {
-
+.a-favor{min-height: 105px; background-position: center;}
+.contra{min-height: 105px; background-position: center;}
+.ausente{min-height: 105px; background-position: center;}
 }
