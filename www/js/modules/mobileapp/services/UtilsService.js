@@ -10,22 +10,7 @@ angular.module('camara')
     .service('UtilsService', function() {
         
         this.formLatLong;
-        
-        /**
-         * Pega a posição geográfica do usuário
-         * 
-         * @returns {undefined}
-         */
-        this._getLatLong = function() 
-        {   
-            if ("geolocation" in navigator) {
-                this.formLatLong = navigator.geolocation.watchPosition(function(position) {
-                    return position.coords.latitude+';'+position.coords.longitude;
-                });        
-            } else {
-                alert('Não foi possível identificar sua localização, portanto não será possível enviar as informações dos formulários abaixo.');
-            }
-        };
+
         
         
         /**
@@ -62,4 +47,20 @@ angular.module('camara')
 
             return dia+"/"+mes+"/"+ano +' às '+ hora;
         };
+        
+        
+        /**
+         * Função que retorna apenas a data 
+         * 
+         * @returns {String}
+         */
+        this._dataAtualVisita = function() 
+        {
+            var data    = new Date();
+            var dia     = (data.getDate().toString().length == 1) ? '0'+data.getDate() : data.getDate();
+            var mes     = (data.getMonth().toString().length == 1) ? '0'+(data.getMonth()+1) : (data.getMonth()+1);
+            var ano     = data.getFullYear();
+
+            return ano+""+mes+""+dia;
+        };        
 });

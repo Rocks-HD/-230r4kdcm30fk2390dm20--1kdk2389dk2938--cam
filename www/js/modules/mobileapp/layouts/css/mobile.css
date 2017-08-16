@@ -129,7 +129,7 @@ div.filtros-conheca select{width:50%; margin-top:10px; font-size:12px; float: le
 
 div.lista-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; height:210px; position: relative; width:100%; overflow: hidden; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; background-size: contain; }
 div.lista-deputados .div-interna{width:800px; position:relative; overflow: hidden; display:block;}
-div.lista-deputados .box-deputado{font-family: "Open Sans Condensed", sans-serif; font-weight: bold; text-transform: uppercase; width:10%; text-align: center; float:left; margin-left:10px; margin-right:10px;}
+div.lista-deputados .box-deputado{font-family: "Open Sans Condensed", sans-serif; font-weight: bold; text-transform: uppercase; width:80px; text-align: center; float:left; margin-left:10px; margin-right:10px;}
 div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; background-color:white; width:100%;}
 div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
 div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
