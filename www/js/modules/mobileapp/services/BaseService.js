@@ -77,7 +77,6 @@ angular.module('camara')
             var dtVisita = UtilsService._dataAtualVisita();
             
             if (typeof(Storage) !== "undefined") {
-                console.log(lstEstados);
                 localStorage.setItem('estados_'+ dtVisita, JSON.stringify(lstEstados));
             } else {
                 console.log('O dispositivo não permite salvar informações!');
@@ -106,6 +105,7 @@ angular.module('camara')
             return lstPartidos;
         };
         
+        
         /**
          * Retorna a lista de todos os deputados cadastrados naquele dia
          * 
@@ -133,6 +133,19 @@ angular.module('camara')
         
         
         /**
+         * Função que retorna informações de um determinado deputado.
+         *    -- Tenta buscar a informação diretamente da base, caso não tenha, busca do servidor
+         *    
+         * @param {int} coDeputado   
+         * @returns {void}
+         */
+        this.infoDeputado = function(coDeputado) 
+        {
+            
+        };
+        
+        
+        /**
          * Retorna informações que poderão ser uteis no futuro
          * 
          * @returns {undefined}
@@ -145,15 +158,43 @@ angular.module('camara')
             
         };
         
-        this.listarEstado = function() 
+        
+        /**
+         * Retorna a lista de estados previamente cadastrados na base
+         * 
+         * @returns {Array}
+         */
+        this.listarEstadosLocal = function() 
         {
+            var dtVisita        = UtilsService._dataAtualVisita(),
+                lstEstados      = JSON.parse(localStorage.getItem('estados_'+ dtVisita)),
+                lstEstadosOrd   = {};
+                
+            Object.keys(lstEstados).sort().forEach(function(key) {
+              lstEstadosOrd[key] = lstEstados[key];
+            });
             
+            return lstEstadosOrd;
         };
         
         
-        this.listarPartidos = function() 
+        /**
+         * Retorna a lista de partidos previamente cadastrados na base
+         * 
+         * @returns {Array}
+         */
+        this.listarPartidosLocal = function() 
         {
+            var dtVisita        = UtilsService._dataAtualVisita(),
+                lstPartidos     = JSON.parse(localStorage.getItem('partidos_'+ dtVisita)),
+                lstPartidosOrd  = {};
+                
+            Object.keys(lstPartidos).sort().forEach(function(key) {
+                lstPartidosOrd[key] = lstPartidos[key];
+            });
             
+            return lstPartidos;
+
         };
         
     }]);

@@ -550,7 +550,7 @@
      * 
      * @param string palavra
      */
-    function removeAcento(palavra) 
+    function removerAcento(palavra) 
     {  
         str_acento      = "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";  
         str_sem_acento  = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC";  
