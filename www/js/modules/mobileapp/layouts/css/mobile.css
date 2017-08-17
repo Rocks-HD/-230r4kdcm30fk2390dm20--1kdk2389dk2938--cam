@@ -37,6 +37,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .ausente h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#FFFFFF; font-size: 130%;}
 .ausente h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#666;}
 
+.background-opine{background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-opiniao.svg); background-size: contain; background-repeat: no-repeat;}
 
 .min-height{min-height: 35%;}
 
@@ -61,6 +62,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
 .texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
 .texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
+.texto-cinza{color:#999; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-explicativo{color:#111; font-size:12px; text-align: justify;}
 .texto-pequeno{font-size:80%;}
 .texto-medio{font-size:110%;}
@@ -71,7 +73,10 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .fundo-preto{background-color:#333;}
 .fundo-verde{background-color:#5AB946;}
 
-.graficos{background-color:#111;}
+.graficos{}
+.graficos h2{color:#111; font-size:18px; text-transform: uppercase;}
+
+.posicionamento-mao{position: absolute; right:10%; width:35%; top:35%;}
 
 .filtro{padding-top:15px; padding-bottom: 30px;}
 .filtro p{color:white; text-transform: uppercase; font-weight: bolder;}
@@ -99,6 +104,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .conheca-seu-deputado{}
 .conheca-seu-deputado .dados-do-deputado{word-wrap: break-word; font-size: 12px;}
 .conheca-seu-deputado .posicao-do-deputado{border: 2px solid white;}
+.conheca-seu-deputado .foto-conheca-seu-deputado{width:45%;}
 /*FIM DE TELAS*/
 
 /*BARRA DE NAVEGAÇÃO - MENU*/
@@ -119,7 +125,7 @@ div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
 
 div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-conheca-titulo h2 span{color:#8cc061;}
-div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:30%;}
+div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:contain;}
 div.filtros-conheca .option{color:white; font-size:14px; text-transform: uppercase; line-height: 2.1em; margin-top:10px;}
 div.filtros-conheca .option .text-option{font-size:11px; float: left; display: block; margin-top: -4px; margin-left:4px;}
 div.filtros-conheca input,select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf;}
@@ -145,7 +151,27 @@ div.texto-opine p{text-align: justify;}
 div.rodape{display: flex; align-items: center; background:blue; margin-top:20px; background-image: linear-gradient(135deg, #8ac53f 10%, #469543 100%); padding:15px;}
 div.rodape img{width:100%;}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 575px) {
+
+}
+
+@media screen and (min-width: 576px) and (max-width:767px) {
+div.compare-os-deputados img{width:50%}
+div.rodape img{width:50%;}
+div.filtros-conheca input[type=radio]{width:30px; height: 30px;}
+div.filtros-conheca .option .text-option{font-size:18px; margin-top:3px;}
+div.filtros-conheca input, select{font-size:20px;}
+div.informativo-deputado{font-size:20px;}
+div.filtros-conheca select{font-size:20px;}
+div.lista-deputados .box-deputado{width:125px;}
+div.lista-deputados{height:260px;}
+div.compare-os-deputados img{width:65%;}
+.btn-verde, .btn-azul-escuro{font-size:25px;}
+.texto-explicativo{font-size:14px;}
+h2{font-size:260%;}
+.conheca-seu-deputado .dados-do-deputado{font-size:16px;}
+.conheca-seu-deputado .foto-conheca-seu-deputado{width:30%;}
+
 
 }
 
@@ -153,17 +179,45 @@ div.rodape img{width:100%;}
 .a-favor{min-height: 105px; background-position: center;}
 .contra{min-height: 105px; background-position: center;}
 .ausente{min-height: 105px; background-position: center;}
+div.compare-os-deputados img{width:50%}
+div.rodape img{width:50%;}
+div.filtros-conheca input[type=radio]{width:30px; height: 30px;}
+div.filtros-conheca .option .text-option{font-size:18px; margin-top:3px;}
+div.filtros-conheca input, select{font-size:20px;}
+div.informativo-deputado{font-size:20px;}
+div.filtros-conheca select{font-size:20px;}
+div.lista-deputados .box-deputado{width:125px;}
+div.lista-deputados{height:260px;}
+div.compare-os-deputados img{width:65%;}
+.btn-verde, .btn-azul-escuro{font-size:25px;}
+.texto-explicativo{font-size:14px;}
+h2{font-size:260%;}
+.conheca-seu-deputado .dados-do-deputado{font-size:20px;}
+.conheca-seu-deputado .foto-conheca-seu-deputado{width:25%;}
+.texto-medio{font-size:170%;}
 
 }
 
-@media (min-width: 992px) and (max-width:1199px) {
+@media (min-width: 992px) {
+div.filtros-conheca input[type=radio]{width:30px; height: 30px;}
 .a-favor{min-height: 135px; background-position: center;}
 .contra{min-height: 135px; background-position: center;}
 .ausente{min-height: 135px; background-position: center;}
-}
-
-@media (min-width: 1200px) {
-.a-favor{min-height: 165px; background-position: center;}
-.contra{min-height: 165px; background-position: center;}
-.ausente{min-height: 165px; background-position: center;}
+div.compare-os-deputados img{width:50%}
+div.rodape img{width:50%;}
+div.filtros-conheca .option .text-option{font-size:18px; margin-top:3px;}
+div.filtros-conheca input, select{font-size:20px;}
+div.informativo-deputado{font-size:20px;}
+div.filtros-conheca select{font-size:20px;}
+div.lista-deputados .box-deputado{width:150px;}
+div.lista-deputados{height:325px; background-size:75%;}
+div.compare-os-deputados img{width:50%;}
+.btn-verde, .btn-azul-escuro{font-size:25px;}
+.texto-explicativo{font-size:18px;}
+h2{font-size:270%;}
+div.lista-deputados .box-deputado h3{font-size:19px;}
+div.lista-deputados .box-deputado h4{font-size:17px;}
+div.lista-deputados .box-deputado img{width:100%;}
+.conheca-seu-deputado .dados-do-deputado{font-size:25px;}
+.conheca-seu-deputado .foto-conheca-seu-deputado{width:20%;}
 }

@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12 fundo-cinza-claro padding-vertical">
-                <img src="/js/modules/mobileapp/layouts/imagens/fotos/01.jpg" alt="João Santana" class="borda-verde-clara pull-left margin-right-15"/>
+                <img src="/js/modules/mobileapp/layouts/imagens/fotos/01.jpg" alt="João Santana" class="borda-verde-clara pull-left margin-right-15 foto-conheca-seu-deputado"/>
                 <div class="dados-do-deputado">
                     <h3 class="texto-grande texto-verde-claro">JOÃO LOPES DANTAS (PT/GO)</h3>
                     <span><strong>Nascimento:</strong> 14/03/1980</span><br>
@@ -24,9 +24,9 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 graficos padding-vertical text-center">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 graficos padding-vertical text-center">
                 <canvas id="myChart"></canvas>
-                <div class="texto-branco texto-grande padding-vertical">TOTAL R$ 34.000,90</div>
+                <div class="texto-cinza texto-grande padding-vertical">TOTAL R$ 34.000,90</div>
             </div>
         </div>
 
@@ -110,9 +110,9 @@
 </div>
 
 <script>
-    Chart.defaults.global.defaultFontColor = 'white';
+    Chart.defaults.global.defaultFontColor = '#999';
     Chart.defaults.global.defaultFontFamily = 'Open Sans';
-    Chart.defaults.global.defaultFontSize = 8;
+    Chart.defaults.global.defaultFontSize = 12;
     Chart.defaults.global.defaultFontStyle = 'bolder';
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
