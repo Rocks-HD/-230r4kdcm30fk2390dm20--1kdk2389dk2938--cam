@@ -53,5 +53,5 @@ angular.module('camara')
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
             controller: 'HomeController'
         })
-        .otherwise({redirectTo: '/'});
+        ;
 }]);
