@@ -12,7 +12,8 @@ angular.module('camara')
         this.APPLICATION_ENV    = selfTarget.indexOf("host.camaraapp") !== -1 ? 'development' : 'production';
         this.url                = this.APPLICATION_ENV == 'development' ? 'http://host.camaraapp' : 'http://webfans.com.br';  
         this.identity           = {};
-        this.lstDeputados       = new Array();
+        this.infoDeputados      = new Array();
+        this.infoDeputado       = new Array();
         this.lstEstados         = {};
         this.lstPartidos        = {};
         
@@ -30,18 +31,42 @@ angular.module('camara')
                         for (var i in r['dados']) {
                             rootObj.lstEstados[r['dados'][i]['siglaUf']] = typeof rootObj.lstEstados[r['dados'][i]['siglaUf']] == 'undefined' ? 1 : rootObj.lstEstados[r['dados'][i]['siglaUf']]+1;
                             rootObj.lstPartidos[r['dados'][i]['siglaPartido']] = typeof rootObj.lstPartidos[r['dados'][i]['siglaPartido']] == 'undefined' ? 1 : rootObj.lstPartidos[r['dados'][i]['siglaPartido']]+1;
-                            rootObj.lstDeputados.push(r['dados'][i]);
+                            rootObj.infoDeputados.push(r['dados'][i]);
                         }
                     } else {
                         rootObj.salvarEstadosLocal(rootObj.lstEstados);
                         rootObj.salvarPartidosLocal(rootObj.lstPartidos);
-                        return rootObj.salvarDeputadosLocal(rootObj.lstDeputados);
+                        return rootObj.salvarDeputadosLocal(rootObj.infoDeputados);
                     }
                 }, 'json');
             } else {               
                 return lstDeputados;
             }
-        };       
+        };
+        
+        
+        /**
+         * Retorna informação do webservice ou da base de dados
+         * 
+         * @param {int} coDeputado
+         * @returns {object}
+         */
+        this.informacaoDoDeputado = function(coDeputado) 
+        {
+            var rootObj         = this;
+            var url             = 'https://dadosabertos.camara.leg.br/api/v2/deputado';
+            var infoDeputado    = rootObj.infoDeputadoLocal(coDeputado);
+
+            if (infoDeputado == null || infoDeputado.length == 0) {
+                return $.get(url, {'id' : coDeputado}, function(r) {
+                    rootObj.infoDeputado.push(r['dados']);
+                    return rootObj.salvarDeputadosLocal(rootObj.infoDeputados);
+                }, 'json');
+            } else {               
+                return infoDeputado;
+            }
+        };
+        
 
         
         
@@ -64,6 +89,23 @@ angular.module('camara')
             return lstDeputados;
         };
 
+
+        /**
+         * Salva informações de um deputado específico 
+         * 
+         * @param {type} infoDeputado
+         * @returns {undefined}
+         */
+        this.salvarDeputadoLocal = function(infoDeputado, coDeputado) 
+        {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('deputado_'+ coDeputado, JSON.stringify(infoDeputado));
+            } else {
+                console.log('O dispositivo não permite salvar informações!');
+            }
+            
+            return infoDeputado;
+        };
         
         
         /**
@@ -114,19 +156,24 @@ angular.module('camara')
          */
         this.listarDeputadosLocal = function(pagina, total) 
         {
-            var dtVisita        = UtilsService._dataAtualVisita(),
-                lstDeputados    = JSON.parse(localStorage.getItem('deputados_'+ dtVisita)),
-                lstPaginacao    = new Array();
-            
-            if (total === false) {
-                for (var i in lstDeputados) {
-                    if ( i >= ((pagina-1)*100) && (i < (pagina*100)) ) {
-                        lstPaginacao.push(lstDeputados[i]);
+            try {
+                var dtVisita        = UtilsService._dataAtualVisita(),
+                    lstDeputados    = JSON.parse(localStorage.getItem('deputados_'+ dtVisita)),
+                    lstPaginacao    = new Array();
+
+                if (total === false) {
+                    for (var i in lstDeputados) {
+                        if ( i >= ((pagina-1)*100) && (i < (pagina*100)) ) {
+                            lstPaginacao.push(lstDeputados[i]);
+                        }
                     }
-                }
-            } else {
-                lstPaginacao = lstDeputados;
+                } else {
+                    lstPaginacao = lstDeputados;
+                }  
+            } catch (e) {
+                console.log(e);
             }
+
             
             return lstPaginacao;
         };
@@ -139,9 +186,14 @@ angular.module('camara')
          * @param {int} coDeputado   
          * @returns {void}
          */
-        this.infoDeputado = function(coDeputado) 
+        this.infoDeputadoLocal = function(coDeputado) 
         {
+            try {
+                var infoDeputado    = JSON.parse(localStorage.getItem('deputado_'+ coDeputado));
+
+            } catch (e) {console.log(e);}
             
+            return infoDeputado;
         };
         
         
@@ -166,13 +218,16 @@ angular.module('camara')
          */
         this.listarEstadosLocal = function() 
         {
-            var dtVisita        = UtilsService._dataAtualVisita(),
-                lstEstados      = JSON.parse(localStorage.getItem('estados_'+ dtVisita)),
-                lstEstadosOrd   = {};
-                
-            Object.keys(lstEstados).sort().forEach(function(key) {
-              lstEstadosOrd[key] = lstEstados[key];
-            });
+            try {
+                var dtVisita        = UtilsService._dataAtualVisita(),
+                    lstEstados      = JSON.parse(localStorage.getItem('estados_'+ dtVisita)),
+                    lstEstadosOrd   = {};
+
+                Object.keys(lstEstados).sort().forEach(function(key) {
+                  lstEstadosOrd[key] = lstEstados[key];
+                });
+
+            } catch (e) {/** console.log(e); */}
             
             return lstEstadosOrd;
         };
@@ -185,13 +240,15 @@ angular.module('camara')
          */
         this.listarPartidosLocal = function() 
         {
-            var dtVisita        = UtilsService._dataAtualVisita(),
-                lstPartidos     = JSON.parse(localStorage.getItem('partidos_'+ dtVisita)),
-                lstPartidosOrd  = {};
-                
-            Object.keys(lstPartidos).sort().forEach(function(key) {
-                lstPartidosOrd[key] = lstPartidos[key];
-            });
+            try {
+                var dtVisita        = UtilsService._dataAtualVisita(),
+                    lstPartidos     = JSON.parse(localStorage.getItem('partidos_'+ dtVisita)),
+                    lstPartidosOrd  = {};
+
+                Object.keys(lstPartidos).sort().forEach(function(key) {
+                    lstPartidosOrd[key] = lstPartidos[key];
+                });
+            } catch (e) {/** console.log(e); */}
             
             return lstPartidos;
 

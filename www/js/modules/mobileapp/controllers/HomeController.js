@@ -14,6 +14,9 @@ angular.module('camara')
         $scope.options;
         $scope.msgPainel;
         $scope.filter           = {'ds_nome' : '', 'ds_estado' : '', 'ds_partido' : ''};
+        $scope.imgSelecionar    = '/js/modules/mobileapp/layouts/imagens/background/background-deputado.svg';
+        $scope.dpSelecionado1   = 0;
+        $scope.dpSelecionado2   = 0;
 
 
         /**
@@ -35,29 +38,19 @@ angular.module('camara')
                                       ($scope.filter['ds_estado'] == '' || $scope.filter['ds_estado'] == data[i]['siglaUf']) && 
                                       ($scope.filter['ds_partido'] == '' || $scope.filter['ds_partido'] == data[i]['siglaPartido']);
 
-                    
                     if (filtroTotal == true) {
                         $(".div-interna").append($scope.layoutItemDeputado(data[i]));
                     }
-                    
-//                    if (dsNome != '' && removerAcento(data[i]['nome']).search(removerAcento(dsNome)) !== -1) {
-//                        $(".div-interna").append($scope.layoutItemDeputado(data[i]));
-//                    }
-//                    if ($scope.filter['ds_estado'] != '' && $scope.filter['ds_estado'] == data[i]['siglaUf']) {
-//                        $(".div-interna").append($scope.layoutItemDeputado(data[i]));
-//                    }
-//                    if ($scope.filter['ds_partido'] != '' && $scope.filter['ds_partido'] == data[i]['siglaPartido']) {
-//                        $(".div-interna").append($scope.layoutItemDeputado(data[i]));
-//                    }
                 }
             }
-            $(".div-interna").css('width', ((data.length)*100) +'px');            
+            console.log(length);
+            $(".div-interna").css('width', ((data.length != 0 ? data.length : 100)*100) +'px');            
         };
 
 
         $scope.layoutItemDeputado = function(data) 
         {
-            var html = '<div class="box-deputado">'+
+            var html = '<div class="box-deputado" data-id="'+ data['id'] +'">'+
                             '<img src="'+ data['urlFoto'] +'" alt="'+ data['nome'] +'"/>'+
                             '<h3>'+ data['nome'] +'</h3>'+
                             '<h4>'+ data['siglaUf'] +'/'+ data['siglaPartido'] +'</h4>'+
@@ -104,8 +97,8 @@ angular.module('camara')
          */
         $scope.redirecionar = function(target) 
         {
-            $location.path('/'+target);  
-            $window.location.reload();
+//            $location.path('#/'+target);  
+            $window.location = '/#/'+target;
         };
         
         
@@ -152,6 +145,46 @@ angular.module('camara')
             $scope.listaDeputados(lstDeputados, true);            
         });
 
+
+        /**
+         * ON: Executa ação quando um deputado for selecionado, seleção p/ comparação ou removido
+         */
+        var DELAY = 700, clicks = 0, timer = null;
+        $(document).on("click", ".box-deputado", function() {
+            clicks++; 
+            
+            if (clicks === 1) {
+                
+                timer = setTimeout(function() {
+                    var infoSelecionado = $(this).html(),
+                        coDeputado      = $(this).attr('data-id');
+
+                    if ($("#deputadoSelecionado1 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado2 != coDeputado ) {
+                        $("#deputadoSelecionado1").html(infoSelecionado);
+                        $scope.dpSelecionado1 = coDeputado;
+                    } else if ($("#deputadoSelecionado2 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado1 != coDeputado ) {
+                        $("#deputadoSelecionado2").html(infoSelecionado);
+                        $scope.dpSelecionado2 = coDeputado;
+                    }
+                    clicks = 0;
+                    
+                }, DELAY);
+            } else {
+                var coDeputado = $(this).attr('data-id');
+                
+                clearTimeout(timer);  
+                $scope.redirecionar('ranking');
+                
+                clicks = 0;   
+            }
+            
+        }).on("click", "#deputadoSelecionado1, #deputadoSelecionado2", function() {
+            $(this).html('<img src="'+ $scope.imgSelecionar +'">');
+            
+        });
+
+
+
         /**
          * ON: verifica se o usuário esta digitando alguma palavra
          */
@@ -162,11 +195,12 @@ angular.module('camara')
             $scope.listaDeputados(lstDeputados, true);
         });
 
+
         /**
          * INIT: 
          */
         angular.element(document).ready(function() {
-            var lstDeputados = BaseService.listarDeputadosLocal(1, false);
+            var lstDeputados = BaseService.listarDeputados(1);
 
             $.when(lstDeputados).then(function(r) {
                 $scope.listaDeputados(r, false);
