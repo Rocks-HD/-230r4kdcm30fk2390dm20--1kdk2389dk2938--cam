@@ -44,7 +44,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .img-100{width:100%; height: auto;}
 .img-50{width:50%; height: auto;}
 
-.icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:56px;}
+.icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:4.6em;}
 .icon-ico-a-favor-1:hover{color:#8AC53F;}
 .icon-ico-contra-2:hover{color:#ED1F24;}
 
@@ -58,9 +58,9 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 .texto-maiusculo{text-transform: uppercase;}
 .texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
-.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
+.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;  line-height:1;}
 .texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
-.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
+.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700; line-height:1;}
 .texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-cinza{color:#999; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-explicativo{color:#111; font-size:12px; text-align: justify;}
@@ -76,7 +76,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .graficos{}
 .graficos h2{color:#111; font-size:18px; text-transform: uppercase;}
 
-.posicionamento-mao{position: absolute; right:10%; width:35%; top:35%;}
+.posicionamento-mao{position: absolute; right:-15%; width:40%; top:35%;}
 
 .filtro{padding-top:15px; padding-bottom: 30px;}
 .filtro p{color:white; text-transform: uppercase; font-weight: bolder;}
@@ -84,6 +84,8 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 .linha-zebrada{display: flex; align-items: center; background:#f5f5f5;}
 .linha-zebrada:nth-child(2n+1){background-color:#dfdfdf;}
+
+.linha-zebrada h3{font-size:100%;}
 
 .titulo-cinza{background-color:#333;}
 .titulo-cinza h2 span{color:#ccc;}
@@ -140,8 +142,10 @@ div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; bac
 div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
 div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
 
-div.informativo-deputado{background-color:#1d1d1d; padding-top:15px; padding-bottom:15px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic;}
+div.informativo-deputado{background-color:#1d1d1d; padding-top:15px; padding-bottom:15px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:10px; font-style: italic; text-transform: uppercase; letter-spacing: 1px; line-height: 1.7em;}
 div.informativo-deputado .text-verde{color:#90C73E;}
+
+div.observacoes{background-color:#5d5d5d; padding-top:15px; padding-bottom:15px; font-family: "Open Sans Condensed", sans-serif; color:#fff; font-size:14px; letter-spacing: 1px; line-height: 1.4em;}
 
 div.conteudo-opine-titulo{background-color:#184071; margin-top:15px;}
 div.conteudo-opine-titulo h2 span{color:#77b2e0;}
@@ -171,7 +175,9 @@ div.compare-os-deputados img{width:65%;}
 h2{font-size:260%;}
 .conheca-seu-deputado .dados-do-deputado{font-size:16px;}
 .conheca-seu-deputado .foto-conheca-seu-deputado{width:30%;}
-
+.linha-zebrada h3{font-size:130%;}
+.linha-zebrada h6{font-size:15px;}
+.icon-ico-a-favor-1, .icon-ico-contra-2{font-size:6.6em;}
 
 }
 
@@ -195,7 +201,9 @@ h2{font-size:260%;}
 .conheca-seu-deputado .dados-do-deputado{font-size:20px;}
 .conheca-seu-deputado .foto-conheca-seu-deputado{width:25%;}
 .texto-medio{font-size:170%;}
-
+.linha-zebrada h3{font-size:160%;}
+.linha-zebrada h6{font-size:18px;}
+.icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.6em;}
 }
 
 @media (min-width: 992px) {
@@ -220,4 +228,8 @@ div.lista-deputados .box-deputado h4{font-size:17px;}
 div.lista-deputados .box-deputado img{width:100%;}
 .conheca-seu-deputado .dados-do-deputado{font-size:25px;}
 .conheca-seu-deputado .foto-conheca-seu-deputado{width:20%;}
+.linha-zebrada h3{font-size:200%;}
+.linha-zebrada h6{font-size:22px;}
+.icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.9em;}
+.posicionamento-mao{top:-20%; right:0;}
 }
