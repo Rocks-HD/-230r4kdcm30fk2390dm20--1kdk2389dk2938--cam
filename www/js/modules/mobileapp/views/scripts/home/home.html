@@ -1,25 +1,6 @@
 <div class="tela1">
+
     <div class="container-fluid">
-        <header class="row">
-            <div class="col-xs-6">
-                <div id="btn-menu">
-                    <span class="glyphicon glyphicon-menu-hamburger"></span>
-                </div>
-            </div>
-            <div class="col-xs-6 text-right">
-                <div id="logo">
-                    <span class="glyphicon glyphicon-picture"></span>
-                </div>
-            </div>
-        </header>
-
-        <nav class="row text-center menu-principal">
-            <div class="col-xs-3"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-home.svg" alt="home"/><br>página inicial</div>
-            <div class="col-xs-3"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-opiniao.svg" alt="sua opinião"/><br>sua opinião (legislação)</div>
-            <div class="col-xs-3"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-ranking.svg" alt="ranking dos deputados"/><br>ranking dos deputados</div>
-            <div class="col-xs-3"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-creditos.svg" alt="créditos do app"/><br>créditos do app</div>
-        </nav>
-
         <div class="row">
             <div class="col-xs-12 padding-vertical titulo-verde">
                 <h2><span>CONHEÇA</span> SEUS DEPUTADOS</h2> 
@@ -29,73 +10,74 @@
         <div class="row filtros-conheca">
             <div class="col-xs-8">
                 <form action="" method="get">
-                    <input type="text" placeholder="Procure pelo nome">
-                    <select><option>Estado</option></select>
-                    <select><option>Partido</option></select>
-                    <select><option>Sexo</option></select>
-                    <select><option>Escolaridade</option></select>
+                    <input name="ds_nome" id="ds_nome" type="text" placeholder="Procure pelo nome" autocomplete="off">
+                    <select name="ds_estado" id="ds_estado">
+                        <option value="">Estado</option>
+                    </select>
+                    <select name="ds_partido" id="ds_partido">
+                        <option value="">Partido</option>
+                    </select>
+                    <select name="ds_sexo" id="ds_sexo">
+                        <option value="">Sexo</option>
+                    </select>
+                    <select name="ds_escolaridade" id="ds_escolaridade">
+                        <option>
+                            Escolaridade
+                        </option>
+                    </select>
                 </form>
             </div>
-            <div class="col-xs-4 option text-center">
-                <label><input type="radio" name="teste"> <span class="text-option"> Ordem A - Z</span></label><br>
-                <label><input type="radio" name="teste"> <span class="text-option"> Ordem Z - A</span></label>
+            <div class="col-xs-4 option">
+                <label><input name="order" value="1" id="order-1" type="radio" name="teste"> <span class="text-option"> Ordem A - Z</span></label><br>
+                <label><input name="order" value="2" id="order-2"  type="radio" name="teste"> <span class="text-option"> Ordem Z - A</span></label>
             </div>
         </div>
-    </div>
 
-    <div class="informativo-deputado">
-        <div class="container">
-            <div class="row"> 
-                <div class="col-xs-12">
-                    <p><span class="text-verde"><b>DESLIZE</b></span> para visualizar os Deputados(as)</p>
-                    <p><span class="text-verde"><b>CLIQUE</b></span> para obter detalhes mais detalhes sobre o(a) Deputado(a)</p>
-                    <p><span class="text-verde"><b>ARRASTE</b></span> a foto e clique no botão COMPARE para equiparar os Deputados(as)</p>
+
+        <div class="informativo-deputado">
+            <div class="container">
+                <div class="row"> 
+                    <div class="col-xs-12">
+                        <p><span class="text-verde"><b>DESLIZE</b></span> para visualizar os Deputados(as)</p>
+                        <p><span class="text-verde"><b>CLIQUE</b></span> para obter detalhes mais detalhes sobre o(a) Deputado(a)</p>
+                        <p><span class="text-verde"><b>ARRASTE</b></span> a foto e clique no botão COMPARE para equiparar os Deputados(as)</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="lista-deputados">
-        <div class="div-interna">
-            <!-- ajax -->
-        </div>
-    </div>  
+        <div class="lista-deputados">
+            <div class="div-interna">
+                <!-- ajax -->
+            </div>
+        </div>  
+    
 
-    <div class="container-fluid compare-os-deputados">
-        <div class="row">
-            <div class="col-xs-4 text-center">
-                <img src="/js/modules/mobileapp/layouts/imagens/background/background-deputado.svg" alt="setas">
-            </div>
-            <div class="col-xs-4 text-center btn-comparar">
-                <button class="btn-verde">Compare</button>
-            </div>
-            <div class="col-xs-4 text-center">
-                <img src="/js/modules/mobileapp/layouts/imagens/background/background-deputado.svg" alt="setas">
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid margin-top-15">
-        <div class="row">
-            <div class="col-xs-12 padding-vertical titulo-azul">
-                <h2><span>SUA OPINIÃO</span> NAS VOTAÇÕES</h2> 
+        <div class="container-fluid compare-os-deputados">
+            <div class="row">
+                <div class="col-xs-4 text-center">
+                    <img src="/js/modules/mobileapp/layouts/imagens/background/background-deputado.svg" alt="setas">
+                </div>
+                <div class="col-xs-4 text-center btn-comparar">
+                    <button class="btn-verde">Compare</button>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <img src="/js/modules/mobileapp/layouts/imagens/background/background-deputado.svg" alt="setas">
+                </div>
             </div>
         </div>
-        <div class="row texto-explicativo padding-vertical fundo-cinza-claro background-opine">
-            <div class="col-xs-12">
-                <p>Um grande pleito de todos os cidadãos é a de comparar suas idéias com as de seus políticos, clique no botão abaixo e dê suas opiniões que nosso APP irá comparar suas opiniões com as de seus deputados.</p>
-                <p class="text-center margin-vertical"><button class="btn-azul-escuro">opine</button></p>
-            </div>
-        </div>
-    </div>
 
-    <div class="container-fluid rodape">
-        <div class="row">
-            <div class="col-xs-6 text-left">
-                <img src="/js/modules/mobileapp/layouts/imagens/logos/logo-camara.png" alt="Câmara dos Deputados"/>
+        <div class="container-fluid margin-top-15">
+            <div class="row">
+                <div class="col-xs-12 padding-vertical titulo-azul">
+                    <h2><span>SUA OPINIÃO</span> NAS VOTAÇÕES</h2> 
+                </div>
             </div>
-            <div class="col-xs-6 text-right">
-                <img src="/js/modules/mobileapp/layouts/imagens/logos/logo-desafio.png" alt="Desafio Cãmara dos Deputados"/>
+            <div class="row texto-explicativo padding-vertical fundo-cinza-claro">
+                <div class="col-xs-12">
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letter. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <p class="text-center margin-vertical"><button class="btn-azul-escuro">opine</button></p>
+                </div>
             </div>
         </div>
     </div>
