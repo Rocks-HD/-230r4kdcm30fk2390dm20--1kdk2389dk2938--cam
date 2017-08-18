@@ -21,10 +21,10 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
 .ver-mais-azul{background-color:#07546B; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 .ver-mais-azul:hover{background-color:#073D49}; 
-.ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
-.ver-mais-roxo:hover{background-color:#3f123c;}
 .ver-mais-verde{background-color:#2B6230; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 .ver-mais-verde:hover{background-color:#1B3F1D;}
+.ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-roxo:hover{background-color:#3f123c;}
 
 /*CLASSES GENÉRICAS*/
 .a-favor{border:2px solid white; background-color:#cce4b4; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-a-favor.svg); background-size: contain; background-repeat: no-repeat;}
@@ -42,6 +42,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .min-height{min-height: 35%;}
 
 .img-100{width:100%; height: auto;}
+.img-75{width:75%; height: auto;}
 .img-50{width:50%; height: auto;}
 
 .icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:4.6em;}
@@ -57,6 +58,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .borda-roxa-clara{border: 5px solid #C449B2;}
 
 .texto-maiusculo{text-transform: uppercase;}
+.line-height{line-height: 1.6em;}
 .texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
 .texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;  line-height:1;}
 .texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
@@ -107,6 +109,8 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .conheca-seu-deputado .dados-do-deputado{word-wrap: break-word; font-size: 12px;}
 .conheca-seu-deputado .posicao-do-deputado{border: 2px solid white;}
 .conheca-seu-deputado .foto-conheca-seu-deputado{width:45%;}
+.ranking-deputados .linha-zebrada p{margin-top:5px;}
+.ranking-deputados .texto-branco{font-size:1.2em;}
 /*FIM DE TELAS*/
 
 /*BARRA DE NAVEGAÇÃO - MENU*/
@@ -178,6 +182,8 @@ h2{font-size:260%;}
 .linha-zebrada h3{font-size:130%;}
 .linha-zebrada h6{font-size:15px;}
 .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:6.6em;}
+.ranking-deputados .linha-zebrada p{font-size:18px;}
+.ranking-deputados .texto-branco{font-size:1.4em;}
 
 }
 
@@ -204,6 +210,8 @@ h2{font-size:260%;}
 .linha-zebrada h3{font-size:160%;}
 .linha-zebrada h6{font-size:18px;}
 .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.6em;}
+.ranking-deputados .linha-zebrada p{font-size:22px;}
+.ranking-deputados .texto-branco{font-size:1.6em;}
 }
 
 @media (min-width: 992px) {
@@ -232,4 +240,7 @@ div.lista-deputados .box-deputado img{width:100%;}
 .linha-zebrada h6{font-size:22px;}
 .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.9em;}
 .posicionamento-mao{top:-20%; right:0;}
+.ranking-deputados .posicionamento-mao{top:55%; right:-20%;}
+.ranking-deputados .linha-zebrada p{font-size:25px;}
+.ranking-deputados .texto-branco{font-size:1.8em;}
 }
