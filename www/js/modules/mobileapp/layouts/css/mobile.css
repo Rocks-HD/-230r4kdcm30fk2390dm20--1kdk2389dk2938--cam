@@ -15,9 +15,9 @@ p{margin:0;}
 
 h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:170%;}
 h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; font-size:90%; text-transform: uppercase; position: relative; z-index: 300}
-.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 13px;}
+.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
 .btn-verde:focus{background-color:#3f7f3c; border:1px solid #2d5d2b;}
-.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 13px;}
+.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
 .btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
 .ver-mais-azul{background-color:#07546B; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
 .ver-mais-azul:hover{background-color:#073D49}; 
