@@ -57,6 +57,8 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .borda-azul-clara{border: 5px solid #0FB7EB;}
 .borda-roxa-clara{border: 5px solid #C449B2;}
 
+.muda-cor-btn-menu{color:#2B6230 !important;}
+
 .texto-maiusculo{text-transform: uppercase;}
 .line-height{line-height: 1.6em;}
 .texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
@@ -111,6 +113,9 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .conheca-seu-deputado .foto-conheca-seu-deputado{width:45%;}
 .ranking-deputados .linha-zebrada p{margin-top:5px;}
 .ranking-deputados .texto-branco{font-size:1.2em;}
+.creditos{margin-bottom: -20px; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-creditos.svg); background-size:cover; background-repeat: no-repeat; background-position: center center;}
+.creditos p{font-size: 18px;}
+.creditos .fundo-cinza-claro{background:transparent;}
 /*FIM DE TELAS*/
 
 /*BARRA DE NAVEGAÇÃO - MENU*/
@@ -121,7 +126,7 @@ header #logo{font-size: 30px; color:#9ae588;}
 /*FIM DA BARRA DE NAVEGAÇÃO - MENU*/ 
 
 /*MENU PRINCIPAL*/
-nav.menu-principal{display:none; background-color:rgba(0,0,0,0.9); padding:30px 0; font-size:10px; color:white; text-transform: uppercase; font-weight: bold; position: absolute; z-index: 300; width:100%;}
+nav.menu-principal{display:none; border-bottom:10px solid #5ab946; margin-top:-15px; background-color:rgba(255,255,255,0.9); padding:30px 0; font-size:90%; color:#367036; text-transform: uppercase; font-weight: bold; position: absolute; z-index: 999; width:100%;}
 /*FIM DO MENU PRINCIPAL*/
 
 div.compare-os-deputados{background-color:#d2d2d2; padding-top:15px; padding-bottom: 15px; }
@@ -184,6 +189,8 @@ h2{font-size:260%;}
 .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:6.6em;}
 .ranking-deputados .linha-zebrada p{font-size:18px;}
 .ranking-deputados .texto-branco{font-size:1.4em;}
+header #btn-menu{width:100px; height:100px;}
+header #btn-menu span{font-size:50px;}
 
 }
 
@@ -212,6 +219,8 @@ h2{font-size:260%;}
 .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.6em;}
 .ranking-deputados .linha-zebrada p{font-size:22px;}
 .ranking-deputados .texto-branco{font-size:1.6em;}
+header #btn-menu{width:120px; height:120px;}
+header #btn-menu span{font-size:60px;}
 }
 
 @media (min-width: 992px) {
@@ -243,4 +252,6 @@ div.lista-deputados .box-deputado img{width:100%;}
 .ranking-deputados .posicionamento-mao{top:55%; right:-20%;}
 .ranking-deputados .linha-zebrada p{font-size:25px;}
 .ranking-deputados .texto-branco{font-size:1.8em;}
+header #btn-menu{width:130px; height:130px;}
+header #btn-menu span{font-size:70px;}
 }

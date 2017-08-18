@@ -104,7 +104,8 @@ angular.module('camara')
         
         
         $(document).on("click", "#btn-menu", function () {
-            $(".menu-principal").toggle();
+            $(".menu-principal").slideToggle();
+            $("header #btn-menu span").toggleClass("muda-cor-btn-menu");
         });
         $(document).on('click', ".menu-principal a", function() {
             $(".menu-principal").hide();
