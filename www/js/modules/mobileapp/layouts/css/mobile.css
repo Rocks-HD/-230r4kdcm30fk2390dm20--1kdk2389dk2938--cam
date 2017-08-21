@@ -114,7 +114,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .ranking-deputados .linha-zebrada p{margin-top:5px;}
 .ranking-deputados .texto-branco{font-size:1.2em;}
 .creditos{margin-bottom: -20px; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-creditos.svg); background-size:cover; background-repeat: no-repeat; background-position: center center;}
-.creditos p{font-size: 18px;}
+.creditos p{font-size: 16px;}
 .creditos .fundo-cinza-claro{background:transparent;}
 /*FIM DE TELAS*/
 
@@ -123,6 +123,7 @@ header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display
 header #btn-menu{position:relative; width:60px; height: 60px; background-color:white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: -20px; z-index: 400;}
 header #btn-menu span{font-size: 30px; color:#5ab946;}
 header #logo{font-size: 30px; color:#9ae588;}
+header #logo img{width:48%;}
 /*FIM DA BARRA DE NAVEGAÇÃO - MENU*/ 
 
 /*MENU PRINCIPAL*/
@@ -137,7 +138,7 @@ div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
 div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-conheca-titulo h2 span{color:#8cc061;}
 div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:contain;}
-div.filtros-conheca .option{color:white; font-size:14px; text-transform: uppercase; line-height: 2.1em; margin-top:10px;}
+div.filtros-conheca .option{color:white; font-size:14px; text-transform: uppercase; line-height: 2.1em; margin-top:10px; text-align: center;}
 div.filtros-conheca .option .text-option{font-size:11px; float: left; display: block; margin-top: -4px; margin-left:4px;}
 div.filtros-conheca input,select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf;}
 div.filtros-conheca input[type=text]{width:100%; background-image:url(/js/modules/mobileapp/layouts/imagens/icones/ico-lupa.svg); background-repeat: no-repeat; background-position: center right;}
@@ -163,6 +164,30 @@ div.texto-opine p{text-align: justify;}
 
 div.rodape{display: flex; align-items: center; background:blue; margin-top:20px; background-image: linear-gradient(135deg, #8ac53f 10%, #469543 100%); padding:15px;}
 div.rodape img{width:100%;}
+
+.abertura{}
+.abertura .logos{display: flex; align-items: center; background-image: linear-gradient(135deg, #f2f2f2 10%, #dfdfdf 100%); padding:15px; position: relative; z-index: 999;}
+.abertura .logos img{width:100%;}
+.content{background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-dedo.svg); background-image: linear-gradient(#ccc,#fff); min-height: 58%;}
+.content img.congresso{position:absolute; bottom:0;}
+.content .logo{position:absolute; width: 100%; text-align: center; margin-top:31%; z-index: 888;}
+.content .logo img{animation-name: anima-logo; animation-duration: 1.5s; width:80%; animation-timing-function: ease-in;}
+.content .nuvem1{animation-name: anima-nuvem-1; animation-duration: 15s; background-image:url(/js/modules/mobileapp/layouts/imagens/png/nuvem1.png); background-repeat: no-repeat; height: 25%;  background-size: 80%; background-position: right;}
+.content .nuvem2{animation-name: anima-nuvem-2; animation-duration: 10s; background-image:url(/js/modules/mobileapp/layouts/imagens/png/nuvem2.png); background-repeat: no-repeat; height: 15%;  background-size:55%; background-position: left; }
+
+@keyframes anima-logo {
+    from {opacity:0; }
+    to {opaciti:1; }
+}
+
+@keyframes anima-nuvem-1 {
+    from {background-position:left;}
+    to {background-position:right;}
+}
+@keyframes anima-nuvem-2 {
+    from {background-position:right;}
+    to {background-position:left}
+}
 
 @media screen and (max-width: 575px) {
 

@@ -49,6 +49,9 @@ angular.module('camara')
         }).when('/compara', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/compara.html',
             controller: 'HomeController'
+        }).when('/abertura', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/abertura.html',
+            controller: 'HomeController'
         }).when('/creditos', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
             controller: 'HomeController'
