@@ -11,8 +11,9 @@
 angular.module('camara', [
     'ngResource',
     'ngRoute',
-    'ngSanitize'
-]).config(function ($compileProvider, $sceDelegateProvider) {
+    'ngSanitize',
+    'chart.js'
+]).config(['$compileProvider', '$sceDelegateProvider', function ($compileProvider, $sceDelegateProvider) {
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|content|file):/);
 
     $sceDelegateProvider.resourceUrlWhitelist([
@@ -22,4 +23,4 @@ angular.module('camara', [
         'http://*.webfans.com.br/**',
         'http://webfans.com.br/**',
         'http://host.camaraapp/**']);
-});
+}]);

@@ -8,9 +8,9 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('HomeController', ['$scope', '$location', '$window', 'BaseService', function($scope, $location, $window, BaseService) {
-        $scope.APPLICATION_ENV  = BaseService.APPLICATION_ENV;
-        $scope.url              = BaseService.url;  
+    .controller('HomeController', ['$scope', '$location', '$window', 'ModelDeputados', 'ModelGeral', function($scope, $location, $window, ModelDeputados, ModelGeral) {
+        $scope.APPLICATION_ENV  = ModelDeputados.APPLICATION_ENV;
+        $scope.url              = ModelDeputados.url;  
         $scope.options;
         $scope.msgPainel;
         $scope.filter           = {'ds_nome' : '', 'ds_estado' : '', 'ds_partido' : ''};
@@ -26,28 +26,36 @@ angular.module('camara')
          * @returns {undefined}
          */
         $scope.listaDeputados = function(data, clear) 
-        {            
-            if (clear === true) {$(".div-interna").html('');}
-            
-            if (typeof data['dados'] != 'undefined') {
-                for (var i in data['dados']) {$(".div-interna").append($scope.layoutItemDeputado(data['dados'][i]));}
-            } else {
-                for (var i in data) {
-                    var dsNome      = $scope.filter['ds_nome'] ? $scope.filter['ds_nome'].toUpperCase() : '';
-                    var filtroTotal = (dsNome == '' || removerAcento(data[i]['nome']).search(removerAcento(dsNome)) !== -1) && 
-                                      ($scope.filter['ds_estado'] == '' || $scope.filter['ds_estado'] == data[i]['siglaUf']) && 
-                                      ($scope.filter['ds_partido'] == '' || $scope.filter['ds_partido'] == data[i]['siglaPartido']);
+        {        
+            try {
+                if (clear === true) {$(".div-interna").html('');}
 
-                    if (filtroTotal == true) {
-                        $(".div-interna").append($scope.layoutItemDeputado(data[i]));
+                if (typeof data['dados'] != 'undefined') {
+                    for (var i in data['dados']) {$(".div-interna").append($scope.layoutItemDeputado(data['dados'][i]));}
+                } else {
+                    for (var i in data) {
+                        var dsNome      = $scope.filter['ds_nome'] ? $scope.filter['ds_nome'].toUpperCase() : '';
+                        var filtroTotal = (dsNome == '' || removerAcento(data[i]['nome']).search(removerAcento(dsNome)) !== -1) && 
+                                          ($scope.filter['ds_estado'] == '' || $scope.filter['ds_estado'] == data[i]['siglaUf']) && 
+                                          ($scope.filter['ds_partido'] == '' || $scope.filter['ds_partido'] == data[i]['siglaPartido']);
+
+                        if (filtroTotal == true) {
+                            $(".div-interna").append($scope.layoutItemDeputado(data[i]));
+                        }
                     }
                 }
-            }
-            console.log(length);
-            $(".div-interna").css('width', ((data.length != 0 ? data.length : 100)*100) +'px');            
+
+                $(".div-interna").css('width', ((typeof data.length != 'undefined' && data.length != 0 ? data.length : 100)*100) +'px');
+            } catch (e) {}
+
         };
-
-
+        
+        /**
+         * Layout para preenchimento
+         * 
+         * @param {type} data
+         * @returns {String}
+         */
         $scope.layoutItemDeputado = function(data) 
         {
             var html = '<div class="box-deputado" data-id="'+ data['id'] +'">'+
@@ -57,8 +65,8 @@ angular.module('camara')
                         '</div>';
             return html;
         };
-
-
+        
+        
         /**
          * Insere no select:ds_estado os estados para formar filtro
          * 
@@ -66,7 +74,7 @@ angular.module('camara')
          */
         $scope.listarEstados = function() 
         {
-            var lstEstados = BaseService.listarEstadosLocal();
+            var lstEstados = ModelGeral.listarEstadosLocal();
             
             for (var i in lstEstados) {
                 $("#ds_estado").append('<option value="'+ i +'">'+ i +'</option>');
@@ -79,15 +87,24 @@ angular.module('camara')
          * 
          * @returns {void}
          */
-        $scope.listarDeputados = function() 
+        $scope.listarPartidos = function() 
         {
-            var lstPartidos = BaseService.listarPartidosLocal();
+            var lstPartidos = ModelDeputados.listarPartidos();
             
             for (var i in lstPartidos) {
                 $("#ds_partido").append('<option value="'+ i +'">'+ i +'</option>');
             }
         };
 
+        
+        $scope.preencherInfoDeputado = function(infoDeputado) 
+        {
+            $(".infoNascimento").append(infoDeputado[0]['dataNascimento'].split('-').reverse().join('/'));
+            $(".infoTelefone").append(infoDeputado[0]['dataNascimento']);
+            $(".infoEmail").append(infoDeputado[0]['ultimoStatus']['gabinete']['email']);
+            $(".infoEscolaridade").append(infoDeputado[0]['escolaridade']);
+        };
+        
         
         /**
          * Redireciona e refresh na tela do usuário
@@ -98,7 +115,7 @@ angular.module('camara')
         $scope.redirecionar = function(target) 
         {
 //            $location.path('#/'+target);  
-            $window.location = '/#/'+target;
+            window.location.hash = target;
         };
         
         
@@ -129,7 +146,7 @@ angular.module('camara')
          * ON: Verifica se o usuário selecionou algum estado
          */
         $(document).on("change", "#ds_estado", function() {
-            var lstDeputados = BaseService.listarDeputadosLocal(1, true);
+            var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
             
             $scope.filter['ds_estado'] = $("#ds_estado").val();
             $scope.listaDeputados(lstDeputados, true);            
@@ -139,7 +156,7 @@ angular.module('camara')
          * ON: Verifica se o usuário selecionou algum partido
          */
         $(document).on("change", "#ds_partido", function() {
-            var lstDeputados = BaseService.listarDeputadosLocal(1, true);
+            var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
             
             $scope.filter['ds_partido'] = $("#ds_partido").val();
             $scope.listaDeputados(lstDeputados, true);            
@@ -149,15 +166,16 @@ angular.module('camara')
         /**
          * ON: Executa ação quando um deputado for selecionado, seleção p/ comparação ou removido
          */
-        var DELAY = 700, clicks = 0, timer = null;
+        var DELAY = 500, clicks = 0, timer = null;
         $(document).on("click", ".box-deputado", function() {
+            var coDeputado  = $(this).attr('data-id'),
+                self        = this;
             clicks++; 
             
             if (clicks === 1) {
-                
                 timer = setTimeout(function() {
-                    var infoSelecionado = $(this).html(),
-                        coDeputado      = $(this).attr('data-id');
+                    var infoSelecionado = $(self).html(),
+                        coDeputado      = $(self).attr('data-id');
 
                     if ($("#deputadoSelecionado1 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado2 != coDeputado ) {
                         $("#deputadoSelecionado1").html(infoSelecionado);
@@ -170,11 +188,9 @@ angular.module('camara')
                     
                 }, DELAY);
             } else {
-                var coDeputado = $(this).attr('data-id');
-                
                 clearTimeout(timer);  
-                $scope.redirecionar('ranking');
-                
+                $scope.redirecionar('conheca/'+coDeputado);
+                ModelDeputados.informacaoDoDeputado(coDeputado);
                 clicks = 0;   
             }
             
@@ -189,24 +205,35 @@ angular.module('camara')
          * ON: verifica se o usuário esta digitando alguma palavra
          */
         $(document).on("keyup", "#ds_nome", function() {
-            var lstDeputados = BaseService.listarDeputadosLocal(1, true);
+            var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
+            
+            console.log(lstDeputados)
             
             $scope.filter['ds_nome'] = $("#ds_nome").val();
             $scope.listaDeputados(lstDeputados, true);
         });
 
 
+        window.onhashchange = function() {
+            window.location.reload();
+        };
+
         /**
          * INIT: 
          */
         angular.element(document).ready(function() {
-            var lstDeputados = BaseService.listarDeputados(1);
+            var selfUrl = $location.url();
+            if (selfUrl == '' || selfUrl == '/') {
+                var lstDeputados = ModelDeputados.listarDeputados(1);
 
-            $.when(lstDeputados).then(function(r) {
-                $scope.listaDeputados(r, false);
-                $scope.listarEstados();
-                $scope.listarDeputados();
-            });       
+                $.when(lstDeputados).then(function(r) {
+                    $scope.listaDeputados(r, false);
+                    $scope.listarEstados();
+                    $scope.listarPartidos();
+                });
+                
+                console.log('aqui');
+            }
         });
 
     }]);

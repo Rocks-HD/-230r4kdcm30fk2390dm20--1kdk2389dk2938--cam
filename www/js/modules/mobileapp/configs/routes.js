@@ -43,10 +43,10 @@ angular.module('camara')
         }).when('/ranking', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',
             controller: 'HomeController'
-        }).when('/conheca', {
+        }).when('/conheca/:item', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/conheca.html',
-            controller: 'HomeController'
-        }).when('/compara', {
+            controller: 'DeputadoController'
+        }).when('/compara:item', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/compara.html',
             controller: 'HomeController'
         }).when('/creditos', {

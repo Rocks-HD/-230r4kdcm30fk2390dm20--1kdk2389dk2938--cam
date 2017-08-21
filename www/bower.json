@@ -34,5 +34,8 @@
   ],
   "directory": "js/modules/",
   "moduleType": [],
-  "private": true
+  "private": true,
+  "dependencies": {
+    "angular-chart.js": "^1.1.1"
+  }
 }
