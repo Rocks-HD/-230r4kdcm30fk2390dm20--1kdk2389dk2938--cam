@@ -56,7 +56,7 @@ angular.module('camara')
                     };
 
                     
-                console.log(lstDespesas);
+//                console.log(lstDespesas);
                 for (var i in lstDespesas) {
                     tpDespesa   = lstDespesas[i]['tipoDespesa'];
                     anoMes      = lstDespesas[i]['ano'] +'-'+ str_pad(lstDespesas[i]['mes'], 2, 0, 'STR_PAD_LEFT');

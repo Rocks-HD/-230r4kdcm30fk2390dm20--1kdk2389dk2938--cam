@@ -7,7 +7,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .service('TGDeputados', ['UtilsService', function(UtilsService) {
+    .service('TGDeputados', ['UtilsService', '$http', function(UtilsService, $http) {
         var selfTarget          = document.URL;
         this.APPLICATION_ENV    = selfTarget.indexOf("host.camaraapp") !== -1 ? 'development' : 'production';
         this.url                = this.APPLICATION_ENV == 'development' ? 'http://host.camaraapp' : 'http://webfans.com.br';  
@@ -67,6 +67,21 @@ angular.module('camara')
             }
         };
         
+
+        /**
+         * retorna informações de um determinado candidato utilizando o ws-v1
+         * 
+         * @param {int} coDeputado
+         * @returns {jqXHR}
+         */
+        this.informacaoDeputadoV1 = function(coDeputado) 
+        {
+            var link = 'http://www.camara.leg.br/SitCamaraWS/Deputados.asmx/ObterDetalhesDeputado';
+            
+            return $.post(link, {ideCadastro: coDeputado, numLegislatura: ''}, function(r) {
+                return r;
+            });
+        };
 
         
         
@@ -290,6 +305,22 @@ angular.module('camara')
         this.infoDetalhadaPartido = function(coPartido) 
         {
             var url             = 'https://dadosabertos.camara.leg.br/api/v2/partidos/'+coPartido;
+
+            return $.get(url, {}, function(r) {
+                return r;
+            }, 'json');
+        };     
+        
+        
+        /**
+         * 
+         * @param int coDeputado
+         * @param int pagina
+         * @returns {jqXHR}
+         */
+        this.listarEventos = function(coDeputado, pagina) 
+        {
+            var url = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+coDeputado+'/eventos?pagina='+pagina+'&dataInicio=2014-01-01&dataFim=2019-12-31&itens=100&ordem=ASC&ordenarPor=dataInicio"';
 
             return $.get(url, {}, function(r) {
                 return r;

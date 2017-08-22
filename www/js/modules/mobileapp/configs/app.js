@@ -20,6 +20,10 @@ angular.module('camara', [
         // Allow same origin resource loads.
         'self',
         // Allow loading from our assets domain.  Notice the difference between * and **.
+        'http://*.camara.leg.br/**',
+        'https://*.camara.leg.br/**',
+        'http://www.camara.leg.br/**',
+        'https://www.camara.leg.br/**',
         'http://*.webfans.com.br/**',
         'http://webfans.com.br/**',
         'http://host.camaraapp/**']);

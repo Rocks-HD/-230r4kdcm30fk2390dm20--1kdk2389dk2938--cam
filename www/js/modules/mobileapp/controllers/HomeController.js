@@ -232,8 +232,6 @@ angular.module('camara')
                     $scope.listarEstados();
                     $scope.listarPartidos();
                 });
-                
-                console.log('aqui');
             }
         });
 

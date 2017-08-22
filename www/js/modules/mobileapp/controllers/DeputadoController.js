@@ -12,19 +12,8 @@ angular.module('camara')
         $scope.selfUrl = $location.url();
         $scope.labels1 = [];
         $scope.data1 = [];
-        $scope.doughnutChartOptions1 = {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Chart.js Doughnut Chart'
-            },
-            animation: {
-                animateScale: true,
-                animateRotate: true
-            }
-        };
+        $scope.options1 = { title: { display: true, position: 'bottom'}, legend: { display: true } };
+        
         $scope.labels2 = [];
         $scope.data2 = [];
         $scope.barChartOptions2 = {
@@ -51,9 +40,6 @@ angular.module('camara')
                 $(".infoTelefone").append(infoDeputado[0]['ultimoStatus']['gabinete']['telefone']);
                 $(".infoEmail").append(infoDeputado[0]['ultimoStatus']['gabinete']['email']);
                 $(".infoEscolaridade").append(infoDeputado[0]['escolaridade']);
-                
-                
-                
                 
             } catch (e) {console.log(e);}
         };
@@ -96,6 +82,7 @@ angular.module('camara')
             var maiorBeneficiario   = data['MB'];
             var maiorBenefOrd       = Object.values(maiorBeneficiario).sort(function(a,b) { return a - b;}).reverse();
             var contador            = 0;
+            var somatorio           = 0;
             
             for (var i in maiorBenefOrd) {
                 if (contador++ <= 10) {
@@ -107,7 +94,10 @@ angular.module('camara')
                                                         'R$ '+ number_format(maiorBenefOrd[i], 2, ',', '.')+
                                                       '</p><br />');
                 }
+                somatorio += maiorBenefOrd[i];
             }
+            
+            $(".valorTotal").append('TOTAL R$ '+ number_format(somatorio, 2, ',', '.'));
         }
 
 

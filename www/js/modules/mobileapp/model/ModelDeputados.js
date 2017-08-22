@@ -23,6 +23,22 @@ angular.module('camara')
         };
         
         /**
+         * Informaçoes detalhadas de um determinado deputado
+         * 
+         * @param {int} coDeputado
+         * @returns {object}
+         */
+        this.informacaoDoDeputadoV1 = function(coDeputado) 
+        {
+            var infoDeputado = TGDeputados.informacaoDeputadoV1(coDeputado);
+
+            return $.when(infoDeputado).then(function(r) {
+                return $.xml2json(r)['#document']['Deputados']['Deputado'];
+            });
+
+        };
+        
+        /**
          * 
          * @param {int} pagina
          * @param {bool} total

@@ -39,16 +39,16 @@ angular.module('camara')
             controller: 'HomeController'
         }).when('/opiniao', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/opiniao.html',
-            controller: 'HomeController'
+            controller: 'OpniaoController'
         }).when('/ranking', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',
             controller: 'HomeController'
         }).when('/conheca/:item', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/conheca.html',
             controller: 'DeputadoController'
-        }).when('/compara:item', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/compara.html',
-            controller: 'HomeController'
+        }).when('/comparar/:item', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/comparar.html',
+            controller: 'CompararController'
         }).when('/abertura', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/abertura.html',
             controller: 'HomeController'
@@ -56,5 +56,6 @@ angular.module('camara')
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
             controller: 'HomeController'
         })
+        //.otherwise({redirectTo: '/'});
         ;
 }]);
