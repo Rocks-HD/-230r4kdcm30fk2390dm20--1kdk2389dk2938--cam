@@ -132,7 +132,9 @@ nav.menu-principal{display:none; border-bottom:10px solid #5ab946; margin-top:-1
 
 div.compare-os-deputados{background-color:#d2d2d2; padding-top:15px; padding-bottom: 15px; }
 div.compare-os-deputados img{width:100%; border:2px dashed #dcdcdc; background-color:white;}
-div.compare-os-deputados .btn-comparar{margin-top:7%;}
+div.compare-os-deputados .btn-comparar{margin-top:2%;}
+div.compare-os-deputados .btn-comparar span{font-size:160%; color:#e9e9e9;}
+div.compare-os-deputados .btn-comparar p{font-size: 8px; margin-top:13px;}
 div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
 
 div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
@@ -174,14 +176,30 @@ div.rodape img{width:100%;}
 .content .logo img{animation-name: anima-logo; animation-duration: 1.5s; width:80%; animation-timing-function: ease-in;}
 .content .nuvem1{animation-name: anima-nuvem-1; animation-duration: 15s; background-image:url(/js/modules/mobileapp/layouts/imagens/png/nuvem1.png); background-repeat: no-repeat; height: 25%;  background-size: 80%; background-position: right;}
 .content .nuvem2{animation-name: anima-nuvem-2; animation-duration: 10s; background-image:url(/js/modules/mobileapp/layouts/imagens/png/nuvem2.png); background-repeat: no-repeat; height: 15%;  background-size:55%; background-position: left; }
+.content .carregando-pai{position:relative; z-index: 1001; text-align: center; margin-top:-33%; padding:30px; background-color:rgba(255,255,255,0.7); border-top:2px solid #dfdfdf; border-bottom: 2px solid #dfdfdf;}
+.content .carregando-pai .ico-carregando-1{animation: ico-carregando-1 3s linear infinite; }
+.content .carregando-pai .ico-carregando-2{animation:ico-carregando-2 2s linear infinite; margin-top:-139px; }
+.content .carregando-pai .ico-carregando-3{animation:ico-carregando-3 1s ease-in infinite; margin-top:-74px; animation-direction: alternate; }
+.content .carregando-pai .ico-carregando-4{margin-top:75px;}
+
+@keyframes ico-carregando-1 {
+    to {transform:rotate(359deg); }
+}
+@keyframes ico-carregando-2 {
+    to {transform:rotate(-359deg); }
+}
+
+@keyframes ico-carregando-3 {
+    to {transform:scale(1.2); }
+}
 
 @keyframes anima-logo {
     from {opacity:0; }
-    to {opaciti:1; }
+    to {opacity:1; }
 }
 
 @keyframes anima-nuvem-1 {
-    from {background-position:left;}
+    from {background-position:left; }
     to {background-position:right;}
 }
 @keyframes anima-nuvem-2 {

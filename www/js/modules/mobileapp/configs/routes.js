@@ -52,6 +52,9 @@ angular.module('camara')
         }).when('/abertura', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/abertura.html',
             controller: 'HomeController'
+        }).when('/carregando', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/carregando.html',
+            controller: 'HomeController'
         }).when('/creditos', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
             controller: 'HomeController'
