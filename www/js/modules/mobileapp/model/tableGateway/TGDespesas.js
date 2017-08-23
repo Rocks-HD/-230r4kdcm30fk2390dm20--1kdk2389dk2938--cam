@@ -17,7 +17,7 @@ angular.module('camara')
         this.listarDespesas = function(coDeputado, ano, pagina) 
         {
             var rootObj        = this;
-            var url            = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+coDeputado+'/despesas?ano='+ ano +'&itens=100&pagina='+pagina+'&ordem=DESC&ordenarPor=numAno';
+            var url            = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+coDeputado+'/despesas?ano='+ ano +'&itens=100&pagina='+ (pagina != null ? pagina : 1) +'&ordem=DESC&ordenarPor=numAno';
             var lstDespesas    = rootObj.listarDespesasLocal(coDeputado);
 
             if (lstDespesas == null || lstDespesas.length == 0) {

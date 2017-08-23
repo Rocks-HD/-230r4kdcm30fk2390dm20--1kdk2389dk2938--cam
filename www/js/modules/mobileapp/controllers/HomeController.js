@@ -15,7 +15,7 @@ angular.module('camara')
         $scope.options;
         $scope.msgPainel;
         $scope.filter           = {'ds_nome' : '', 'ds_estado' : '', 'ds_partido' : ''};
-        $scope.imgSelecionar    = '/js/modules/mobileapp/layouts/imagens/background/background-deputado.svg';
+        $scope.imgSelecionar    = './js/modules/mobileapp/layouts/imagens/background/background-deputado.svg';
         $scope.dpSelecionado1   = 0;
         $scope.dpSelecionado2   = 0;
 
@@ -121,29 +121,9 @@ angular.module('camara')
         };
         
         
-        
-        $(document).on("click", "#btn-menu", function () {
-            $(".menu-principal").slideToggle();
-            $("header #btn-menu span").toggleClass("muda-cor-btn-menu");
-        });
-        $(document).on('click', ".menu-principal a", function() {
-            $(".menu-principal").hide();
-            return false;
-        });
-        
-        
-        /**
-         * Quando o usuário clicar em qualquer botão padrão do sistema que envie o formulário
-         */
-        $(document).on("click", "#btnEnviar", function() {
-
-        });
-
-        
-        
         $(document).on("click", ".btn-comparar button", function() {
             if ($scope.dpSelecionado1 != 0 && $scope.dpSelecionado2 != 0) {
-                $scope.redirecionar('/ranking/'+ $scope.dpSelecionado1+'-'+$scope.dpSelecionado2);
+                $scope.redirecionar('/comparar/'+ $scope.dpSelecionado1+'-'+$scope.dpSelecionado2);
             }
         });
         
@@ -155,6 +135,8 @@ angular.module('camara')
             
             $scope.listaDeputados(lstDeputados, true);            
         });
+        
+        
         /**
          * ON: Verifica se o usuário selecionou algum estado
          */
@@ -179,13 +161,17 @@ angular.module('camara')
         /**
          * ON: Executa ação quando um deputado for selecionado, seleção p/ comparação ou removido
          */
-        var DELAY = 500, clicks = 0, timer = null;
+        var DELAY = 500, 
+            clicks = 0, 
+            timer = null;
         $(document).on("click", ".box-deputado", function() {
+
             var coDeputado  = $(this).attr('data-id'),
                 self        = this;
             clicks++; 
-            
-            if (clicks === 1) {
+
+            if (clicks == 1) {
+                
                 timer = setTimeout(function() {
                     var infoSelecionado = $(self).html(),
                         coDeputado      = $(self).attr('data-id');

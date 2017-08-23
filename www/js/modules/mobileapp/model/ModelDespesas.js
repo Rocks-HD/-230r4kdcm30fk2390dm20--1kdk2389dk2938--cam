@@ -44,7 +44,7 @@ angular.module('camara')
             try {
                 var tpDespesa   = '', 
                     anoMes      = '',
-                    lstDespesas = TGDespesas.listarDespesas(coDeputado),
+                    lstDespesas = TGDespesas.listarDespesas(coDeputado, 2014, null),
                     maiorBeneficiario = {},
                     result   = {
                         'VGM'    : {}, //ValoresGastosMensais

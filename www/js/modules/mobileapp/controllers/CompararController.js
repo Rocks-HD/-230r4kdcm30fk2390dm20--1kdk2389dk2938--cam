@@ -20,10 +20,7 @@ angular.module('camara')
         
         $scope.preencherInfoCandidatos = function(info1, det1, prop1, data1, info2, det2, prop2, data2) 
         {
-            var infCand1 = typeof info1[0] ? info1[0] : info1,
-                infCand2 = typeof info2[0] ? info2[0] : info2;
-
-            
+            console.log(det1);
             $(".imgCandidato1").attr('src', det1['0']['ultimoStatus']['urlFoto']);
             $(".nomeCandidato1").html(det1['0']['ultimoStatus']['nomeEleitoral']);
             $(".partidoCandidato1").html(det1['0']['ultimoStatus']['siglaPartido'] +'/'+det1['0']['ultimoStatus']['siglaUf']);
@@ -35,6 +32,7 @@ angular.module('camara')
             $(".qntComissoesTitular1").html('');
             $(".qntCargosOcupados1").html('');
 
+            console.log(det2);
             $(".imgCandidato2").attr('src', det2['0']['ultimoStatus']['urlFoto']);
             $(".nomeCandidato2").html(det2['0']['ultimoStatus']['nomeEleitoral']);
             $(".partidoCandidato2").html(det2['0']['ultimoStatus']['siglaPartido'] +'/'+det1['0']['ultimoStatus']['siglaUf']);

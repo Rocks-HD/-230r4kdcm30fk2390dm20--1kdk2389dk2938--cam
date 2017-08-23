@@ -36,28 +36,36 @@ angular.module('camara')
     $routeProvider
         .when('/', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/home.html',
-            controller: 'HomeController'
+            controller: 'HomeController',
+            noReload: false
         }).when('/opiniao', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/opiniao.html',
-            controller: 'OpiniaoController'
+            controller: 'OpiniaoController',
+            noReload: false
         }).when('/ranking', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',
-            controller: 'HomeController'
+            controller: 'HomeController',
+            noReload: false
         }).when('/conheca/:item', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/conheca.html',
-            controller: 'DeputadoController'
+            controller: 'DeputadoController',
+            noReload: false
         }).when('/comparar/:item', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/comparar.html',
-            controller: 'CompararController'
+            controller: 'CompararController',
+            noReload: false
         }).when('/abertura', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/abertura.html',
-            controller: 'HomeController'
+            controller: 'HomeController',
+            noReload: false
         }).when('/carregando', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/carregando.html',
-            controller: 'HomeController'
+            controller: 'HomeController',
+            noReload: false
         }).when('/creditos', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
-            controller: 'HomeController'
+            controller: 'HomeController',
+            noReload: false
         })
         //.otherwise({redirectTo: '/'});
         ;

@@ -38,7 +38,7 @@
                     './js/modules/mobileapp/model/ModelProposicoes.js',
                     './js/modules/mobileapp/controllers/HomeController.js',
                     './js/modules/mobileapp/controllers/DeputadoController.js',
-                    './js/modules/mobileapp/controllers/OpniaoController.js',
+                    './js/modules/mobileapp/controllers/OpiniaoController.js',
                     './js/modules/mobileapp/controllers/CompararController.js',
                     './js/modules/mobileapp/configs/routes.js',
                     './js/modules/mobileapp/functions/Development.js',
@@ -67,7 +67,7 @@
                     './js/modules/mobileapp/model/ModelProposicoes.js',
                     './js/modules/mobileapp/controllers/HomeController.js',
                     './js/modules/mobileapp/controllers/DeputadoController.js',
-                    './js/modules/mobileapp/controllers/OpniaoController.js',
+                    './js/modules/mobileapp/controllers/OpiniaoController.js',
                     './js/modules/mobileapp/controllers/CompararController.js',
                     './js/modules/mobileapp/configs/routes.js',
                     './js/modules/mobileapp/functions/Development.js',
@@ -79,7 +79,6 @@
 
             $(document).ready(function () {
                 $.each(arrayArquivos[APPLICATION_ENV], function (i, e) {
-                    console.log(e);
                     $("body").append('<script type="text/javascript" src="' + e + '"><\/script>');
                 });
             });
@@ -105,10 +104,10 @@
                 </div>
             </header>
             <nav class="row text-center menu-principal">
-                <div ng-click="$scope.redirecionar('/')" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-home.svg" alt="home"/><br>Página inicial do aplicativo</div>
-                <div ng-click="$scope.redirecionar('/')" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-opiniao.svg" alt="sua opinião"/><br>sua opinião nas votações</div>
-                <div ng-click="$scope.redirecionar('/')" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-ranking.svg" alt="ranking dos deputados"/><br>ranking dos deputados</div>
-                <div ng-click="$scope.redirecionar('/')" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-creditos.svg" alt="créditos do app"/><br>créditos do aplicativo</div>
+                <div onclick="window.location.hash=''; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-home.svg" alt="home"/><br>Página inicial do aplicativo</div>
+                <div onclick="window.location.hash='opiniao'; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-opiniao.svg" alt="sua opinião"/><br>sua opinião nas votações</div>
+                <div onclick="window.location.hash='ranking'; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-ranking.svg" alt="ranking dos deputados"/><br>ranking dos deputados</div>
+                <div onclick="window.location.hash='creditos'; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-creditos.svg" alt="créditos do app"/><br>créditos do aplicativo</div>
             </nav>        
         </div>
         
