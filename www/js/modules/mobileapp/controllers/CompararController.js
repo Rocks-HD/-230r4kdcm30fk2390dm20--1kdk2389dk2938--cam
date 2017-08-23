@@ -10,7 +10,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('CompararController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', 'ModelProposicoes', function($scope, $location, $window, ModelDespesas, ModelDeputados, ModelProposicoes) {
+    .controller('CompararController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', 'ModelProposicoes', function CompararController($scope, $location, $window, ModelDespesas, ModelDeputados, ModelProposicoes) {
         $scope.selfUrl = $location.url();
         
         

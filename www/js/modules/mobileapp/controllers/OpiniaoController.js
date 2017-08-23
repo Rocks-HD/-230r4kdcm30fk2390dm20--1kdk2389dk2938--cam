@@ -8,7 +8,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('OpniaoController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', function($scope, $location, $window, ModelDespesas, ModelDeputados) {
+    .controller('OpiniaoController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', function OpiniaoController($scope, $location, $window, ModelDespesas, ModelDeputados) {
         $scope.selfUrl = $location.url();
         
         

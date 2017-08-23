@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Camara</title>
+        <title>Câmara dos Deputados - EDO</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' 'unsafe-eval' *; media-src 'self' 'unsafe-inline' 'unsafe-eval' *; img-src 'self' 'unsafe-inline' 'unsafe-eval' *">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +21,10 @@
             var APPLICATION_ENV = document.URL.indexOf("host.camaraapp") !== -1 ? 'development' : 'production';
             var arrayArquivos = {
                 'development': [
-//                    './js/library/angular/angular.js',
-//                    './js/library/angular-route/angular-route.min.js',
-//                    './js/library/angular-resource/angular-resource.min.js',
-//                    './js/library/angular-ui-router/angular-ui-router.min.js',
-//                    './js/library/angular-sanitize/angular-sanitize.min.js',
-                    './js/library/compile-footer.js',
+                    './js/library/angular/angular.js',
+                    './js/library/angular-route/angular-route.min.js',
+                    './js/library/angular-resource/angular-resource.min.js',
+                    './js/library/angular-sanitize/angular-sanitize.min.js',
                     './js/modules/mobileapp/configs/app.js',
                     './js/modules/mobileapp/services/LayoutService.js',
                     './js/modules/mobileapp/services/UtilsService.js',
@@ -44,20 +42,44 @@
                     './js/modules/mobileapp/controllers/CompararController.js',
                     './js/modules/mobileapp/configs/routes.js',
                     './js/modules/mobileapp/functions/Development.js',
-//                    './js/library/mCustomScrollbar/js/minified/jquery.mCustomScrollbar.min.js',
-                    './js/library/chart.js/dist/Chart.min.js',
+                    './js/library/chart.js/dist/Chart.bundle.js',
                     './js/library/angular-chart.js/dist/angular-chart.min.js',
                     './js/library/xml2json/xml2json.js'
                 ],
                 'production': [
-                    './js-min/modules/mobileapp/compile-footer.js',
-                    './js-min/modules/mobileapp/production.js',
-                    './js-min/modules/mobileapp/functions.js'
+//                    './js-min/modules/mobileapp/compile-footer.js',
+//                    './js-min/modules/mobileapp/production.js',
+//                    './js-min/modules/mobileapp/functions.js'
+                    './js/library/angular/angular.js',
+                    './js/library/angular-route/angular-route.min.js',
+                    './js/library/angular-resource/angular-resource.min.js',
+                    './js/library/angular-sanitize/angular-sanitize.min.js',
+                    './js/modules/mobileapp/configs/app.js',
+                    './js/modules/mobileapp/services/LayoutService.js',
+                    './js/modules/mobileapp/services/UtilsService.js',
+                    './js/modules/mobileapp/model/tableGateway/TGDeputados.js',
+                    './js/modules/mobileapp/model/tableGateway/TGDespesas.js',
+                    './js/modules/mobileapp/model/tableGateway/TGGeral.js',
+                    './js/modules/mobileapp/model/tableGateway/TGProposicoes.js',
+                    './js/modules/mobileapp/model/ModelDespesas.js',
+                    './js/modules/mobileapp/model/ModelDeputados.js',
+                    './js/modules/mobileapp/model/ModelGeral.js',
+                    './js/modules/mobileapp/model/ModelProposicoes.js',
+                    './js/modules/mobileapp/controllers/HomeController.js',
+                    './js/modules/mobileapp/controllers/DeputadoController.js',
+                    './js/modules/mobileapp/controllers/OpniaoController.js',
+                    './js/modules/mobileapp/controllers/CompararController.js',
+                    './js/modules/mobileapp/configs/routes.js',
+                    './js/modules/mobileapp/functions/Development.js',
+                    './js/library/chart.js/dist/Chart.bundle.js',
+                    './js/library/angular-chart.js/dist/angular-chart.min.js',
+                    './js/library/xml2json/xml2json.js'
                 ]
             };
 
             $(document).ready(function () {
                 $.each(arrayArquivos[APPLICATION_ENV], function (i, e) {
+                    console.log(e);
                     $("body").append('<script type="text/javascript" src="' + e + '"><\/script>');
                 });
             });
@@ -78,7 +100,7 @@
                 </div>
                 <div class="col-xs-6 text-right">
                     <div id="logo">
-                        <img src="/js/modules/mobileapp/layouts/imagens/logos/logo-app-branco.svg" alt="Projeto EDO"/>
+                        <img src="./js/modules/mobileapp/layouts/imagens/logos/logo-app-branco.svg" alt="Projeto EDO"/>
                     </div>
                 </div>
             </header>
@@ -97,10 +119,10 @@
         <div class="container-fluid rodape">
             <div class="row">
                 <div class="col-xs-6">
-                    <img src="/js/modules/mobileapp/layouts/imagens/logos/logo-camara.png" alt=""/>
+                    <img src="./js/modules/mobileapp/layouts/imagens/logos/logo-camara.png" alt=""/>
                 </div>
                 <div class="col-xs-6 text-right">
-                    <img src="/js/modules/mobileapp/layouts/imagens/logos/logo-desafio.png" alt=""/>
+                    <img src="./js/modules/mobileapp/layouts/imagens/logos/logo-desafio.png" alt=""/>
                 </div>
             </div>
         </div>

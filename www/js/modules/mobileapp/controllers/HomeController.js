@@ -8,9 +8,10 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('HomeController', ['$scope', '$location', '$window', 'ModelDeputados', 'ModelGeral', function($scope, $location, $window, ModelDeputados, ModelGeral) {
+    .controller('HomeController', ['$scope', '$location', 'ModelDeputados', 'ModelGeral', function ($scope, $location, ModelDeputados, ModelGeral) {
         $scope.APPLICATION_ENV  = ModelDeputados.APPLICATION_ENV;
         $scope.url              = ModelDeputados.url;  
+        $scope.selfUrl          = $location.url();
         $scope.options;
         $scope.msgPainel;
         $scope.filter           = {'ds_nome' : '', 'ds_estado' : '', 'ds_partido' : ''};
@@ -33,6 +34,7 @@ angular.module('camara')
                 if (typeof data['dados'] != 'undefined') {
                     for (var i in data['dados']) {$(".div-interna").append($scope.layoutItemDeputado(data['dados'][i]));}
                 } else {
+                    data = $("#order-2").is(":checked") ? data.reverse() : data;
                     for (var i in data) {
                         var dsNome      = $scope.filter['ds_nome'] ? $scope.filter['ds_nome'].toUpperCase() : '';
                         var filtroTotal = (dsNome == '' || removerAcento(data[i]['nome']).search(removerAcento(dsNome)) !== -1) && 
@@ -114,8 +116,8 @@ angular.module('camara')
          */
         $scope.redirecionar = function(target) 
         {
-//            $location.path('#/'+target);  
             window.location.hash = target;
+            window.location.reload();
         };
         
         
@@ -139,10 +141,20 @@ angular.module('camara')
 
         
         
-
+        $(document).on("click", ".btn-comparar button", function() {
+            if ($scope.dpSelecionado1 != 0 && $scope.dpSelecionado2 != 0) {
+                $scope.redirecionar('/ranking/'+ $scope.dpSelecionado1+'-'+$scope.dpSelecionado2);
+            }
+        });
         
-        
-        
+        /**
+         * ON: Verifica se o usuário clicou sobre o input:radio
+         */
+        $(document).on("change", "#order-1, #order-2", function() {
+            var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
+            
+            $scope.listaDeputados(lstDeputados, true);            
+        });
         /**
          * ON: Verifica se o usuário selecionou algum estado
          */
@@ -196,6 +208,12 @@ angular.module('camara')
             }
             
         }).on("click", "#deputadoSelecionado1, #deputadoSelecionado2", function() {
+            if ($(this).attr('id') == "deputadoSelecionado1") {
+                $scope.dpSelecionado1 = 0;
+            } else {
+                $scope.dpSelecionado2 = 0;
+            }
+            
             $(this).html('<img src="'+ $scope.imgSelecionar +'">');
             
         });
@@ -207,8 +225,6 @@ angular.module('camara')
          */
         $(document).on("keyup", "#ds_nome", function() {
             var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
-            
-            console.log(lstDeputados)
             
             $scope.filter['ds_nome'] = $("#ds_nome").val();
             $scope.listaDeputados(lstDeputados, true);

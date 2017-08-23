@@ -8,7 +8,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('DeputadoController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', function($scope, $location, $window, ModelDespesas, ModelDeputados) {
+    .controller('DeputadoController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', function DeputadoController($scope, $location, $window, ModelDespesas, ModelDeputados) {
         $scope.selfUrl = $location.url();
         $scope.labels1 = [];
         $scope.data1 = [];
@@ -18,7 +18,7 @@ angular.module('camara')
         $scope.data2 = [];
         $scope.barChartOptions2 = {
             showToolTips: true,
-            tooltipEvents: ["mousemove", "touchstart", "touchmove"],
+            tooltipEvents: ["mousemove", "touchstart", "touchmove"]
         };
 
 
@@ -58,7 +58,7 @@ angular.module('camara')
                     html = '<p>'+ 
                                 lstComissoes[i]['nomePapel'] +' - '+ lstComissoes[i]['nomeOrgao'] +'<br />'+
                                 lstComissoes[i]['dataInicio'].split('-').reverse().join('/') + (lstComissoes[i]['dataFim'] ? ' - '+ lstComissoes[i]['dataFim'].split('-').reverse().join('/') : '') +
-                           '</p><br />'
+                           '</p><br />';
                    
                     if (lstComissoes[i]['nomePapel'] == 'Titular') {
                         $(".lstTitularComissoes").append(html);
@@ -67,7 +67,7 @@ angular.module('camara')
                     }
                 }
             }
-        }
+        };
         
         
         /**
@@ -98,7 +98,7 @@ angular.module('camara')
             }
             
             $(".valorTotal").append('TOTAL R$ '+ number_format(somatorio, 2, ',', '.'));
-        }
+        };
 
 
         /**

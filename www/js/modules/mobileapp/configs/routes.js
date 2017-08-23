@@ -39,7 +39,7 @@ angular.module('camara')
             controller: 'HomeController'
         }).when('/opiniao', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/opiniao.html',
-            controller: 'OpniaoController'
+            controller: 'OpiniaoController'
         }).when('/ranking', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',
             controller: 'HomeController'

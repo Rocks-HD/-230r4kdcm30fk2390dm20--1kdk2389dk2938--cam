@@ -13,7 +13,9 @@ angular.module('camara', [
     'ngRoute',
     'ngSanitize',
     'chart.js'
-]).config(['$compileProvider', '$sceDelegateProvider', function ($compileProvider, $sceDelegateProvider) {
+]).config(['$compileProvider', '$locationProvider', '$sceDelegateProvider', function ($compileProvider, $locationProvider, $sceDelegateProvider) {
+    $locationProvider.hashPrefix('');
+    
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|content|file):/);
 
     $sceDelegateProvider.resourceUrlWhitelist([
