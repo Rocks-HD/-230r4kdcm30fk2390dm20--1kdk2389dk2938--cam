@@ -30,7 +30,7 @@ angular.module('camara')
                                 rootObj.lstDepesas.push(r['dados'][i]);
                             }
                         } else {
-                            if (ano <= 2019) {
+                            if (ano >= 2015 && ano <= 2019) {
                                 rootObj.listarDespesas(coDeputado, ++ano, 1);
                             } else {
                                 return rootObj.salvarDespesas(rootObj.lstDepesas, coDeputado);
