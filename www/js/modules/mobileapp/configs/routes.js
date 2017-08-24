@@ -58,6 +58,18 @@ angular.module('camara')
             templateUrl: './js/modules/mobileapp/views/scripts/home/comparar.html',
             controller: 'CompararController',
             noReload: false
+        }).when('/abertura', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/abertura.html',
+            controller: 'HomeController',
+            noReload: false
+        }).when('/carregando', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/carregando.html',
+            controller: 'HomeController',
+            noReload: false
+         }).when('/processo', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/processo.html',
+            controller: 'HomeController',
+            noReload: false
         }).when('/creditos', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
             controller: 'CreditosController',
