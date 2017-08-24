@@ -329,7 +329,7 @@ angular.module('camara')
          */
         this.listarEventos = function(coDeputado, pagina) 
         {
-            var url = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+coDeputado+'/eventos?pagina='+pagina+'&dataInicio=2014-01-01&dataFim=2019-12-31&itens=100&ordem=ASC&ordenarPor=dataInicio"';
+            var url = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+coDeputado+'/eventos?pagina='+pagina+'&dataInicio=2015-01-01&dataFim=2018-12-31&itens=100&ordem=ASC&ordenarPor=dataInicio"';
 
             return $.get(url, {}, function(r) {
                 return r;

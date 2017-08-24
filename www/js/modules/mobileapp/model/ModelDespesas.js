@@ -41,7 +41,6 @@ angular.module('camara')
          */
         this.gerarEstatistica = function(coDeputado) 
         {
-            console.log(coDeputado)
             try {
                 var tpDespesa   = '', 
                     anoMes      = '',

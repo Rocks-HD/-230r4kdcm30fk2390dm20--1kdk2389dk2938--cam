@@ -28,17 +28,17 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .div-flex{display: flex; align-items: center;}
 
 /*CLASSES GENÉRICAS*/
-.a-favor{border:2px solid white; background-color:#cce4b4; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-a-favor.svg); background-size: contain; background-repeat: no-repeat;}
+.a-favor{border:2px solid white; background-color:#cce4b4; background-image:url(../imagens/background/background-a-favor.svg); background-size: contain; background-repeat: no-repeat;}
 .a-favor h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#5AB946; font-size: 130%;}
 .a-favor h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#2B6230;}
-.contra{border:2px solid white; background-color:#f9c5ca; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-contra.svg); background-size: contain; background-repeat: no-repeat;}
+.contra{border:2px solid white; background-color:#f9c5ca; background-image:url(../imagens/background/background-contra.svg); background-size: contain; background-repeat: no-repeat;}
 .contra h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#ed1f24; font-size: 130%;}
 .contra h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#b21f24;}
-.ausente{border:2px solid white; background-color:#b3b3b3; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-ausente.svg); background-size: contain; background-repeat: no-repeat;}
+.ausente{border:2px solid white; background-color:#b3b3b3; background-image:url(../imagens/background/background-ausente.svg); background-size: contain; background-repeat: no-repeat;}
 .ausente h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#FFFFFF; font-size: 130%;}
 .ausente h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#666;}
 
-.background-opine{background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-opiniao.svg); background-size: contain; background-repeat: no-repeat;}
+.background-opine{background-image:url(../imagens/background/background-opiniao.svg); background-size: contain; background-repeat: no-repeat;}
 
 .min-height{min-height: 35%;}
 
@@ -120,11 +120,11 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .conheca-seu-deputado .foto-conheca-seu-deputado{width:45%;}
 .ranking-deputados .linha-zebrada p{margin-top:5px;}
 .ranking-deputados .texto-branco{font-size:1.2em;}
-.creditos{margin-bottom: -20px; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-creditos.svg); background-size:cover; background-repeat: no-repeat; background-position: center center;}
+.creditos{margin-bottom: -20px; background-image:url(../imagens/background/background-creditos.svg); background-size:cover; background-repeat: no-repeat; background-position: center center;}
 .creditos p{font-size: 16px;}
 .creditos .fundo-cinza-claro{background:transparent;}
 .processo{font-size:12px; color:white; }
-.processo .processo-2{background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-congresso.svg); background-size:cover; background-position: bottom; background-repeat: no-repeat;  }
+.processo .processo-2{background-image:url(../imagens/background/background-congresso.svg); background-size:cover; background-position: bottom; background-repeat: no-repeat;  }
 .processo h3{color:white; line-height: 1.7em; margin:0; margin-bottom:5px;}
 .processo .flutua-seta-esquerda{position: absolute; width:25%; margin-top:-30px; left:10px; z-index: 3000; opacity:0.15; }
 .processo .flutua-seta-direita{position: absolute; width:25%; margin-top:-30px; right:10px; z-index: 3001;  opacity:0.15;}
@@ -152,15 +152,15 @@ div.compare-os-deputados h4{display:none;}
 
 div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-conheca-titulo h2 span{color:#8cc061;}
-div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:contain;}
+div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(../imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:contain;}
 div.filtros-conheca .option{color:white; font-size:14px; text-transform: uppercase; line-height: 2.1em; margin-top:10px; text-align: center;}
 div.filtros-conheca .option .text-option{font-size:11px; float: left; display: block; margin-top: -4px; margin-left:4px;}
 div.filtros-conheca input,select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf;}
-div.filtros-conheca input[type=text]{width:100%; background-image:url(/js/modules/mobileapp/layouts/imagens/icones/ico-lupa.svg); background-repeat: no-repeat; background-position: center right;}
+div.filtros-conheca input[type=text]{width:100%; background-image:url(../imagens/icones/ico-lupa.svg); background-repeat: no-repeat; background-position: center right;}
 div.filtros-conheca input[type=radio]{color:white; border:none; background-color:white; width:15px; height: 15px; float: left;}
 div.filtros-conheca select{width:50%; margin-top:10px; font-size:12px; float: left;}
 
-div.lista-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; height:210px; position: relative; width:100%; overflow: hidden; background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; background-size: contain; overflow-x: scroll}
+div.lista-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; height:210px; position: relative; width:100%; overflow: hidden; background-image:url(../imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; background-size: contain; overflow-x: scroll}
 div.lista-deputados .div-interna{width:800px; position:relative; overflow: hidden; display:block;}
 div.lista-deputados .box-deputado{font-family: "Open Sans Condensed", sans-serif; font-weight: bold; text-transform: uppercase; width:80px; text-align: center; float:left; margin-left:10px; margin-right:10px;}
 div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; background-color:white; width:100%;}
@@ -183,12 +183,12 @@ div.rodape img{width:100%;}
 .abertura{}
 .abertura .logos{display: flex; align-items: center; background-image: linear-gradient(135deg, #f2f2f2 10%, #dfdfdf 100%); padding:15px; position: relative; z-index: 999;}
 .abertura .logos img{width:100%;}
-.content{background-image:url(/js/modules/mobileapp/layouts/imagens/background/background-dedo.svg); background-image: linear-gradient(#ccc,#fff); min-height: 58%;}
+.content{background-image:url(../imagens/background/background-dedo.svg); background-image: linear-gradient(#ccc,#fff); min-height: 58%;}
 .content img.congresso{position:absolute; bottom:0;}
 .content .logo{position:absolute; width: 100%; text-align: center; margin-top:31%; z-index: 888;}
 .content .logo img{animation-name: anima-logo; animation-duration: 1.5s; width:80%; animation-timing-function: ease-in;}
-.content .nuvem1{animation-name: anima-nuvem-1; animation-duration: 15s; background-image:url(/js/modules/mobileapp/layouts/imagens/png/nuvem1.png); background-repeat: no-repeat; height: 25%;  background-size: 80%; background-position: right;}
-.content .nuvem2{animation-name: anima-nuvem-2; animation-duration: 10s; background-image:url(/js/modules/mobileapp/layouts/imagens/png/nuvem2.png); background-repeat: no-repeat; height: 15%;  background-size:55%; background-position: left; }
+.content .nuvem1{animation-name: anima-nuvem-1; animation-duration: 15s; background-image:url(../imagens/png/nuvem1.png); background-repeat: no-repeat; height: 25%;  background-size: 80%; background-position: right;}
+.content .nuvem2{animation-name: anima-nuvem-2; animation-duration: 10s; background-image:url(../imagens/png/nuvem2.png); background-repeat: no-repeat; height: 15%;  background-size:55%; background-position: left; }
 .content .carregando-pai{position:relative; z-index: 1001; text-align: center; margin-top:-33%; padding:30px; background-color:rgba(255,255,255,0.7); border-top:2px solid #dfdfdf; border-bottom: 2px solid #dfdfdf;}
 .content .carregando-pai .ico-carregando-1{animation: ico-carregando-1 3s linear infinite; }
 .content .carregando-pai .ico-carregando-2{animation:ico-carregando-2 2s linear infinite; margin-top:-139px; }

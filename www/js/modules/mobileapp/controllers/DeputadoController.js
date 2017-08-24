@@ -149,7 +149,7 @@ angular.module('camara')
                     infoDeputado = ModelDeputados.informacaoDoDeputado(coDeputado);
                     
                 $.when(infoDeputado).then(function(infoDep) {
-                    ModelDespesas.listarDespesas(coDeputado, 2014, 1);
+                    ModelDespesas.listarDespesas(coDeputado, 2015, 1);
                     $scope.preencherInfoDeputado(infoDep);
                     
                     var lstComissoes = ModelDeputados.listarComissoes(coDeputado);
