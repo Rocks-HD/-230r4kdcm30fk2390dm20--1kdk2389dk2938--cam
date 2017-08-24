@@ -8,10 +8,8 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('HomeController', ['$scope', '$location', 'ModelDeputados', 'ModelGeral', function ($scope, $location, ModelDeputados, ModelGeral) {
+    .controller('HomeController', ['$scope', '$location', 'ModelDeputados', 'ModelGeral', function HomeController($scope, $location, ModelDeputados, ModelGeral) {
         $scope.APPLICATION_ENV  = ModelDeputados.APPLICATION_ENV;
-        $scope.url              = ModelDeputados.url;  
-        $scope.selfUrl          = $location.url();
         $scope.options;
         $scope.msgPainel;
         $scope.filter           = {'ds_nome' : '', 'ds_estado' : '', 'ds_partido' : ''};
@@ -51,6 +49,7 @@ angular.module('camara')
             } catch (e) {}
 
         };
+        
         
         /**
          * Layout para preenchimento
@@ -121,6 +120,9 @@ angular.module('camara')
         };
         
         
+        /**
+         * 
+         */
         $(document).on("click", ".btn-comparar button", function() {
             if ($scope.dpSelecionado1 != 0 && $scope.dpSelecionado2 != 0) {
                 $scope.redirecionar('/comparar/'+ $scope.dpSelecionado1+'-'+$scope.dpSelecionado2);
@@ -146,6 +148,7 @@ angular.module('camara')
             $scope.filter['ds_estado'] = $("#ds_estado").val();
             $scope.listaDeputados(lstDeputados, true);            
         });
+        
         
         /**
          * ON: Verifica se o usuário selecionou algum partido
@@ -178,9 +181,11 @@ angular.module('camara')
 
                     if ($("#deputadoSelecionado1 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado2 != coDeputado ) {
                         $("#deputadoSelecionado1").html(infoSelecionado);
+                        ModelDeputados.informacaoDoDeputado(coDeputado);
                         $scope.dpSelecionado1 = coDeputado;
                     } else if ($("#deputadoSelecionado2 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado1 != coDeputado ) {
                         $("#deputadoSelecionado2").html(infoSelecionado);
+                        ModelDeputados.informacaoDoDeputado(coDeputado);
                         $scope.dpSelecionado2 = coDeputado;
                     }
                     clicks = 0;
@@ -201,9 +206,7 @@ angular.module('camara')
             }
             
             $(this).html('<img src="'+ $scope.imgSelecionar +'">');
-            
         });
-
 
 
         /**
@@ -217,24 +220,27 @@ angular.module('camara')
         });
 
 
+        /**
+         * Garantir uma nova model
+         * @returns {undefined}
+         */
         window.onhashchange = function() {
             window.location.reload();
         };
+
 
         /**
          * INIT: 
          */
         angular.element(document).ready(function() {
-            var selfUrl = $location.url();
-            if (selfUrl == '' || selfUrl == '/') {
-                var lstDeputados = ModelDeputados.listarDeputados(1);
+            var lstDeputados = ModelDeputados.listarDeputados(1);
 
-                $.when(lstDeputados).then(function(r) {
-                    $scope.listaDeputados(r, false);
-                    $scope.listarEstados();
-                    $scope.listarPartidos();
-                });
-            }
+            $.when(lstDeputados).then(function(r) {
+                $scope.listaDeputados(r, false);
+                $scope.listarEstados();
+                $scope.listarPartidos();
+            });
+
         });
 
     }]);

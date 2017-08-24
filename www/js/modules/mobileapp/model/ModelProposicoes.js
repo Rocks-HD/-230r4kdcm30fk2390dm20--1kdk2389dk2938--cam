@@ -16,12 +16,16 @@ angular.module('camara')
          * 
          * @returns {object}
          */
-        this.listarProposicoesCandidato = function(dsNome) 
+        this.listarProposicoesCandidato = function(coDeputado, dsNome) 
         {
-            var lstProposicoes = TGProposicoes.listarProposicoesCandidato(dsNome);
+            var lstProposicoes = TGProposicoes.listarProposicoesCandidato(coDeputado, dsNome);
 
             return $.when(lstProposicoes).then(function(r) {
-                return $.xml2json(r)['#document']['proposicoes']['proposicao'];
+                if (typeof r != 'object') {
+                    return $.xml2json(r)['#document']['proposicoes']['proposicao'];
+                } else {
+                    return r;
+                }
             });
         };
 

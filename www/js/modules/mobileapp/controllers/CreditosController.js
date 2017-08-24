@@ -3,30 +3,29 @@
 /**
  * 
  * @ngdoc function
- * @name camara.controller:MainController
+ * @name camara.controller:AberturaController
  * @description 
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('OpiniaoController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', function OpiniaoController($scope, $location, $window, ModelDespesas, ModelDeputados) {
-        $scope.selfUrl = $location.url();
-        
-        
+    .controller('CreditosController', ['$scope', '$timeout', 'ModelDeputados', function CreditosController($scope, $timeout, ModelDeputados) {
+
+
+
         /**
          * Garantir uma nova model
          * @returns {undefined}
          */
         window.onhashchange = function() {
             window.location.reload();
-        };        
+        };
+        
         
         /**
          * INIT: 
          */
         angular.element(document).ready(function() {
-                
-            console.log('aqui');
             
-        });     
+        });
 
     }]);

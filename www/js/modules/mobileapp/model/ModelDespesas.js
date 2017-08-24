@@ -41,20 +41,20 @@ angular.module('camara')
          */
         this.gerarEstatistica = function(coDeputado) 
         {
+            console.log(coDeputado)
             try {
                 var tpDespesa   = '', 
                     anoMes      = '',
-                    lstDespesas = TGDespesas.listarDespesas(coDeputado, 2014, null),
-                    maiorBeneficiario = {},
+                    lstDespesas = TGDespesas.listarDespesas(coDeputado, 2015, null),
                     result   = {
                         'VGM'    : {}, //ValoresGastosMensais
                         'DGM'    : {}, //DescricaoDosGastosMensais
                         'MB'     : {}, //Maior beneficiário
                         'NCNPJ'  : {}, //Nome do CNPJ
-                        'GTA'    : {2014:0, 2015:0, 2016:0, 2017:0},//Gastos Totais Anuais
+                        'GTA'    : {2015:0, 2016:0, 2017:0, 2018:0},//Gastos Totais Anuais
                         'arrayTpServico' : {}
                     };
-
+                    
                     
 //                console.log(lstDespesas);
                 for (var i in lstDespesas) {
@@ -72,9 +72,8 @@ angular.module('camara')
                     result['MB'][lstDespesas[i]['cnpjCpfFornecedor']] = valorBeneficiario +  parseFloat(lstDespesas[i]['valorDocumento']);
                     result['NCNPJ'][lstDespesas[i]['cnpjCpfFornecedor']] = lstDespesas[i]['nomeFornecedor'];
                 }
-
             } catch (e) {console.log(e);}
-            
+
             return result;
         };
         

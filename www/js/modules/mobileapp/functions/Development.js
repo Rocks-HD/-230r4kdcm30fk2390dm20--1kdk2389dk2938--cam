@@ -255,7 +255,7 @@
      * Função de fazer com que o sistema informe que esta havendo uma requisição ajax 
      */
     $(document).ajaxSend(function () {
-        exibirTarjaAjax('Carregando, aguarde...');
+        exibirTarjaAjax('');
 
     }).ajaxStop(function(){
         $(".ajaxCarregando").remove();

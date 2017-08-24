@@ -18,13 +18,14 @@
                 $(".areaPrincipal").removeClass('hidden');
             }, 5000);
 
-            var APPLICATION_ENV = document.URL.indexOf("host.camaraapp") !== -1 ? 'development' : 'production';
+            var APPLICATION_ENV = document.URL.indexOf("host.camaraapp") !== -1 ? 'development' : 'development';
             var arrayArquivos = {
                 'development': [
-                    './js/library/angular/angular.js',
-                    './js/library/angular-route/angular-route.min.js',
-                    './js/library/angular-resource/angular-resource.min.js',
-                    './js/library/angular-sanitize/angular-sanitize.min.js',
+//                    './js/library/angular-route/angular-route.min.js',
+//                    './js/library/angular-resource/angular-resource.min.js',
+//                    './js/library/angular-sanitize/angular-sanitize.min.js',
+//                    './js/modules/mobileapp/configs/app.js',
+                    './js/library/compile-footer.js',
                     './js/modules/mobileapp/configs/app.js',
                     './js/modules/mobileapp/services/LayoutService.js',
                     './js/modules/mobileapp/services/UtilsService.js',
@@ -36,39 +37,13 @@
                     './js/modules/mobileapp/model/ModelDeputados.js',
                     './js/modules/mobileapp/model/ModelGeral.js',
                     './js/modules/mobileapp/model/ModelProposicoes.js',
-                    './js/modules/mobileapp/controllers/HomeController.js',
-                    './js/modules/mobileapp/controllers/DeputadoController.js',
-                    './js/modules/mobileapp/controllers/OpiniaoController.js',
+                    './js/modules/mobileapp/controllers/AberturaController.js',
                     './js/modules/mobileapp/controllers/CompararController.js',
-                    './js/modules/mobileapp/configs/routes.js',
-                    './js/modules/mobileapp/functions/Development.js',
-                    './js/library/chart.js/dist/Chart.bundle.js',
-                    './js/library/angular-chart.js/dist/angular-chart.min.js',
-                    './js/library/xml2json/xml2json.js'
-                ],
-                'production': [
-//                    './js-min/modules/mobileapp/compile-footer.js',
-//                    './js-min/modules/mobileapp/production.js',
-//                    './js-min/modules/mobileapp/functions.js'
-                    './js/library/angular/angular.js',
-                    './js/library/angular-route/angular-route.min.js',
-                    './js/library/angular-resource/angular-resource.min.js',
-                    './js/library/angular-sanitize/angular-sanitize.min.js',
-                    './js/modules/mobileapp/configs/app.js',
-                    './js/modules/mobileapp/services/LayoutService.js',
-                    './js/modules/mobileapp/services/UtilsService.js',
-                    './js/modules/mobileapp/model/tableGateway/TGDeputados.js',
-                    './js/modules/mobileapp/model/tableGateway/TGDespesas.js',
-                    './js/modules/mobileapp/model/tableGateway/TGGeral.js',
-                    './js/modules/mobileapp/model/tableGateway/TGProposicoes.js',
-                    './js/modules/mobileapp/model/ModelDespesas.js',
-                    './js/modules/mobileapp/model/ModelDeputados.js',
-                    './js/modules/mobileapp/model/ModelGeral.js',
-                    './js/modules/mobileapp/model/ModelProposicoes.js',
-                    './js/modules/mobileapp/controllers/HomeController.js',
+                    './js/modules/mobileapp/controllers/CreditosController.js',
                     './js/modules/mobileapp/controllers/DeputadoController.js',
+                    './js/modules/mobileapp/controllers/HomeController.js',
                     './js/modules/mobileapp/controllers/OpiniaoController.js',
-                    './js/modules/mobileapp/controllers/CompararController.js',
+                    './js/modules/mobileapp/controllers/RankingController.js',
                     './js/modules/mobileapp/configs/routes.js',
                     './js/modules/mobileapp/functions/Development.js',
                     './js/library/chart.js/dist/Chart.bundle.js',
@@ -104,10 +79,10 @@
                 </div>
             </header>
             <nav class="row text-center menu-principal">
-                <div onclick="window.location.hash=''; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-home.svg" alt="home"/><br>Página inicial do aplicativo</div>
-                <div onclick="window.location.hash='opiniao'; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-opiniao.svg" alt="sua opinião"/><br>sua opinião nas votações</div>
-                <div onclick="window.location.hash='ranking'; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-ranking.svg" alt="ranking dos deputados"/><br>ranking dos deputados</div>
-                <div onclick="window.location.hash='creditos'; window.location.reload();" class="col-xs-6 col-sm-3 margin-vertical"><img src="/js/modules/mobileapp/layouts/imagens/icones/ico-creditos.svg" alt="créditos do app"/><br>créditos do aplicativo</div>
+                <div onclick="window.location.hash='home';" class="col-xs-6 col-sm-3 margin-vertical"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-home.svg" alt="home"/><br>Página inicial do aplicativo</div>
+                <div onclick="window.location.hash='opiniao'" class="col-xs-6 col-sm-3 margin-vertical"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-opiniao.svg" alt="sua opinião"/><br>sua opinião nas votações</div>
+                <div onclick="window.location.hash='ranking'" class="col-xs-6 col-sm-3 margin-vertical"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-ranking.svg" alt="ranking dos deputados"/><br>ranking dos deputados</div>
+                <div onclick="window.location.hash='creditos'" class="col-xs-6 col-sm-3 margin-vertical"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-creditos.svg" alt="créditos do app"/><br>créditos do aplicativo</div>
             </nav>        
         </div>
         

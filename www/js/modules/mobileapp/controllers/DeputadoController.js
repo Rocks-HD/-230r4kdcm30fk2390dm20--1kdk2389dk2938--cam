@@ -8,11 +8,11 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('DeputadoController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', function DeputadoController($scope, $location, $window, ModelDespesas, ModelDeputados) {
+    .controller('DeputadoController', ['$scope', '$location', '$timeout', 'ModelDespesas', 'ModelDeputados', function DeputadoController($scope, $location, $timeout, ModelDespesas, ModelDeputados) {
         $scope.selfUrl = $location.url();
         $scope.labels1 = [];
         $scope.data1 = [];
-        $scope.options1 = { title: { display: true, position: 'bottom'}, legend: { display: true } };
+        $scope.options1 = { title: { display: false, position: 'bottom'}, legend: { display: false } };
         
         $scope.labels2 = [];
         $scope.data2 = [];
@@ -25,12 +25,14 @@ angular.module('camara')
         /**
          * Preenche a tela com informações vindas do servidor
          * 
-         * @param {object} infoDeputado
+         * @param {object} infoDep
          * @returns {void}
          */
-        $scope.preencherInfoDeputado = function(infoDeputado) 
+        $scope.preencherInfoDeputado = function(infoDep) 
         {
             try {
+                var infoDeputado = typeof infoDep['dados'] != 'undefined' ? [infoDep['dados']] : infoDep;
+                
                 $(".nomeDestaque").append(infoDeputado[0]['ultimoStatus']['nomeEleitoral']+' ('+infoDeputado[0]['ultimoStatus']['siglaPartido'] +'-'+infoDeputado[0]['ultimoStatus']['siglaUf']+')' );
                 $(".infoNome").append(infoDeputado[0]['nomeCivil']);
                 $(".infoNomeEleitoral").append(infoDeputado[0]['ultimoStatus']['nomeEleitoral']);
@@ -107,22 +109,31 @@ angular.module('camara')
          */
         $scope.infoRelatorioDespesas = function () 
         {
-            var coDeputado    = strstr($scope.selfUrl, '/', false).replace( /^\D+/g, ''),
-                infoRelatorio = ModelDespesas.gerarEstatistica(coDeputado);
-             
-            for (var i in infoRelatorio['DGM']) {
-               $scope.labels1.push(i);
-               $scope.data1.push(number_format(infoRelatorio['DGM'][i], 2, '.', ''));
+            var coDeputado  = strstr($scope.selfUrl, '/', false).replace( /^\D+/g, ''),
+                relatorio   = ModelDespesas.gerarEstatistica(coDeputado);
+                
+            if (relatorio['GTA'][2015] >= 1 || relatorio['GTA'][2016] >= 1 || relatorio['GTA'][2017] >= 1 || relatorio['GTA'][2018] >= 1) {
+                $.when(relatorio).then(function(infoRelatorio) {
+                    for (var i in infoRelatorio['DGM']) {
+                       $scope.labels1.push(i);
+                       $scope.data1.push(number_format(infoRelatorio['DGM'][i], 2, '.', ''));
+                    }
+
+                    for (var i in infoRelatorio['VGM']) {
+                       $scope.labels2.push(i);
+                       $scope.data2.push(number_format(infoRelatorio['VGM'][i], 2, '.', ''));
+                    }
+
+                    $scope.layoutBeneficiarios(infoRelatorio);
+
+                    return JSON.stringify( infoRelatorio );
+                });
+            } else {
+                $timeout(function() {
+                    $scope.infoRelatorioDespesas();
+                }, 7000);
             }
             
-            for (var i in infoRelatorio['VGM']) {
-               $scope.labels2.push(i);
-               $scope.data2.push(number_format(infoRelatorio['VGM'][i], 2, '.', ''));
-            }
-
-            $scope.layoutBeneficiarios(infoRelatorio);
-
-            return JSON.stringify( infoRelatorio );
         };
 
 
@@ -137,23 +148,33 @@ angular.module('camara')
                 var coDeputado   = strstr($scope.selfUrl, '/', false).replace( /^\D+/g, ''),
                     infoDeputado = ModelDeputados.informacaoDoDeputado(coDeputado);
                     
+                $.when(infoDeputado).then(function(infoDep) {
+                    ModelDespesas.listarDespesas(coDeputado, 2014, 1);
+                    $scope.preencherInfoDeputado(infoDep);
                     
-                ModelDespesas.listarDespesas(coDeputado, 2014, 1);
-                $scope.preencherInfoDeputado(infoDeputado);
-                
-                var lstComissoes = ModelDeputados.listarComissoes(coDeputado);
-                $.when(lstComissoes).then(function(r) {
-                    $scope.layoutComissoes(r['dados']);
-                });
-                
-                var lstCargos = ModelDeputados.listarCargos(coDeputado);
-                $.when(lstCargos).then(function(r) {
-                    $scope.layoutComissoes(r['dados']);
-                });
+                    var lstComissoes = ModelDeputados.listarComissoes(coDeputado);
+                    $.when(lstComissoes).then(function(comissoes) {
+                        $scope.layoutComissoes(comissoes['dados']);
+                        
+                        var lstCargos = ModelDeputados.listarCargos(coDeputado);
+                        $.when(lstCargos).then(function(cargos) {
+                            $scope.layoutComissoes(cargos['dados']);
+                        });
+                    });
+                });                    
                 
             } catch (e) {console.log(e);}
         };
 
+
+        /**
+         * Garantir uma nova model
+         * @returns {undefined}
+         */
+        window.onhashchange = function() {
+            window.location.reload();
+        };
+        
 
         /**
          * INIT: 

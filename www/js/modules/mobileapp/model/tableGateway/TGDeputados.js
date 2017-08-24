@@ -19,29 +19,31 @@ angular.module('camara')
         
 
         this.listarDeputados = function(pagina) 
-        {           
-            var rootObj         = this;
-            var url             = 'https://dadosabertos.camara.leg.br/api/v2/deputados';
-            var lstDeputados    = rootObj.listarDeputadosLocal(pagina, false);
+        {
+            try {
+                var rootObj         = this;
+                var url             = 'https://dadosabertos.camara.leg.br/api/v2/deputados';
+                var lstDeputados    = rootObj.listarDeputadosLocal(pagina, false);
 
-            if (lstDeputados == null || lstDeputados.length == 0) {
-                return $.get(url, {'itens' : '100', 'pagina': pagina}, function(r) {
-                    if (typeof r['dados'] != 'undefined' && r['dados'].length != 0) {
-                        rootObj.listarDeputados(++pagina);
-                        for (var i in r['dados']) {
-                            rootObj.lstEstados[r['dados'][i]['siglaUf']] = typeof rootObj.lstEstados[r['dados'][i]['siglaUf']] == 'undefined' ? 1 : rootObj.lstEstados[r['dados'][i]['siglaUf']]+1;
-                            rootObj.lstPartidos[r['dados'][i]['siglaPartido']] = typeof rootObj.lstPartidos[r['dados'][i]['siglaPartido']] == 'undefined' ? 1 : rootObj.lstPartidos[r['dados'][i]['siglaPartido']]+1;
-                            rootObj.infoDeputados.push(r['dados'][i]);
+                if (lstDeputados == null || lstDeputados.length == 0) {
+                    return $.get(url, {'itens' : '100', 'pagina': pagina}, function(r) {
+                        if (typeof r['dados'] != 'undefined' && r['dados'].length != 0) {
+                            rootObj.listarDeputados(++pagina);
+                            for (var i in r['dados']) {
+                                rootObj.lstEstados[r['dados'][i]['siglaUf']] = typeof rootObj.lstEstados[r['dados'][i]['siglaUf']] == 'undefined' ? 1 : rootObj.lstEstados[r['dados'][i]['siglaUf']]+1;
+                                rootObj.lstPartidos[r['dados'][i]['siglaPartido']] = typeof rootObj.lstPartidos[r['dados'][i]['siglaPartido']] == 'undefined' ? 1 : rootObj.lstPartidos[r['dados'][i]['siglaPartido']]+1;
+                                rootObj.infoDeputados.push(r['dados'][i]);
+                            }
+                        } else {
+                            rootObj.salvarEstadosLocal(rootObj.lstEstados);
+                            rootObj.salvarPartidosLocal(rootObj.lstPartidos);
+                            return rootObj.salvarDeputadosLocal(rootObj.infoDeputados);
                         }
-                    } else {
-                        rootObj.salvarEstadosLocal(rootObj.lstEstados);
-                        rootObj.salvarPartidosLocal(rootObj.lstPartidos);
-                        return rootObj.salvarDeputadosLocal(rootObj.infoDeputados);
-                    }
-                }, 'json');
-            } else {               
-                return lstDeputados;
-            }
+                    }, 'json');
+                } else {               
+                    return lstDeputados;
+                }
+            } catch (e) {console.log(e);}
         };
         
         
@@ -53,18 +55,21 @@ angular.module('camara')
          */
         this.informacaoDoDeputado = function(coDeputado) 
         {
-            var rootObj         = this;
-            var url             = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+coDeputado;
-            var infoDeputado    = rootObj.infoDeputadoLocal(coDeputado);
+            try {
+                var rootObj         = this;
+                var url             = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+coDeputado;
+                var infoDeputado    = rootObj.infoDeputadoLocal(coDeputado);
 
-            if (infoDeputado == null || infoDeputado.length == 0) {
-                return $.get(url, {}, function(r) {
-                    rootObj.infoDeputado.push(r['dados']);
-                    return rootObj.salvarDeputadoLocal(rootObj.infoDeputado, coDeputado);
-                }, 'json');
-            } else {               
-                return infoDeputado;
-            }
+                if (infoDeputado == null || infoDeputado.length == 0) {
+                    return $.get(url, {}, function(r) {
+                        rootObj.infoDeputado.push(r['dados']);
+                        return rootObj.salvarDeputadoLocal(rootObj.infoDeputado, coDeputado);
+                    }, 'json');
+                } else {               
+                    return infoDeputado;
+                }
+     
+            } catch (e) {console.log(e);}
         };
         
 
@@ -114,7 +119,11 @@ angular.module('camara')
         this.salvarDeputadoLocal = function(infoDeputado, coDeputado) 
         {
             if (typeof(Storage) !== "undefined") {
-                localStorage.setItem('deputado_'+ coDeputado, JSON.stringify(infoDeputado));
+                if (infoDeputado[0]['id'] == coDeputado) {
+                    localStorage.setItem('deputado_'+ coDeputado, JSON.stringify(infoDeputado));
+                } else {
+                    console.log('sistema tentou salvar um candidato com informações diferentes');
+                }
             } else {
                 console.log('O dispositivo não permite salvar informações!');
             }
@@ -281,7 +290,7 @@ angular.module('camara')
             return $.get(url, {}, function(r) {
                 return r;
             }, 'json');
-        }
+        };
      
      
         /**

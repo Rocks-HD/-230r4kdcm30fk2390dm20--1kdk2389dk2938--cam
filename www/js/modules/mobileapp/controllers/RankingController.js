@@ -8,7 +8,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('OpiniaoController', ['$scope', '$location', '$window', 'ModelDespesas', 'ModelDeputados', function OpiniaoController($scope, $location, $window, ModelDespesas, ModelDeputados) {
+    .controller('RankingController', ['$scope', '$location', '$window', 'ModelDeputados', function RankingController($scope, $location, $window, ModelDespesas, ModelDeputados) {
         $scope.selfUrl = $location.url();
         
         
@@ -24,7 +24,7 @@ angular.module('camara')
          * INIT: 
          */
         angular.element(document).ready(function() {
-                
+
             console.log('aqui');
             
         });     
