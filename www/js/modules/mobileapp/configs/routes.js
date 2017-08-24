@@ -62,6 +62,10 @@ angular.module('camara')
             templateUrl: './js/modules/mobileapp/views/scripts/home/carregando.html',
             controller: 'HomeController',
             noReload: false
+         }).when('/processo', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/processo.html',
+            controller: 'HomeController',
+            noReload: false
         }).when('/creditos', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
             controller: 'HomeController',
