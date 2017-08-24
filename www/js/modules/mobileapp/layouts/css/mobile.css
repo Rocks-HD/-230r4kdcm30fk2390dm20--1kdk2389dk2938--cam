@@ -133,7 +133,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 /*BARRA DE NAVEGAÇÃO - MENU*/
 header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center; margin-bottom:15px;}
-header #btn-menu{position:relative; width:60px; height: 60px; background-color:white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: -20px; z-index: 400;}
+header #btn-menu{position:relative; width:60px; height: 60px; background-color:white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: -15%; z-index: 400;}
 header #btn-menu span{font-size: 30px; color:#5ab946;}
 header #logo{font-size: 30px; color:#9ae588;}
 header #logo img{width:48%;}
@@ -146,9 +146,9 @@ nav.menu-principal{display:none; border-bottom:10px solid #5ab946; margin-top:-1
 div.compare-os-deputados{background-color:#d2d2d2; padding-top:15px; padding-bottom: 15px; }
 div.compare-os-deputados img{width:100%; border:2px dashed #dcdcdc; background-color:white;}
 div.compare-os-deputados .btn-comparar{margin-top:2%;}
-div.compare-os-deputados .btn-comparar span{font-size:160%; color:#e9e9e9;}
 div.compare-os-deputados .btn-comparar p{font-size: 8px; margin-top:13px;}
 div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
+div.compare-os-deputados h4{display:none;}
 
 div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
 div.conteudo-conheca-titulo h2 span{color:#8cc061;}
@@ -167,7 +167,7 @@ div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; bac
 div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
 div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
 
-div.informativo-deputado{background-color:#1d1d1d; padding-top:15px; padding-bottom:15px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:10px; font-style: italic; text-transform: uppercase; letter-spacing: 1px; line-height: 1.7em;}
+div.informativo-deputado{background-color:#1d1d1d; padding-top:15px; padding-bottom:15px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic; text-transform: uppercase; letter-spacing: 1px; line-height: 1.7em;}
 div.informativo-deputado .text-verde{color:#90C73E;}
 
 div.observacoes{background-color:#5d5d5d; padding-top:15px; padding-bottom:15px; font-family: "Open Sans Condensed", sans-serif; color:#fff; font-size:14px; letter-spacing: 1px; line-height: 1.4em;}
@@ -267,11 +267,9 @@ div.rodape img{width:100%;}
     .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:6.6em;}
     .ranking-deputados .linha-zebrada p{font-size:18px;}
     .ranking-deputados .texto-branco{font-size:1.4em;}
-    header #btn-menu{width:100px; height:100px;}
+    header #btn-menu{width:100px; height:100px; margin-bottom:-10%;}
     header #btn-menu span{font-size:50px;}
     div.compare-os-deputados .btn-comparar p{font-size:10px;}
-    div.compare-os-deputados .btn-comparar span{font-size:210%;}
-
 }
 
 @media (min-width: 768px) and (max-width:991px) {
@@ -301,13 +299,12 @@ div.rodape img{width:100%;}
     .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.6em;}
     .ranking-deputados .linha-zebrada p{font-size:22px;}
     .ranking-deputados .texto-branco{font-size:1.6em;}
-    header #btn-menu{width:120px; height:120px;}
+    header #btn-menu{width:120px; height:120px; margin-bottom:-5%;}
     header #btn-menu span{font-size:60px;}
     div.compare-os-deputados .btn-comparar p{font-size:14px;}
-    div.compare-os-deputados .btn-comparar span{font-size:210%;}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width:1199px) {
     .processo .flutua-seta-direita{width:8%;}
     .processo .flutua-seta-esquerda{width:8%;}
     div.filtros-conheca input[type=radio]{width:30px; height: 30px;}
@@ -338,8 +335,13 @@ div.rodape img{width:100%;}
     .ranking-deputados .posicionamento-mao{top:55%; right:-20%;}
     .ranking-deputados .linha-zebrada p{font-size:25px;}
     .ranking-deputados .texto-branco{font-size:1.8em;}
-    header #btn-menu{width:130px; height:130px;}
+    header #btn-menu{width:130px; height:130px; margin-bottom:-5%;}
     header #btn-menu span{font-size:70px;}
     div.compare-os-deputados .btn-comparar p{font-size:18px;}
-    div.compare-os-deputados .btn-comparar span{font-size:270%;}
 }
+
+@media (min-width: 1200px){
+    header #btn-menu span{font-size:70px;}
+    header #btn-menu{width:130px; height:130px; margin-bottom:0;}
+}
+
