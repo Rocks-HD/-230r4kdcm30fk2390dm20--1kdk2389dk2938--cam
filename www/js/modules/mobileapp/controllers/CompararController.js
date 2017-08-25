@@ -46,6 +46,7 @@ angular.module('camara')
                     $(".nomeCandidato1").html($scope.InfoDeputado1['0']['ultimoStatus']['nomeEleitoral']);
                     $(".partidoCandidato1").html($scope.InfoDeputado1['0']['ultimoStatus']['siglaPartido'] +'/'+$scope.InfoDeputado1['0']['ultimoStatus']['siglaUf']);
                     $(".escolaridade1").html($scope.InfoDeputado1['0']['escolaridade'] != null ? $scope.InfoDeputado1['0']['escolaridade'] : '---');
+                    $(".areaDep1").attr('data-id', $scope.InfoDeputado1['0']['id']);
                     $scope.labels1[0] = $scope.InfoDeputado1['0']['ultimoStatus']['nomeEleitoral'];
 
                     var infoDeputado2 = ModelDeputados.informacaoDoDeputado(coDeputado2);
@@ -58,6 +59,7 @@ angular.module('camara')
                             $(".nomeCandidato2").html($scope.InfoDeputado2['0']['ultimoStatus']['nomeEleitoral']);
                             $(".partidoCandidato2").html($scope.InfoDeputado2['0']['ultimoStatus']['siglaPartido'] +'/'+$scope.InfoDeputado2['0']['ultimoStatus']['siglaUf']);
                             $(".escolaridade2").html($scope.InfoDeputado2['0']['escolaridade'] != null ? $scope.InfoDeputado2['0']['escolaridade'] : '---');
+                            $(".areaDep2").attr('data-id', $scope.InfoDeputado2['0']['id']);
                             $scope.labels1[1] = $scope.InfoDeputado2['0']['ultimoStatus']['nomeEleitoral'];
                                     
                         } catch (e) {
@@ -239,6 +241,11 @@ angular.module('camara')
         $scope.$on('chart-update', function(evt, chart){
             chart.update();
         });          
+        
+        
+        $(document).on("click", ".areaDep1, .areaDep2", function() {
+            window.location.hash = '/conheca/'+ $(this).attr('data-id');
+        });
         
         
         /**

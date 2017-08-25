@@ -33,9 +33,23 @@ angular.module('camara')
                     rootObj.salvarProposicoesDeputadoLocal(coDeputado, lstProposicoes);
                     return lstProposicoes;
                 }, 'xml');
-            } else {               
+            } else {  
+                localStorage.removeItem('proposicoes_'+coDeputado);
                 return lstProposicoes;
             }
+        };
+        
+        
+        /**
+         * 
+         */
+        this.obterVotacaoProposicaoPorId = function(coProposicao) 
+        {
+            var link = 'http://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicaoPorID';
+            return $.get(link, {idProposicao : coProposicao}, function(r) {
+                var lstProposicoes = $.xml2json(r)['#document']['proposicao']['Votacoes']['Votacao'];
+                return lstProposicoes;
+            }, 'xml');            
         };
         
         
@@ -52,7 +66,6 @@ angular.module('camara')
             
             return lstProposicoes;
         };
-        
         
         
         /**
@@ -78,7 +91,7 @@ angular.module('camara')
          * @param {type} tipo
          * @returns {jqXHR}
          */
-        this.listarProposicoesVotadasEmPlenario = function(anoBusca, tipoBusca) 
+        this.listarProposicoesVotadasEmPlenario = function(anoBusca) 
         {
             var url = 'http://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoesVotadasEmPlenario?ano='+anoBusca+'&tipo=';
 
@@ -105,6 +118,55 @@ angular.module('camara')
                 return r;
             }, 'json');
         };
+        
+        
+        /**
+         * 
+         * @param {type} opniao
+         * @returns {undefined}
+         */
+        this.salvarOpiniao = function(opniao) 
+        {
+            var lstOpinioes     = this.listarOpinioes(),
+                itensOpnioes    = new Array();
+            
+            if (typeof(Storage) !== "undefined") {
+                if (lstOpinioes == null || lstOpinioes.length == 0) {
+                    itensOpnioes.push(opniao);
+                } else {
+                    for (var i in lstOpinioes) {
+                        if (opniao['coProposicao'] == lstOpinioes[i]['coProposicao']) {
+                            delete lstOpinioes[i];
+                        }
+                    }
+                    
+                    lstOpinioes.push(opniao);
+                    
+                    for (var i in lstOpinioes) {
+                        if (typeof lstOpinioes[i]['coProposicao'] != 'undefined') {
+                            itensOpnioes.push(lstOpinioes[i]);
+                        }
+                    }
+                }                
+                localStorage.setItem('opiniao', JSON.stringify(itensOpnioes));
+
+            } else {
+                console.log('O dispositivo não permite salvar informações!');
+            }
+            
+            return lstOpinioes;
+        };
+        
+        /**
+         * 
+         * @param {type} proposicao
+         * @returns {undefined}
+         */
+        this.listarOpinioes = function() 
+        {
+            return JSON.parse(localStorage.getItem('opiniao'));
+        };
+        
               
     }]);
         
