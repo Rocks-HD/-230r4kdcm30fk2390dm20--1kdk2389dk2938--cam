@@ -42,6 +42,19 @@ angular.module('camara')
         
         /**
          * 
+         */
+        this.obterVotacaoProposicaoPorId = function(coProposicao) 
+        {
+            var link = 'http://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicaoPorID';
+            return $.get(link, {idProposicao : coProposicao}, function(r) {
+                var lstProposicoes = $.xml2json(r)['#document']['proposicao']['Votacoes']['Votacao'];
+                return lstProposicoes;
+            }, 'xml');            
+        };
+        
+        
+        /**
+         * 
          * @param {type} coDeputado
          * @returns {undefined}
          */
@@ -154,10 +167,6 @@ angular.module('camara')
             return JSON.parse(localStorage.getItem('opiniao'));
         };
         
-        this.infoOpiniao = function() 
-        {
-            
-        };
               
     }]);
         

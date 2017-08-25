@@ -13,7 +13,6 @@ angular.module('camara')
         this.url                = this.APPLICATION_ENV == 'development' ? 'http://host.camaraapp' : 'http://webfans.com.br';  
 
 
-        
         /**
          * 
          * @returns {jqXHR}
