@@ -23,36 +23,194 @@
             
             <div class="col-xs-4 margin-top-15">
                 <p>ANO</p>
-                <select>
-                    <option>Mostrar todos dessa legislatura</option>
-                    <option>2014</option>
-                    <option>2015</option>
+                <select name="ano" id="ano">
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
                 </select>
             </div>
             <div class="col-xs-8 margin-top-15">
                 <p>TIPO DE PROPOSIÇÃO</p>
-                <select>
-                    <option>Mostrar todos</option>
-                    <option>PEC</option>
-                    <option>PL</option>
+                <select name="tipo" id="tipo">
+                    <option>Escolha</option>
+                    <option value="AA">Autógrafo</option>
+                    <option value="ADD">Adendo</option>
+                    <option value="ANEXO">Anexo</option>
+                    <option value="APJ">Anteprojeto</option>
+                    <option value="ATA">Ata</option>
+                    <option value="ATC">Ato Convocatório</option>
+                    <option value="ATOP">Ato do Presidente</option>
+                    <option value="AV">Aviso</option>
+                    <option value="AVN">Aviso (CN)</option>
+                    <option value="CAC">Comunicado de alteração do controle societário</option>
+                    <option value="CAE">Relatório de Atividades do Comitê de Admissibilidade de Emendas (CAE)</option>
+                    <option value="CAE">Relatório</option>
+                    <option value="CCN">Consulta do Congresso Nacional</option>
+                    <option value="COI">Relatório do COI</option>
+                    <option value="CON">Consulta</option>
+                    <option value="CRVITAEDOC">Curriculum Vitae/Outro Documento</option>
+                    <option value="CST">CST</option>
+                    <option value="CVO">Complementação de Voto</option>
+                    <option value="CVR">Contestação ao Voto do Relator</option>
+                    <option value="DCR">Denúncia por crime de responsabilidade</option>
+                    <option value="DEN">Denúncia</option>
+                    <option value="DEC">Decisão</option>
+                    <option value="DIS">Discurso</option>
+                    <option value="DOC">Documentos internos</option>
+                    <option value="DOCCPI">Documento de CPI ostensivo</option>
+                    <option value="DOCCPI">Documento de CPI sigiloso</option>
+                    <option value="DTQ">Destaque</option>
+                    <option value="DVT">Declaração de Voto</option>
+                    <option value="EAG">Emenda Substitutiva Aglutinativa Global</option>
+                    <option value="EMA">Emenda Aglutinativa de Plenário</option>
+                    <option value="EMC">Emenda na Comissão</option>
+                    <option value="EMC-A">Emenda Adotada pela Comissão</option>
+                    <option value="EMD">Emenda</option>
+                    <option value="EML">Emenda à LDO</option>
+                    <option value="EMO">Emenda ao Orçamento</option>
+                    <option value="EMP">Emenda de Plenário</option>
+                    <option value="EMPV">Emenda a Medida Provisória</option>
+                    <option value="EMR">Emenda de Relator</option>
+                    <option value="EMRP">Emenda de Relator Parcial</option>
+                    <option value="EMS">Emenda/Substitutivo do Senado</option>
+                    <option value="EPP">Emenda ao Plano Plurianual</option>
+                    <option value="ERD">Emenda de Redação</option>
+                    <option value="ERD-A">Emenda de Redação Adotada</option>
+                    <option value="ERR">Errata</option>
+                    <option value="ESB">Emenda ao Substitutivo</option>
+                    <option value="ESP">Emenda Substitutiva de Plenário</option>
+                    <option value="EXP">Exposição</option>
+                    <option value="IAN">IAN</option>
+                    <option value="INA">Indicação de Autoridade</option>
+                    <option value="INC">Indicação</option>
+                    <option value="MAD">Manifestação do(a) Denunciado(a)</option>
+                    <option value="MAN">Manifestação do Relator</option>
+                    <option value="MCN">Mensagem (CN)</option>
+                    <option value="MMP">Mensagem do Ministério Público da União</option>
+                    <option value="MPV">Medida Provisória</option>
+                    <option value="MSC">Mensagem</option>
+                    <option value="MSF">Mensagem (SF)</option>
+                    <option value="MSG">Mensagem (CN)</option>
+                    <option value="MST">Mensagem do Supremo Tribunal Federal</option>
+                    <option value="MTC">Mensagem do Tribunal de Contas da União</option>
+                    <option value="NIC">Norma Interna</option>
+                    <option value="NINF">Não Informada</option>
+                    <option value="OBJ">Objeto de Deliberação</option>
+                    <option value="OF">Ofício</option>
+                    <option value="OF">Ofício do Congresso Nacional</option>
+                    <option value="OF">Ofício do Congresso Nacional</option>
+                    <option value="OF">Ofício do Senado Federal</option>
+                    <option value="OF.">Ofício Externo</option>
+                    <option value="OFE">Ofício de órgão do Poder Executivo</option>
+                    <option value="OFJ">Ofício de órgão do Poder Judiciário</option>
+                    <option value="OFN">Ofício (CN)</option>
+                    <option value="OFS">Ofício do Senado Federal</option>
+                    <option value="OFT">OFT</option>
+                    <option value="P.C">Parecer (CD)</option>
+                    <option value="PAR">Parecer de Comissão</option>
+                    <option value="PARF">Parecer de Comissão para Redação Final</option>
+                    <option value="PCA">PCA</option>
+                    <option value="PDA">PDA</option>
+                    <option value="PDC">Projeto de Decreto Legislativo</option>
+                    <option value="PDN">Projeto de Decreto Legislativo (CN)</option>
+                    <option value="PDS">Projeto de Decreto Legislativo (SF)</option>
+                    <option value="PEA">Parecer à Emenda Aglutinativa</option>
+                    <option value="PEC">Proposta de Emenda à Constituição</option>
+                    <option value="PEP">Parecer às Emendas de Plenario</option>
+                    <option value="PES">Parecer às emendas apresentadas ao Substitutivo do Relator</option>
+                    <option value="PET">Petição</option>
+                    <option value="PFC">Proposta de Fiscalização e Controle</option>
+                    <option value="PIN">Proposta de Instrução Normativa</option>
+                    <option value="PL">Projeto de Lei</option>
+                    <option value="PLC">Projeto de Lei da Câmara dos Deputados (SF)</option>
+                    <option value="PLN">Projeto de Lei (CN)</option>
+                    <option value="PLP">Projeto de Lei Complementar</option>
+                    <option value="PLS">Projeto de Lei do Senado Federal</option>
+                    <option value="PLV">Projeto de Lei de Conversão</option>
+                    <option value="PPP">Parecer Proferido em Plenário</option>
+                    <option value="PPP">Parecer Proferido em Plenário - Notas Taquigráficas</option>
+                    <option value="PPR">Parecer Reformulado de Plenário</option>
+                    <option value="PR/CNJ">Parecer do Conselho Nacional de Justiça</option>
+                    <option value="PR/CNMP">Parecer do Conselho Nacional do Ministério Público</option>
+                    <option value="PRA">Projeto de Resolução da Assembleia Constituinte - 1987/88</option>
+                    <option value="PRC">Projeto de Resolução</option>
+                    <option value="PRF">Projeto de Resolução do Senado Federal</option>
+                    <option value="PRL">Parecer do Relator</option>
+                    <option value="PRN">Projeto de Resolução do Congresso Nacional</option>
+                    <option value="PRO">Proposta</option>
+                    <option value="PRP">Parecer do Relator Parcial</option>
+                    <option value="PRR">Parecer Reformulado</option>
+                    <option value="PRST">Parecer à Redação para o Segundo Turno</option>
+                    <option value="PRT">Parecer Técnico</option>
+                    <option value="PRV">Parecer Vencedor</option>
+                    <option value="PRVP">Proposta de Redação do Vencido em Primeiro Turno</option>
+                    <option value="PSS">Parecer às Emendas ou ao Substitutivo do Senado - Notas Taquigráficas</option>
+                    <option value="PSS">Parecer às Emendas ou ao Substitutivo do Senado</option>
+                    <option value="R.C">Recurso do Congresso Nacional</option>
+                    <option value="RAT">Relatório Setorial</option>
+                    <option value="RCM">RCM</option>
+                    <option value="RCP">Requerimento de Instituição de CPI</option>
+                    <option value="RDF">Redação Final</option>
+                    <option value="RDV">Redação do Vencido</option>
+                    <option value="REC">Recurso</option>
+                    <option value="REL">Relatório</option>
+                    <option value="REM">Reclamação</option>
+                    <option value="REP">Representação</option>
+                    <option value="REQ">Requerimento</option>
+                    <option value="RFP">Refomulação de Parecer - art. 130, parágrafo único do RICD.</option>
+                    <option value="RIC">Requerimento de Informação</option>
+                    <option value="RIN">Requerimento de Resolução Interna</option>
+                    <option value="RLF">Relatório Final</option>
+                    <option value="RLP">Relatório Prévio</option>
+                    <option value="RLP(R)">Relatório Prévio Reformulado</option>
+                    <option value="RLP(V)">Relatório Prévio Vencedor</option>
+                    <option value="RPA">Relatório Parcial</option>
+                    <option value="RPL">Relatório Preliminar</option>
+                    <option value="RPLE">Relatório Preliminar Apresentado com Emendas</option>
+                    <option value="RPLOA">Relatório Preliminar</option>
+                    <option value="RPR">Representação</option>
+                    <option value="RQA">Requerimento de Informações da Assembleia Constituinte - 1987/88</option>
+                    <option value="RQC">RQC</option>
+                    <option value="RQN">Requerimento do Congresso Nacional</option>
+                    <option value="RQP">Requerimento de Plenário</option>
+                    <option value="RRC">Relatório de Receita</option>
+                    <option value="RRL">Relatório do Relator</option>
+                    <option value="RST">Redação para o segundo turno</option>
+                    <option value="RTV">Mensagem de Rádio e Televisão</option>
+                    <option value="SAP">Subemenda Aglutinativa Substitutiva de Plenário</option>
+                    <option value="SBE">Subemenda</option>
+                    <option value="SBE-A">Subemenda Adotada pela Comissão</option>
+                    <option value="SBR">Subemenda de Relator</option>
+                    <option value="SBT">Substitutivo</option>
+                    <option value="SBT-A">Substitutivo adotado pela Comissão</option>
+                    <option value="SDL">Sugestão de Emenda à LDO - CLP</option>
+                    <option value="SGM">Ofício da Mesa</option>
+                    <option value="SIP">Solicitação para instauração de processo</option>
+                    <option value="SIT">Solicitação de Informação ao TCU</option>
+                    <option value="SLD">Sugestão de Emenda à LDO - Comissões</option>
+                    <option value="SOA">Sugestão de Emenda ao Orçamento - CLP</option>
+                    <option value="SOR">Sugestão de Emenda ao Orçamento - Comissões</option>
+                    <option value="SPA">Sugestão de Emenda ao PPA - CLP</option>
+                    <option value="SPA-R">Sugestão de Emenda ao PPA - revisão (CLP)</option>
+                    <option value="SPP">Sugestão de Emenda ao PPA - Comissões</option>
+                    <option value="SPP-R">Sugestão de Emenda ao PPA - revisão (Comissões)</option>
+                    <option value="SRAP">Sugestão de Requerimento de Audiência Pública</option>
+                    <option value="SRL">Sugestão de Emenda a Relatório</option>
+                    <option value="SSP">Subemenda Substitutiva de Plenário</option>
+                    <option value="STF">Ofício</option>
+                    <option value="SUC">Sugestão a Projeto de Consolidação de Leis</option>
+                    <option value="SUG">Sugestão</option>
+                    <option value="SUM">Súmula</option>
+                    <option value="TER">Termo de Implementação</option>
+                    <option value="TVR">Ato de Concessão e Renovação de Concessão de Emissora de Rádio e Televisão</option>
+                    <option value="VTS">Voto em Separado</option>
                 </select>
             </div>
         </div>
 
-        <div class="row linha-zebrada text-center padding-vertical">
-            <div class="col-xs-4"><h3>Lei da Maioridade Penal</h3><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-mao-clique.svg" alt="clique e saiba mais" class="posicionamento-mao"/></div>
-            <div class="col-xs-4"><h6>Prevê a redução da maioridade penal para 16 anos em caso de crimes graves</h6></div>
-            <div class="col-xs-4"><span class="icon-ico-a-favor-1"></span><br><span class="icon-ico-contra-2"></span></div>
-        </div>
-        <div class="row linha-zebrada text-center padding-vertical">
-            <div class="col-xs-4"><h3>Lei da Maioridade Penal</h3><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-mao-clique.svg" alt="clique e saiba mais" class="posicionamento-mao"/></div>
-            <div class="col-xs-4"><h6>Prevê a redução da maioridade penal para 16 anos em caso de crimes graves</h6></div>
-            <div class="col-xs-4"><span class="icon-ico-a-favor-1"></span><br><span class="icon-ico-contra-2"></span></div>
-        </div>
-        <div class="row linha-zebrada text-center padding-vertical">
-            <div class="col-xs-4"><h3>Lei da Maioridade Penal</h3><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-mao-clique.svg" alt="clique e saiba mais" class="posicionamento-mao"/></div>
-            <div class="col-xs-4"><h6>Prevê a redução da maioridade penal para 16 anos em caso de crimes graves</h6></div>
-            <div class="col-xs-4"><span class="icon-ico-a-favor-1"></span><br><span class="icon-ico-contra-2"></span></div>
+        <div class="areaDeOpniao">
+            
         </div>
 
     </div>

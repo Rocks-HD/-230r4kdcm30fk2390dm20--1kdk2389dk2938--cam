@@ -29,5 +29,22 @@ angular.module('camara')
             });
         };
 
+
+        /**
+         * Lista apenas as proposições votadas em plenario
+         */
+        this.listarProposicoesVotadasEmPlenario = function(ano, tipo) 
+        {
+            return TGProposicoes.listarProposicoesVotadasEmPlenario(ano, tipo);
+        };
+
+
+        /**
+         * detalhes das proposicoes
+         */
+        this.detalhesProposicoes = function(arrayCodigos) 
+        {
+            return TGProposicoes.detalhesProposicoes(arrayCodigos);
+        };
     }]);
         

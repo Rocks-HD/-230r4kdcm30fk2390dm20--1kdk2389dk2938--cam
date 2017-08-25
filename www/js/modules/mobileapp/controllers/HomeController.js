@@ -8,7 +8,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('HomeController', ['$scope', '$location', 'ModelDeputados', 'ModelGeral', function HomeController($scope, $location, ModelDeputados, ModelGeral) {
+    .controller('HomeController', ['$scope', '$location', '$timeout', 'ModelDeputados', 'ModelGeral', function HomeController($scope, $location, $timeout, ModelDeputados, ModelGeral) {
         $scope.APPLICATION_ENV  = ModelDeputados.APPLICATION_ENV;
         $scope.options;
         $scope.msgPainel;
@@ -121,12 +121,29 @@ angular.module('camara')
         
         
         /**
+         * Ação quando o usuário selecionar um candidato
+         * 
+         * @returns {void}
+         */
+        $scope.compararCandidatos = function() 
+        {
+            if ($scope.dpSelecionado1 != 0 && $scope.dpSelecionado2 != 0) {
+                if ($(".ajaxCarregando").length == 0) {
+                    $scope.redirecionar('/comparar/'+ $scope.dpSelecionado1+'-'+$scope.dpSelecionado2);
+                } else {
+                    $timeout(function() {
+                        $scope.compararCandidatos();
+                    }, 10000);
+                }
+            }
+        };
+        
+        
+        /**
          * 
          */
         $(document).on("click", ".btn-comparar button", function() {
-            if ($scope.dpSelecionado1 != 0 && $scope.dpSelecionado2 != 0) {
-                $scope.redirecionar('/comparar/'+ $scope.dpSelecionado1+'-'+$scope.dpSelecionado2);
-            }
+            $scope.compararCandidatos();
         });
         
         /**
@@ -160,6 +177,29 @@ angular.module('camara')
             $scope.listaDeputados(lstDeputados, true);            
         });
 
+        /**
+         * Função que é chamada quando um usuário clica sobre um deputado
+         * 
+         * @param {int} coDeputado
+         * @returns {void}
+         */
+        $scope.selecionarDeputado = function(coDeputado, infoSelecionado) 
+        {
+            if ($("#deputadoSelecionado1 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado2 != coDeputado ) {
+                var infoDeputado = ModelDeputados.informacaoDoDeputado(coDeputado);
+                $.when(infoDeputado).then(function(r) {
+                    $("#deputadoSelecionado1").html(infoSelecionado);
+                    $scope.dpSelecionado1 = coDeputado;
+                });
+            } else if ($("#deputadoSelecionado2 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado1 != coDeputado ) {
+                var infoDeputado = ModelDeputados.informacaoDoDeputado(coDeputado);
+                $.when(infoDeputado).then(function(r) {
+                    $("#deputadoSelecionado2").html(infoSelecionado);
+                    $scope.dpSelecionado2 = coDeputado;
+                });
+            }
+        };
+
 
         /**
          * ON: Executa ação quando um deputado for selecionado, seleção p/ comparação ou removido
@@ -174,22 +214,12 @@ angular.module('camara')
             clicks++; 
 
             if (clicks == 1) {
-                
                 timer = setTimeout(function() {
                     var infoSelecionado = $(self).html(),
                         coDeputado      = $(self).attr('data-id');
-
-                    if ($("#deputadoSelecionado1 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado2 != coDeputado ) {
-                        $("#deputadoSelecionado1").html(infoSelecionado);
-                        ModelDeputados.informacaoDoDeputado(coDeputado);
-                        $scope.dpSelecionado1 = coDeputado;
-                    } else if ($("#deputadoSelecionado2 img").attr('src') == $scope.imgSelecionar && $scope.dpSelecionado1 != coDeputado ) {
-                        $("#deputadoSelecionado2").html(infoSelecionado);
-                        ModelDeputados.informacaoDoDeputado(coDeputado);
-                        $scope.dpSelecionado2 = coDeputado;
-                    }
-                    clicks = 0;
                     
+                    $scope.selecionarDeputado(coDeputado, infoSelecionado);
+                    clicks = 0;
                 }, DELAY);
             } else {
                 clearTimeout(timer);  

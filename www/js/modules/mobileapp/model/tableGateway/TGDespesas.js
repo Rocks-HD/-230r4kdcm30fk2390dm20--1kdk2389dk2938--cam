@@ -55,6 +55,8 @@ angular.module('camara')
         {          
             try {
                 if (typeof(Storage) !== "undefined") {
+                    console.log('despesas:');
+                    console.log(lstDespesas);
                     localStorage.setItem('despesas_'+ coDeputado, JSON.stringify(lstDespesas));
                 } else {
                     console.log('O dispositivo não permite salvar informações!');
