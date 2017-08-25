@@ -115,7 +115,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 /*TELAS*/
 .conheca-seu-deputado{}
-.conheca-seu-deputado .dados-do-deputado{word-wrap: break-word; font-size: 12px;}
+.conheca-seu-deputado .dados-do-deputado{word-wrap: break-word; font-size: 12px; display:flow-root;}
 .conheca-seu-deputado .posicao-do-deputado{border: 2px solid white;}
 .conheca-seu-deputado .foto-conheca-seu-deputado{width:45%;}
 .ranking-deputados .linha-zebrada p{margin-top:5px;}
