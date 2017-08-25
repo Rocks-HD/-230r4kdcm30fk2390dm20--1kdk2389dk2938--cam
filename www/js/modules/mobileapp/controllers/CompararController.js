@@ -138,7 +138,7 @@ angular.module('camara')
         {
             $timeout(function() {
                 $scope.preencherGrafico(coDeputado1, coDeputado2);
-            }, 1000);
+            }, 5000);
         };
         
         

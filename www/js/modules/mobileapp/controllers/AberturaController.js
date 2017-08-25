@@ -24,9 +24,11 @@ angular.module('camara')
          */
         angular.element(document).ready(function() {
             var lstDeputados = ModelDeputados.listarDeputados(1);
+            $(".glyphicon-menu-hamburger").parent().hide();
 
             $.when(lstDeputados).then(function(r) {
                 $timeout(function() {
+                    $(".glyphicon-menu-hamburger").parent().show();
                     window.location.hash = 'home';
                 }, 10000);
             });
