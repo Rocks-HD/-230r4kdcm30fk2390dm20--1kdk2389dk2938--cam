@@ -62,10 +62,10 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 .texto-maiusculo{text-transform: uppercase;} 
 .line-height{line-height: 1.6em;}
-.texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
-.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;  line-height:1;}
-.texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700;}
-.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:180%; font-weight: 700; line-height:1;}
+.texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;}
+.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;  line-height:1;}
+.texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;}
+.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700; line-height:1;}
 .texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-cinza{color:#999; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-explicativo{color:#111; font-size:12px; text-align: justify;}
@@ -146,7 +146,7 @@ nav.menu-principal{display:none; border-bottom:10px solid #5ab946; margin-top:-1
 div.compare-os-deputados{background-color:#d2d2d2; padding-top:15px; padding-bottom: 15px; }
 div.compare-os-deputados img{width:100%; border:2px dashed #dcdcdc; background-color:white;}
 div.compare-os-deputados .btn-comparar{margin-top:2%;}
-div.compare-os-deputados .btn-comparar p{font-size: 8px; margin-top:13px;}
+div.compare-os-deputados .btn-comparar p{font-size: 11px; margin-top:8px;}
 div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
 div.compare-os-deputados h4{display:none;}
 
@@ -201,7 +201,7 @@ div.rodape img{width:100%;}
 .contentCarregando .carregando-pai .ico-carregando-3{animation:ico-carregando-3 1s ease-in infinite; margin-top:-74px; animation-direction: alternate; }
 .contentCarregando .carregando-pai .ico-carregando-4{margin-top:75px;}
 
-.ajaxCarregando{background-color: #68d0cd; color: #FFFFFF; display: none; font-size: 13px; font-weight: bold; height: 5px; left: 0px; line-height: 35px; margin: 0; position: fixed; text-align: center; top: 0px; width: 100%; z-index: 100000;}
+.ajaxCarregando{background-color: #00ff00; color: #FFFFFF; display: none; font-size: 13px; font-weight: bold; height: 5px; left: 0px; line-height: 35px; margin: 0; position: fixed; text-align: center; top: 0px; width: 100%; z-index: 100000;}
 
 .processo-1{animation: processo-1 1s linear;}
 .processo-2{animation: processo-2 1.25s linear;}
@@ -247,7 +247,7 @@ div.rodape img{width:100%;}
 }
 
 @media screen and (max-width: 575px) {
-
+    div.compare-os-deputados .btn-comparar p{font-size: 12px;}
 }
 
 @media screen and (min-width: 576px) and (max-width:767px) {
@@ -275,7 +275,7 @@ div.rodape img{width:100%;}
     .ranking-deputados .texto-branco{font-size:1.4em;}
     header #btn-menu{width:100px; height:100px; margin-bottom:-10%;}
     header #btn-menu span{font-size:50px;}
-    div.compare-os-deputados .btn-comparar p{font-size:10px;}
+    div.compare-os-deputados .btn-comparar p{font-size:13px;}
 }
 
 @media (min-width: 768px) and (max-width:991px) {
