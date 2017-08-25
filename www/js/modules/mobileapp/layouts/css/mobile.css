@@ -60,7 +60,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 .muda-cor-btn-menu{color:#2B6230 !important;}
 
-.texto-maiusculo{text-transform: uppercase;}
+.texto-maiusculo{text-transform: uppercase;} 
 .line-height{line-height: 1.6em;}
 .texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;}
 .texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;  line-height:1;}
