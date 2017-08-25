@@ -28,7 +28,7 @@ angular.module('camara')
             $.when(lstDeputados).then(function(r) {
                 $timeout(function() {
                     window.location.hash = 'home';
-                }, 1000);
+                }, 10000);
             });
         });
 

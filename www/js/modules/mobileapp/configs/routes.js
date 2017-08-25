@@ -68,7 +68,7 @@ angular.module('camara')
             noReload: false
          }).when('/processo', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/processo.html',
-            controller: 'HomeController',
+            controller: 'ProcessoController',
             noReload: false
         }).when('/creditos', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',

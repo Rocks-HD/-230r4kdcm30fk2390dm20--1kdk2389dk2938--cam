@@ -71,6 +71,41 @@ angular.module('camara')
             return lstProposicoes;
         };        
         
+        
+        /**
+         * 
+         * @param {type} ano
+         * @param {type} tipo
+         * @returns {jqXHR}
+         */
+        this.listarProposicoesVotadasEmPlenario = function(anoBusca, tipoBusca) 
+        {
+            var url = 'http://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ListarProposicoesVotadasEmPlenario?ano='+anoBusca+'&tipo=';
+
+            return $.get(url, {}, function(r) {
+                return $.xml2json(r)['#document']['proposicoes']['proposicao'];
+            }, 'xml');
+        };
+        
+        
+        /**
+         * 
+         * @param array arrayCod
+         * @returns {jqXHR}
+         */
+        this.detalhesProposicoes = function(arrayCod) 
+        {
+            var lstId = Object.keys(arrayCod).join('&id=');
+            console.log(lstId);
+            
+            var url = 'https://dadosabertos.camara.leg.br/api/v2/proposicoes?id='+lstId+'&itens=100&ordem=ASC&ordenarPor=id';
+            var data = {};
+
+            return $.get(url, data, function(r) {
+                return r;
+            }, 'json');
+        };
+              
     }]);
         
 

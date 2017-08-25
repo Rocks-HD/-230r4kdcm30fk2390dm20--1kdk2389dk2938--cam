@@ -103,6 +103,7 @@ angular.module('camara')
             if (typeof(Storage) !== "undefined") {
                 localStorage.setItem('deputados_'+ dtVisita, JSON.stringify(lstDeputados));
             } else {
+                console.log(lstDeputados);
                 console.log('O dispositivo não permite salvar informações!');
             }
             
@@ -121,14 +122,15 @@ angular.module('camara')
             if (typeof(Storage) !== "undefined") {
                 if (infoDeputado[0]['id'] == coDeputado) {
                     localStorage.setItem('deputado_'+ coDeputado, JSON.stringify(infoDeputado));
+                    return infoDeputado;
                 } else {
-                    console.log('sistema tentou salvar um candidato com informações diferentes');
+                    localStorage.setItem('deputado_'+ coDeputado, JSON.stringify(infoDeputado[infoDeputado.length-1]));
+                    return infoDeputado[infoDeputado.length-1];
                 }
             } else {
                 console.log('O dispositivo não permite salvar informações!');
             }
             
-            return infoDeputado;
         };
         
         
