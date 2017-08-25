@@ -20,6 +20,8 @@ angular.module('camara')
             showToolTips: true,
             tooltipEvents: ["mousemove", "touchstart", "touchmove"]
         };
+        
+        $scope.count = 0;
 
 
         /**
@@ -31,7 +33,7 @@ angular.module('camara')
         $scope.preencherInfoDeputado = function(infoDep) 
         {
             try {
-                var infoDeputado = typeof infoDep['dados'] != 'undefined' ? [infoDep['dados']] : infoDep;
+                var infoDeputado = typeof infoDep['dados'] != 'undefined' ? [infoDep['dados']] : (typeof infoDep[0] != 'undefined' ? infoDep : [infoDep]);
                 
                 $(".nomeDestaque").append(infoDeputado[0]['ultimoStatus']['nomeEleitoral']+' ('+infoDeputado[0]['ultimoStatus']['siglaPartido'] +'-'+infoDeputado[0]['ultimoStatus']['siglaUf']+')' );
                 $(".infoNome").append(infoDeputado[0]['nomeCivil']);
@@ -42,7 +44,6 @@ angular.module('camara')
                 $(".infoTelefone").append(infoDeputado[0]['ultimoStatus']['gabinete']['telefone']);
                 $(".infoEmail").append(infoDeputado[0]['ultimoStatus']['gabinete']['email']);
                 $(".infoEscolaridade").append(infoDeputado[0]['escolaridade']);
-                
             } catch (e) {console.log(e);}
         };
 
@@ -129,13 +130,31 @@ angular.module('camara')
                     return JSON.stringify( infoRelatorio );
                 });
             } else {
-                $timeout(function() {
-                    $scope.infoRelatorioDespesas();
-                }, 7000);
+                $scope.timeOutInfoRelatorioDespesas();
             }
-            
         };
 
+
+        /**
+         * 
+         * @returns {undefined}
+         */
+        $scope.timeOutInfoRelatorioDespesas = function() 
+        {
+            if (++$scope.count == 7) {
+                if ($(".ajaxCarregando").length == 0) {
+                    $timeout(function() {
+                        $scope.infoRelatorioDespesas();
+                    }, 10000);
+                } else {
+                    $timeout(function() {
+                        $scope.infoRelatorioDespesas();
+                    }, 10000);
+                }
+            } else {
+                $("canvas").parent().html('Erro no webservice...');
+            }
+        };
 
         /**
          * Função que inicia a tela

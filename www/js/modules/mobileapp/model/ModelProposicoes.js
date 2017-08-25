@@ -33,9 +33,9 @@ angular.module('camara')
         /**
          * Lista apenas as proposições votadas em plenario
          */
-        this.listarProposicoesVotadasEmPlenario = function(ano, tipo) 
+        this.listarProposicoesVotadasEmPlenario = function(ano) 
         {
-            return TGProposicoes.listarProposicoesVotadasEmPlenario(ano, tipo);
+            return TGProposicoes.listarProposicoesVotadasEmPlenario(ano);
         };
 
 
@@ -45,6 +45,26 @@ angular.module('camara')
         this.detalhesProposicoes = function(arrayCodigos) 
         {
             return TGProposicoes.detalhesProposicoes(arrayCodigos);
+        };
+        
+        /**
+         * 
+         * @param {type} opniao
+         * @returns {undefined}
+         */
+        this.salvarOpiniao = function(opniao) 
+        {
+            return TGProposicoes.salvarOpiniao(opniao);
+        };
+        
+        /**
+         * 
+         * @param {type} proposicao
+         * @returns {undefined}
+         */
+        this.listarOpinioes = function() 
+        {
+            return TGProposicoes.listarOpinioes();
         };
     }]);
         
