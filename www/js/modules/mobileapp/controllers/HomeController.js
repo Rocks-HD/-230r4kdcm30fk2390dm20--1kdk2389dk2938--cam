@@ -16,6 +16,7 @@ angular.module('camara')
         $scope.imgSelecionar    = './js/modules/mobileapp/layouts/imagens/background/background-deputado.svg';
         $scope.dpSelecionado1   = 0;
         $scope.dpSelecionado2   = 0;
+        $scope.lstEstados       = new Array();
 
 
         /**
@@ -78,8 +79,15 @@ angular.module('camara')
             var lstEstados = ModelGeral.listarEstadosLocal();
             
             for (var i in lstEstados) {
-                $("#ds_estado").append('<option value="'+ i +'">'+ i +'</option>');
+                if (lstEstados[i] != '') {
+                    $scope.lstEstados.push({
+                        cod     : i,
+                        name    : i,
+                        total   : lstEstados[i]
+                    });                    
+                }
             }
+            $scope.lstEstados = angular.copy($scope.lstEstados);
         };
 
 
@@ -139,32 +147,28 @@ angular.module('camara')
         };
         
         
-        /**
-         * 
-         */
-        $(document).on("click", ".btn-comparar button", function() {
-            $scope.compararCandidatos();
-        });
         
         /**
          * ON: Verifica se o usuário clicou sobre o input:radio
          */
-        $(document).on("change", "#order-1, #order-2", function() {
+        $scope.orderarDeputados = function() 
+        {
             var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
             
-            $scope.listaDeputados(lstDeputados, true);            
-        });
-        
-        
+            $scope.listaDeputados(lstDeputados, true);                        
+        };
+
+            
         /**
          * ON: Verifica se o usuário selecionou algum estado
          */
-        $(document).on("change", "#ds_estado", function() {
+        $scope.filtrarEstado = function() 
+        {
             var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
             
             $scope.filter['ds_estado'] = $("#ds_estado").val();
-            $scope.listaDeputados(lstDeputados, true);            
-        });
+            $scope.listaDeputados(lstDeputados, true);   
+        };
         
         
         /**

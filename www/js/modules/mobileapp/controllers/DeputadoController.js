@@ -141,11 +141,11 @@ angular.module('camara')
          */
         $scope.timeOutInfoRelatorioDespesas = function() 
         {
-            if (++$scope.count == 7) {
+            if (++$scope.count <= 4) {
                 if ($(".ajaxCarregando").length == 0) {
                     $timeout(function() {
-                        $scope.infoRelatorioDespesas();
-                    }, 10000);
+                        $scope.timeOutInfoRelatorioDespesas();
+                    }, 5000);
                 } else {
                     $timeout(function() {
                         $scope.infoRelatorioDespesas();
