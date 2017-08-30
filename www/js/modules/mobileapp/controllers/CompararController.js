@@ -104,29 +104,31 @@ angular.module('camara')
         {
             var despesasDep1    = ModelDespesas.gerarEstatistica(coDeputado1);
 
-            $.when(despesasDep1).then(function(data1) {
-                if (typeof data1['DGM']['undefined'] == 'undefined') {
-                    var despesasDep2    = ModelDespesas.gerarEstatistica(coDeputado2);
+            if ($(".ajaxCarregando").length == 0) {
+                $.when(despesasDep1).then(function(data1) {
+                    if (typeof data1['DGM']['undefined'] == 'undefined') {
+                        var despesasDep2    = ModelDespesas.gerarEstatistica(coDeputado2);
 
-                    $.when(despesasDep2).then(function(data2) {
-                        if (typeof data2['DGM']['undefined'] == 'undefined') {
-                            for (var i in data1['GTA']) { $scope.data1[0] += parseFloat(data1['GTA'][i]); }
-                            $scope.data1[0] = number_format($scope.data1[0], 2, '.', '');
-                            
-                            for (var i in data2['GTA']) { $scope.data1[1] += parseFloat(data2['GTA'][i]); }
-                            $scope.data1[1] = number_format($scope.data1[1], 2, '.', '');
-                            
-                            $(".carregandoGrafico1").hide();
-                            $(".grafico1").show();
-                            
-                        } else {
-                            $scope.timeOutPreencherGrafico(coDeputado1, coDeputado2);
-                        }
-                    });
-                } else {
-                    $scope.timeOutPreencherGrafico(coDeputado1, coDeputado2);
-                }
-            });
+                        $.when(despesasDep2).then(function(data2) {
+                            if (typeof data2['DGM']['undefined'] == 'undefined') {
+                                for (var i in data1['GTA']) { $scope.data1[0] += parseFloat(data1['GTA'][i]); }
+                                $scope.data1[0] = number_format($scope.data1[0], 2, '.', '');
+
+                                for (var i in data2['GTA']) { $scope.data1[1] += parseFloat(data2['GTA'][i]); }
+                                $scope.data1[1] = number_format($scope.data1[1], 2, '.', '');
+
+                                $(".carregandoGrafico1").hide();
+                                $(".grafico1").show();
+
+                            } else {
+                                $scope.timeOutPreencherGrafico(coDeputado1, coDeputado2);
+                            }
+                        });
+                    } else {
+                        $scope.timeOutPreencherGrafico(coDeputado1, coDeputado2);
+                    }
+                });
+            }
         };        
         
         

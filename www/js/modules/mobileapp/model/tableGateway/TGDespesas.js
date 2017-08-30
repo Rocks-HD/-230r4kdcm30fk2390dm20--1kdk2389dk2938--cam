@@ -15,6 +15,13 @@ angular.module('camara')
         this.infoAnterior       = {};
         this.erroLstDespesas    = false;
         
+        /**
+         * 
+         * @param {type} coDeputado
+         * @param {type} ano
+         * @param {type} pagina
+         * @returns {unresolved}
+         */
         this.listarDespesas = function(coDeputado, ano, pagina) 
         {
             try {
@@ -32,8 +39,8 @@ angular.module('camara')
                                     rootObj.lstDepesas.push(r['dados'][i]);
                                 }
                             } else {
-                                if (ano >= 2015 && ano <= 2019) {
-                                    rootObj.listarDespesas(coDeputado, ++ano, 1);
+                                if (ano++ >= 2015 && ano < 2019) {
+                                    rootObj.listarDespesas(coDeputado, ano, 1);
                                 } else {
                                     return rootObj.salvarDespesas(rootObj.lstDepesas, coDeputado);
                                 }

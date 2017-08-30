@@ -11,8 +11,8 @@
             <div class="col-xs-8">
                 <form action="" method="get">
                     <input name="ds_nome" id="ds_nome" type="text" placeholder="Procure pelo nome" autocomplete="off">
-                    <select name="ds_estado" id="ds_estado">
-                        <option value="">Estado</option>
+                    <select name="ds_estado" id="ds_estado" ng-model="lstEstados" ng-change="filtrarEstado()">
+                        <option ng-repeat="estado in lstEstados" value="{{estado.cod}}">{{estado.cod}}</option>
                     </select>
                     <select name="ds_partido" id="ds_partido">
                         <option value="">Partido</option>
@@ -26,8 +26,8 @@
                 </form>
             </div>
             <div class="col-xs-4 option">
-                <label><input name="order" value="1" id="order-1" type="radio" name="teste"> <span class="text-option"> Ordem A - Z</span></label><br>
-                <label><input name="order" value="2" id="order-2"  type="radio" name="teste"> <span class="text-option"> Ordem Z - A</span></label>
+                <label><input name="order" value="1" id="order-1" type="radio" ng-click="orderarDeputados()"> <span class="text-option"> Ordem A - Z</span></label><br>
+                <label><input name="order" value="2" id="order-2" type="radio" ng-click="orderarDeputados()"> <span class="text-option"> Ordem Z - A</span></label>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
                 <img src="./js/modules/mobileapp/layouts/imagens/background/background-deputado.svg" alt="setas">
             </div>
             <div class="col-xs-4 text-center btn-comparar">
-                <button class="btn-verde">Comparar</button>
+                <button class="btn-verde" ng-click="compararCandidatos()">Comparar</button>
                 <p><b>Escolheu errado? Basta clicar na foto(s) ao lado</b></p>
                 
             </div>
