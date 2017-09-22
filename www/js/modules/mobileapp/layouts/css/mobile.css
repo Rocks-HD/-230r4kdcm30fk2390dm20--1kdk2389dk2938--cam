@@ -17,6 +17,8 @@ h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5p
 h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; font-size:90%; text-transform: uppercase; position: relative; z-index: 300}
 .btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
 .btn-verde:focus{background-color:#3f7f3c; border:1px solid #2d5d2b;}
+.btn-roxo{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#601b58; border:1px solid #3f123c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+.btn-roxo:focus{background-color:#3f123c; border:1px solid #3f123c;}
 .btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
 .btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
 .ver-mais-azul{background-color:#07546B; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
@@ -83,6 +85,7 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .fundo-roxo{background-color:#601B58;}
 .fundo-vermelho{background-color:#b21f24;}
 .fundo-roxo-claro{background-color:#a93b95;}
+.fundo-dfdfdf{background-color:#dfdfdf;}
 
 .graficos{}
 .graficos h2{color:#111; font-size:18px; text-transform: uppercase;}
@@ -176,6 +179,9 @@ div.conteudo-opine-titulo{background-color:#184071; margin-top:15px;}
 div.conteudo-opine-titulo h2 span{color:#77b2e0;}
 div.texto-opine{padding:15px; color:white; font-family:"Open Sans Condensed"; font-size:12px; background:#599fd6; text-align:center;}
 div.texto-opine p{text-align: justify;}
+
+div.camara-em-foco{}
+div.camara-em-foco{}
 
 div.rodape{display: flex; align-items: center; background:blue; margin-top:20px; background-image: linear-gradient(135deg, #8ac53f 10%, #469543 100%); padding:15px;}
 div.rodape img{width:100%;}

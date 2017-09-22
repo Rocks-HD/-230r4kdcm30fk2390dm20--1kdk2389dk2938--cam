@@ -46,6 +46,10 @@ angular.module('camara')
             templateUrl: './js/modules/mobileapp/views/scripts/home/opiniao.html',
             controller: 'OpiniaoController',
             noReload: false
+        }).when('/camara-em-foco', {
+            templateUrl: './js/modules/mobileapp/views/scripts/home/camara-em-foco.html',
+            controller: 'OpiniaoController',
+            noReload: false
         }).when('/ranking', {
             templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',
             controller: 'RankingController',
