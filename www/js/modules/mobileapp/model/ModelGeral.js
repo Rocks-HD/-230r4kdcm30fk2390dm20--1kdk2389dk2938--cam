@@ -15,6 +15,12 @@ angular.module('camara')
         {
             return TGGeral.listarEstadosLocal();
         };
+                
+        
+        this.listarPartidosLocal = function() 
+        {
+            return TGGeral.listarPartidosLocal();
+        };
         
         
         

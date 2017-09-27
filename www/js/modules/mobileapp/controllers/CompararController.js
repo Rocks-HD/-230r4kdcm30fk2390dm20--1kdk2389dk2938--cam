@@ -40,8 +40,6 @@ angular.module('camara')
             $.when(infoDeputado1).then(function(info1) {
                 try {
                     $scope.InfoDeputado1 = typeof info1['dados'] != 'undefined' ? info1['dados'] : info1;
-
-//                    console.log($scope.InfoDeputado1);
                     $(".imgCandidato1").attr('src', $scope.InfoDeputado1['0']['ultimoStatus']['urlFoto']);
                     $(".nomeCandidato1").html($scope.InfoDeputado1['0']['ultimoStatus']['nomeEleitoral']);
                     $(".partidoCandidato1").html($scope.InfoDeputado1['0']['ultimoStatus']['siglaPartido'] +'/'+$scope.InfoDeputado1['0']['ultimoStatus']['siglaUf']);
@@ -53,8 +51,6 @@ angular.module('camara')
                     $.when(infoDeputado2).then(function(info2) {
                         try {
                             $scope.InfoDeputado2   = typeof info2['dados'] != 'undefined' ? info2['dados'] : (typeof info2[0] != 'undefined' ? [info2[0]] : [info2]);
-
-//                            console.log($scope.InfoDeputado2);
                             $(".imgCandidato2").attr('src', $scope.InfoDeputado2['0']['ultimoStatus']['urlFoto']);
                             $(".nomeCandidato2").html($scope.InfoDeputado2['0']['ultimoStatus']['nomeEleitoral']);
                             $(".partidoCandidato2").html($scope.InfoDeputado2['0']['ultimoStatus']['siglaPartido'] +'/'+$scope.InfoDeputado2['0']['ultimoStatus']['siglaUf']);
@@ -96,9 +92,9 @@ angular.module('camara')
         
         /**
          * 
-         * @param {type} data1
-         * @param {type} data2
-         * @returns {undefined}
+         * @param {int} coDeputado1
+         * @param {int} coDeputado2
+         * @returns {void}
          */
         $scope.preencherGrafico = function(coDeputado1, coDeputado2) 
         {
@@ -110,6 +106,7 @@ angular.module('camara')
                         var despesasDep2    = ModelDespesas.gerarEstatistica(coDeputado2);
 
                         $.when(despesasDep2).then(function(data2) {
+                            console.log('akljflkajsfçlksjflçksjflçksaf');
                             if (typeof data2['DGM']['undefined'] == 'undefined') {
                                 for (var i in data1['GTA']) { $scope.data1[0] += parseFloat(data1['GTA'][i]); }
                                 $scope.data1[0] = number_format($scope.data1[0], 2, '.', '');
@@ -128,6 +125,8 @@ angular.module('camara')
                         $scope.timeOutPreencherGrafico(coDeputado1, coDeputado2);
                     }
                 });
+            } else {
+                $scope.timeOutPreencherGrafico(coDeputado1, coDeputado2);
             }
         };        
         
@@ -142,6 +141,7 @@ angular.module('camara')
         {
             $timeout(function() {
                 $scope.preencherGrafico(coDeputado1, coDeputado2);
+                console.log('aqui');
             }, 5000);
         };
         

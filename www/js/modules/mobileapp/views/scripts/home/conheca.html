@@ -29,8 +29,18 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 graficos padding-vertical text-center">
-                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data1" options="options1" chart-options="options1" chart-legend="true" chart-labels="labels1"></canvas>
-                <div class="texto-cinza texto-grande padding-vertical valorTotal"></div>
+                <div class="contentCarregando carregandoGrafico1">
+                    <div class="carregando-pai">
+                        <div class="ico-carregando-1"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-1.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-2"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-2.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-3"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-3.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-4"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-4.svg" alt="Projeto Legislar"/></div>
+                    </div>
+                </div>
+                <div class="grafico1" style="display: none;">
+                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data1" options="options1" chart-options="options1" chart-legend="true" chart-labels="labels1"></canvas>
+                    <div class="texto-cinza texto-grande padding-vertical valorTotal"></div>
+                </div>
             </div>
         </div>
 
@@ -41,7 +51,17 @@
         </div>
         <div class="row">
             <div class="col-xs-12 graficos padding-vertical text-center">
-                <canvas id="bar" class="chart chart-line" chart-data="data2" chart-labels="labels2" chart-series="series2" options="barChartOptions2"></canvas>
+                <div class="contentCarregando carregandoGrafico2">
+                    <div class="carregando-pai">
+                        <div class="ico-carregando-1"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-1.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-2"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-2.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-3"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-3.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-4"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-4.svg" alt="Projeto Legislar"/></div>
+                    </div>
+                </div>
+                <div class="grafico2" style="display: none;">                
+                    <canvas id="bar" class="chart chart-line" chart-data="data2" chart-labels="labels2" chart-series="series2" options="barChartOptions2"></canvas>
+                </div>
             </div>
         </div>
 

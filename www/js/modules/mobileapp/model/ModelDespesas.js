@@ -41,37 +41,44 @@ angular.module('camara')
          */
         this.gerarEstatistica = function(coDeputado) 
         {
-            try {
-                var tpDespesa   = '', 
-                    anoMes      = '',
-                    lstDespesas = TGDespesas.listarDespesas(coDeputado, 2015, null),
-                    result   = {
-                        'VGM'    : {}, //ValoresGastosMensais
-                        'DGM'    : {}, //DescricaoDosGastosMensais
-                        'MB'     : {}, //Maior beneficiário
-                        'NCNPJ'  : {}, //Nome do CNPJ
-                        'GTA'    : {2015:0, 2016:0, 2017:0, 2018:0},//Gastos Totais Anuais
-                        'arrayTpServico' : {}
-                    };
-                    
-                    
-//                console.log(lstDespesas);
-                for (var i in lstDespesas) {
-                    tpDespesa   = lstDespesas[i]['tipoDespesa'];
-                    anoMes      = lstDespesas[i]['ano'] +'-'+ str_pad(lstDespesas[i]['mes'], 2, 0, 'STR_PAD_LEFT');
-                    result['arrayTpServico'][tpDespesa] = 1;
-                    
-                    var valor               = typeof result['VGM'][anoMes] != 'undefined' ? result['VGM'][anoMes] : 0;
-                    var valorTpDespesa      = typeof result['DGM'][tpDespesa] != 'undefined' ? result['DGM'][tpDespesa] : 0;
-                    var valorBeneficiario   = typeof result['MB'][lstDespesas[i]['cnpjCpfFornecedor']] != 'undefined' ? result['MB'][lstDespesas[i]['cnpjCpfFornecedor']] : 0;
+            var lstEstatistica = TGDespesas.listarEstatisticas(coDeputado);
+            if (lstEstatistica == null) {
+                try {
+                    var tpDespesa   = '', 
+                        anoMes      = '',
+                        lstDespesas = TGDespesas.listarDespesas(coDeputado, 2015, null),
+                        result   = {
+                            'VGM'    : {}, //ValoresGastosMensais
+                            'DGM'    : {}, //DescricaoDosGastosMensais
+                            'MB'     : {}, //Maior beneficiário
+                            'NCNPJ'  : {}, //Nome do CNPJ
+                            'GTA'    : {2015:0, 2016:0, 2017:0, 2018:0},//Gastos Totais Anuais
+                            'arrayTpServico' : {}
+                        };
 
-                    result['VGM'][anoMes] = parseFloat(valor) + parseFloat(lstDespesas[i]['valorDocumento']);
-                    result['DGM'][tpDespesa] = parseFloat(valorTpDespesa) + parseFloat(lstDespesas[i]['valorDocumento']);
-                    result['GTA'][lstDespesas[i]['ano']] += parseFloat(lstDespesas[i]['valorDocumento']);
-                    result['MB'][lstDespesas[i]['cnpjCpfFornecedor']] = valorBeneficiario +  parseFloat(lstDespesas[i]['valorDocumento']);
-                    result['NCNPJ'][lstDespesas[i]['cnpjCpfFornecedor']] = lstDespesas[i]['nomeFornecedor'];
-                }
-            } catch (e) {console.log(e);}
+                    for (var i in lstDespesas) {
+                        tpDespesa   = lstDespesas[i]['tipoDespesa'];
+                        anoMes      = lstDespesas[i]['ano'] +'-'+ str_pad(lstDespesas[i]['mes'], 2, 0, 'STR_PAD_LEFT');
+                        result['arrayTpServico'][tpDespesa] = 1;
+
+                        var valor               = typeof result['VGM'][anoMes] != 'undefined' ? result['VGM'][anoMes] : 0;
+                        var valorTpDespesa      = typeof result['DGM'][tpDespesa] != 'undefined' ? result['DGM'][tpDespesa] : 0;
+                        var valorBeneficiario   = typeof result['MB'][lstDespesas[i]['cnpjCpfFornecedor']] != 'undefined' ? result['MB'][lstDespesas[i]['cnpjCpfFornecedor']] : 0;
+
+                        result['VGM'][anoMes] = parseFloat(valor) + parseFloat(lstDespesas[i]['valorDocumento']);
+                        result['DGM'][tpDespesa] = parseFloat(valorTpDespesa) + parseFloat(lstDespesas[i]['valorDocumento']);
+                        result['GTA'][lstDespesas[i]['ano']] += parseFloat(lstDespesas[i]['valorDocumento']);
+                        result['MB'][lstDespesas[i]['cnpjCpfFornecedor']] = valorBeneficiario +  parseFloat(lstDespesas[i]['valorDocumento']);
+                        result['NCNPJ'][lstDespesas[i]['cnpjCpfFornecedor']] = lstDespesas[i]['nomeFornecedor'];
+                        
+                        if (typeof result['VGM']['undefined-undefined'] == 'undefined') {
+                            TGDespesas.salvarEstatisticas(result, coDeputado);
+                        }
+                    }
+                } catch (e) {console.log(e);}
+            } else {
+                var result = lstEstatistica;
+            }
 
             return result;
         };

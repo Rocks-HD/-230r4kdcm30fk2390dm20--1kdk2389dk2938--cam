@@ -127,6 +127,9 @@ angular.module('camara')
 
                     $scope.layoutBeneficiarios(infoRelatorio);
 
+                    $(".carregandoGrafico1, .carregandoGrafico2").hide();
+                    $(".grafico1, .grafico2").show();
+
                     return JSON.stringify( infoRelatorio );
                 });
             } else {
@@ -168,7 +171,6 @@ angular.module('camara')
                     infoDeputado = ModelDeputados.informacaoDoDeputado(coDeputado);
                     
                 $.when(infoDeputado).then(function(infoDep) {
-                    ModelDespesas.listarDespesas(coDeputado, 2015, 1);
                     $scope.preencherInfoDeputado(infoDep);
                     
                     var lstComissoes = ModelDeputados.listarComissoes(coDeputado);

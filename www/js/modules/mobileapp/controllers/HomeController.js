@@ -17,6 +17,7 @@ angular.module('camara')
         $scope.dpSelecionado1   = 0;
         $scope.dpSelecionado2   = 0;
         $scope.lstEstados       = new Array();
+        $scope.lstPartidos      = new Array();
 
 
         /**
@@ -92,17 +93,13 @@ angular.module('camara')
 
 
         /**
-         * Insere no select:ds_estado os estados para formar filtro
+         * Insere no select:ds_partido os partidos para formar filtro
          * 
          * @returns {void}
          */
         $scope.listarPartidos = function() 
         {
-            var lstPartidos = ModelDeputados.listarPartidos();
-            
-            for (var i in lstPartidos) {
-                $("#ds_partido").append('<option value="'+ i +'">'+ i +'</option>');
-            }
+            $scope.lstPartidos = ModelDeputados.listarPartidos();
         };
 
         
@@ -149,9 +146,9 @@ angular.module('camara')
         
         
         /**
-         * ON: Verifica se o usuário clicou sobre o input:radio
+         * 
          */
-        $scope.orderarDeputados = function() 
+        $scope.ordenarDeputados = function() 
         {
             var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
             
@@ -161,25 +158,30 @@ angular.module('camara')
             
         /**
          * ON: Verifica se o usuário selecionou algum estado
+         * 
+         * @param string estadoSelect
          */
-        $scope.filtrarEstado = function() 
+        $scope.filtrarEstado = function(estadoSelect) 
         {
             var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
             
-            $scope.filter['ds_estado'] = $("#ds_estado").val();
+            $scope.filter['ds_estado'] = estadoSelect;
             $scope.listaDeputados(lstDeputados, true);   
         };
         
         
         /**
          * ON: Verifica se o usuário selecionou algum partido
+         * 
+         * @param string partidoSelect
          */
-        $(document).on("change", "#ds_partido", function() {
+        $scope.filtrarPartido = function(partidoSelect) 
+        {
             var lstDeputados = ModelDeputados.listarDeputadosLocal(1, true);
             
-            $scope.filter['ds_partido'] = $("#ds_partido").val();
+            $scope.filter['ds_partido'] = partidoSelect;
             $scope.listaDeputados(lstDeputados, true);            
-        });
+        };
 
         /**
          * Função que é chamada quando um usuário clica sobre um deputado

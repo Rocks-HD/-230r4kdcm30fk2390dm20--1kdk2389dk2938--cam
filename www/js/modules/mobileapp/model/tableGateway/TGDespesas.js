@@ -81,6 +81,27 @@ angular.module('camara')
         
         
         /**
+         * Salva as informações de despesas referentes a um determinado candidato
+         * 
+         * @param {object} lstEstatisticas
+         * @param {int} coDeputado
+         * @returns {object}
+         */
+        this.salvarEstatisticas = function(lstEstatisticas, coDeputado) 
+        {          
+            try {
+                if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem('estatisticas_'+ coDeputado, JSON.stringify(lstEstatisticas));
+                } else {
+                    console.log('O dispositivo não permite salvar informações!');
+                }
+            } catch (e) {console.log(e);}
+
+            return lstEstatisticas;
+        };
+        
+        
+        /**
          * 
          * @param {int} coDeputado
          * @returns {object}
@@ -92,6 +113,21 @@ angular.module('camara')
             } catch (e) {console.log(e);}
             
             return infoDeputado;
+        };        
+        
+        
+        /**
+         * 
+         * @param {int} coDeputado
+         * @returns {object}
+         */
+        this.listarEstatisticas = function(coDeputado) 
+        {
+            try {
+                var lstEstatisticas    = JSON.parse(localStorage.getItem('estatisticas_'+ coDeputado));
+            } catch (e) {console.log(e);}
+            
+            return lstEstatisticas;
         };        
         
     }]);

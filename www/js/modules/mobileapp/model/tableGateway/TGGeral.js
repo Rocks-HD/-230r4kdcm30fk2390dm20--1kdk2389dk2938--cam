@@ -97,6 +97,17 @@ angular.module('camara')
 
         };
         
+        
+        /**
+         * Função que preenche as informações do campo blocos partidários
+         * 
+         * @returns {void}
+         */
+        this.listarBlocosPartidarios = function() 
+        {
+            
+        }
+        
     }]);
         
 

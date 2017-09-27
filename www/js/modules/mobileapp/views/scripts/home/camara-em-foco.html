@@ -11,6 +11,8 @@
             </div>
         </div>
     </div>
+    
+    <!-- Representação por ESTADOS -->
     <div class="container">
         <div class="row margin-top-15">
             <div class="col-xs-12 padding-vertical titulo-azul">
@@ -19,11 +21,46 @@
         </div>
         <div class="row margin-top-15">
             <div class="col-xs-12">
-                <canvas id="myChart"></canvas>
+                <div class="contentCarregando carregandoGraficoEstado">
+                    <div class="carregando-pai">
+                        <div class="ico-carregando-1"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-1.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-2"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-2.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-3"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-3.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-4"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-4.svg" alt="Projeto Legislar"/></div>
+                    </div>
+                </div>
+                <div class="graficoEstado" style="display: none;">                
+                    <canvas id="pie" class="chart chart-pie" chart-data="dataEstado" options="optionsEstado" chart-options="optionsEstado" chart-legend="true" chart-labels="labelsEstado"></canvas>
+                </div>
             </div>
             <div class="col-xs-12 text-center">
-                <div class="texto-cinza texto-grande padding-vertical valorTotal">513 DEPUTADOS </div>
+                <div class="texto-cinza texto-grande padding-vertical valorTotal">{{nuDeputados}} DEPUTADOS </div>
             </div>
+        </div>
+    </div>
+    
+    
+    <!-- Representação por PARTIDOS -->
+    <div class="container">
+        <div class="row margin-top-15">
+            <div class="col-xs-12 padding-vertical titulo-azul">
+                <h2 class="texto-medio line-height"><span>REPRESENTATIVIDADE</span> POR PARTIDOS</h2> 
+            </div>
+        </div>
+        <div class="row margin-top-15">
+            <div class="col-xs-12">
+                <div class="contentCarregando carregandoGraficoPartido">
+                    <div class="carregando-pai">
+                        <div class="ico-carregando-1"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-1.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-2"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-2.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-3"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-3.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-4"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-4.svg" alt="Projeto Legislar"/></div>
+                    </div>
+                </div>
+                <div class="graficoPartido" style="display: none;">                
+                    <canvas id="pie" class="chart chart-pie" chart-data="dataPartido" options="optionsPartido" chart-options="optionsPartido" chart-legend="true" chart-labels="labelsPartido"></canvas>
+                </div>
+            </div>            
         </div>
     </div>
 
@@ -113,29 +150,5 @@
 </div>
 
 <script>
-
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'pie',
-        // The data for our dataset
-        data: {
-            labels: ["PB", "PI", "MS", "MA", "DF", "RR", "SC"],
-            datasets: [{
-                    backgroundColor: [
-                        '#599fd6',
-                        '#cccccb',
-                        '#184071',
-                        '#3e7bbe',
-                        '#77b2e0',
-                        '#6fccdd',
-                        '#3e7bbe'
-                    ],
-                    data: [10, 10, 5, 2, 20, 30, 45]
-                }]
-        },
-        // Configuration options go here
-        options: {}
-    });
 
 </script>

@@ -76,7 +76,7 @@ angular.module('camara')
         this.salvarProposicoesDeputadoLocal = function(coDeputado, lstProposicoes) 
         {           
             if (typeof(Storage) !== "undefined") {
-                localStorage.setItem('proposicoes_'+ coDeputado, JSON.stringify(lstProposicoes));
+                //localStorage.setItem('proposicoes_'+ coDeputado, JSON.stringify(lstProposicoes));
             } else {
                 console.log('O dispositivo não permite salvar informações!');
             }
