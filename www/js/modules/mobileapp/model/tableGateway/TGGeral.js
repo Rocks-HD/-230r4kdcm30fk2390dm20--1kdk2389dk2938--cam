@@ -12,6 +12,20 @@ angular.module('camara')
         this.APPLICATION_ENV    = selfTarget.indexOf("host.camaraapp") !== -1 ? 'development' : 'production';
         this.url                = this.APPLICATION_ENV == 'development' ? 'http://host.camaraapp' : 'http://webfans.com.br';  
 
+        /**
+         * Limpa as informações da base.
+         *   -- importante utilizar na inicialização da aplicação
+         *   
+         * @returns {void}
+         */
+        this.limparBaseGeral = function() 
+        {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.clear();
+            } else {
+                console.log('O dispositivo não permite salvar informações!');
+            }
+        };
         
         
         /**
@@ -105,8 +119,70 @@ angular.module('camara')
          */
         this.listarBlocosPartidarios = function() 
         {
+            try {
+                var rootObj     = this;
+                var infoBlocos  = rootObj.infoBlocosPartidarios();
+
+                if (infoBlocos == null || infoBlocos.length == 0) {
+                    return $.post('http://www.camara.leg.br/SitCamaraWS/Deputados.asmx/ObterPartidosBlocoCD', {idBloco: '', numLegislatura: ''}, function(r) {
+                        return rootObj.salvarBlocosPartidarios(r);
+                    });
+                }
+            } catch (e) {
+                console.log(e);
+            }
             
-        }
+            return infoBlocos;
+        };
+        
+        
+        /**
+         * Lista os blocos partidários
+         * 
+         * @returns {Array|Object}
+         */
+        this.infoBlocosPartidarios = function() 
+        {
+            try {
+                var dtVisita    = UtilsService._dataAtualVisita();
+                var infoBlocos  = JSON.parse(localStorage.getItem('blocos_'+ dtVisita));
+
+            } catch (e) {console.log(e);}
+            
+            return infoBlocos;
+        };
+        
+        
+        /**
+         * Função que preenche as informações do campo blocos partidários
+         * 
+         * @returns {void}
+         */
+        this.salvarBlocosPartidarios = function(lstBlocos) 
+        {
+            var dtVisita = UtilsService._dataAtualVisita();
+            
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('blocos_'+ dtVisita, JSON.stringify($.xml2json(lstBlocos)['#document']));
+                return $.xml2json(lstBlocos)['#document'];       
+            } else {
+                console.log('O dispositivo não permite salvar informações!');
+            }
+        };
+        
+        
+        /**
+         * 
+         * @returns {object}
+         */
+        this.listarOrgaos = function() 
+        {
+            var url = 'https://dadosabertos.camara.leg.br/api/v2/orgaos?itens=100&ordem=DESC&ordenarPor=sigla';
+
+            return $.get(url, {}, function(r) {
+                return r;
+            }, 'json');            
+        };        
         
     }]);
         

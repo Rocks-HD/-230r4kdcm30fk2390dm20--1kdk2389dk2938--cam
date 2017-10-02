@@ -48,6 +48,9 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .img-75{width:75%; height: auto;}
 .img-50{width:50%; height: auto;}
 
+.margin-left-10 {margin-left: 10px;}
+.padding-left-10 {padding-left: 10px;}
+
 .icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:4.6em;}
 .icon-ico-a-favor-1.active {color:#8AC53F;}
 .icon-ico-contra-2.active {color:#ED1F24;}
