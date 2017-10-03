@@ -93,6 +93,41 @@ angular.module('camara')
             return padraoBloco;
         };
         
+        
+        /**
+         * Lista os orgaos existentes e filtra o resultado para comissões permanentes
+         * 
+         * @returns {object}
+         */
+        this.listarOrgaos = function() 
+        {
+            var lstOrgaos       = TGGeral.listarOrgaos();
+            var lstResultado    = new Array();
+            $.when(lstOrgaos).then(function(r) {
+                if (typeof lstOrgaos['orgaos'] != 'undefined') {
+                    var orgao = lstOrgaos['orgaos']['orgao'];
+                    for (var i in orgao) {
+                        if (orgao[i]['$']['idTipodeOrgao'] === '2') {
+                            lstResultado.push(orgao[i]['$']);                        
+                        }
+                    }
+                }
+            });
+
+            return lstResultado;
+        }
+        
+        
+        /**
+         * Retorna informações dos membros que compôem uma determinada comissão
+         * 
+         * @param int coOrgao
+         * @returns {object}
+         */
+        this.obterMembrosOrgao = function(coOrgao) 
+        {
+            return TGGeral.obterMembrosOrgao(coOrgao);
+        }
     }]);
         
 

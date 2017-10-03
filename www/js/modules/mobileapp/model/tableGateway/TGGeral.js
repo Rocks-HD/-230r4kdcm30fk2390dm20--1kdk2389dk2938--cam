@@ -156,7 +156,7 @@ angular.module('camara')
         /**
          * Função que preenche as informações do campo blocos partidários
          * 
-         * @returns {void}
+         * @returns {object}
          */
         this.salvarBlocosPartidarios = function(lstBlocos) 
         {
@@ -172,18 +172,77 @@ angular.module('camara')
         
         
         /**
+         * No sistema e na própria chamada é orgãos, mas a utilização é listagem de comissões
          * 
          * @returns {object}
          */
         this.listarOrgaos = function() 
         {
-            var url = 'https://dadosabertos.camara.leg.br/api/v2/orgaos?itens=100&ordem=DESC&ordenarPor=sigla';
+            try {
+                var rootObj     = this;
+                var lstOrgaos   = rootObj.listarOrgaosBase();
 
-            return $.get(url, {}, function(r) {
-                return r;
-            }, 'json');            
+                if (lstOrgaos == null || lstOrgaos.length == 0) {
+                    return $.post('http://www.camara.leg.br/SitCamaraWS/Orgaos.asmx/ObterOrgaos', {}, function(r) {
+                        return rootObj.salvarOrgaos(r);
+                    });
+                }
+            } catch (e) {
+                console.log(e);
+            }
+            
+            return lstOrgaos;         
+        };
+        
+        
+        /**
+         * No sistema e na própria chamada é orgãos, mas a utilização é listagem de comissões
+         * 
+         * @returns {object}
+         */
+        this.listarOrgaosBase = function() 
+        {
+            try {
+                var dtVisita    = UtilsService._dataAtualVisita();
+                var infoBlocos  = JSON.parse(localStorage.getItem('orgaos_'+ dtVisita));
+
+            } catch (e) {console.log(e);}
+            
+            return infoBlocos;
+        };
+        
+        
+        /**
+         * Função que preenche as informações dos orgões existentes
+         * 
+         * @returns {object}
+         */
+        this.salvarOrgaos = function(lstOrgaos) 
+        {
+            var dtVisita = UtilsService._dataAtualVisita();
+            
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('orgaos_'+ dtVisita, JSON.stringify($.xml2json(lstOrgaos)['#document']));
+                return $.xml2json(lstOrgaos)['#document'];       
+            } else {
+                console.log('O dispositivo não permite salvar informações!');
+            }
         };        
         
+        
+        /**
+         * 
+         * @param int coOrgao
+         * @returns {void}
+         */
+        this.obterMembrosOrgao = function(coOrgao) 
+        {
+            try {
+                return $.post('http://www.camara.leg.br/SitCamaraWS/Orgaos.asmx/ObterMembrosOrgao', {IDOrgao: coOrgao}, function(r) {
+                    return r;
+                });
+            } catch (e) {console.log(e);}
+        };
     }]);
         
 

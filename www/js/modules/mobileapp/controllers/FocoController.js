@@ -73,8 +73,8 @@ angular.module('camara')
             var html        = '';
             var contador    = 0;
             var giro        = 0;
-            
-            if (typeof listarBlocos != 'undefined') {
+
+            if (typeof listarBlocos != 'undefined' && Object.keys(listarBlocos).length >= 1 && $(".lstBlocosPartidarios").html() == '') {
                 for (var i in listarBlocos) {
                     html += '<div class="col-xs-6 text-center btnBlocosPartidarios fundo-cinza-'+ ((++contador%2 == 0) ? (giro%2 != 0 ? 'claro' : 'escuro') : (giro%2 != 0 ? 'escuro' : 'claro')) +' padding-vertical" data-id="'+ i +'"><h3>'+ i +'</h3>'+ listarBlocos[i] +' deputados</div>';
                     $(".lstBlocosPartidarios").html(html);
@@ -87,17 +87,85 @@ angular.module('camara')
         
         
         /**
+         * Tenta exibir as informações dos blocos partidários quando a primeira tentativa não der certo
          * return {void}
          */
         $scope.timeoutPreencherInfoBlocoPartidario = function()
         {
             $timeout(function() {
                 $scope.preencherInfoBlocoPartidario();
-            }, 10000);
+            }, 2000);
         };
 
 
-        //
+        /**
+         * Lista as comissões permantentes;
+         *     -- A listagem consegue retornar todas as comissões, porém apenas as permanentes serão exibidas
+         *  
+         */
+        $scope.preencherInfoComissoes = function() 
+        {
+            var listarOrgaos = ModelGeral.listarOrgaos();
+            var html        = '';
+
+            if (typeof listarOrgaos != 'undefined' && Object.keys(listarOrgaos).length >= 1 && $(".areaListagemComissoes").html() == '') {
+                for (var i in listarOrgaos) {
+                    html += '<div class="row fundo-dfdfdf infoComissao" data-id="'+ listarOrgaos[i]['id'] +'">'+
+                                '<div class="col-xs-10 fundo-cinza-claro padding-vertical"><h3>'+ listarOrgaos[i]['descricao'] +'</h3></div>'+
+                                '<div class="col-xs-2 text-center fundo-cinza-escuro padding-vertical"><i class="material-icons">arrow_drop_down_circle</i></div>'+
+                            '</div>'+
+                            '<div class="row linha'+ listarOrgaos[i]['id'] +'" style="display:none;">'+
+                            '</div>';
+                    $(".areaListagemComissoes").html(html);
+                }
+            } else {
+                $scope.timeoutpreencherInfoComissoes();
+            }
+        };
+        
+        
+        /**
+         * Tenta exibir as informações das comissões quando a primeira tentativa não der certo
+         * return {void}
+         */
+        $scope.timeoutpreencherInfoComissoes = function()
+        {
+            $timeout(function() {
+                $scope.preencherInfoComissoes();
+            }, 2000);
+        };        
+
+
+        /**
+         * 
+         */
+        $(document).on('click', '.infoComissao', function() {
+            var coComissao      = $(this).attr('data-id');
+            
+            if (!$(".linha"+coComissao).is(":visible")) {
+                var infoComissao    = ModelGeral.obterMembrosOrgao(coComissao),
+                    html            = '';
+                    
+                $(".linha"+coComissao).show().html('Carregando...'); 
+                $.when(infoComissao).then(function(r) {
+                    var membro = $.xml2json(r)['#document']['orgao']['membros'];
+                    for (var i in membro) {
+                        console.log(i);
+                        if (i !== 'Suplente' && i !== 'Titular' && i != '$') {
+                            html  += '<div class="col-xs-6 fundo-preto padding-vertical texto-branco text-center">'+
+                                        '<p>'+ membro[i]['nome'] +' - '+ membro[i]['partido'] +'/'+ membro[i]['uf'] +'</p>'+
+                                    '</div>';
+                        }
+
+                        $(".linha"+coComissao).html('').append(html);
+                    }
+                });
+            } else {
+                $(".linha"+coComissao).hide(); 
+            }
+        });
+
+        //Se o usuário clicar sobre um bloco será informado sobre os partidos que existem internamente
         $(document).on('click', '.btnBlocosPartidarios', function() {
             var coBloco     = $(this).attr('data-id'),
                 infoBloco   = ModelGeral.infoBlocoPartidario(coBloco),
@@ -137,6 +205,7 @@ angular.module('camara')
                 $scope.graficoEstado();
                 $scope.graficoPartidos();
                 $scope.preencherInfoBlocoPartidario();
+                $scope.preencherInfoComissoes();
             });
         });
 
