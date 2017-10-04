@@ -69,10 +69,10 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 
 .texto-maiusculo{text-transform: uppercase;} 
 .line-height{line-height: 1.6em;}
-.texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;}
-.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;  line-height:1;}
-.texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700;}
-.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:220%; font-weight: 700; line-height:1;}
+.texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700;}
+.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700;  line-height:1;}
+.texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700;}
+.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700; line-height:1;}
 .texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-cinza{color:#999; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
 .texto-explicativo{color:#111; font-size:12px; text-align: justify;}
