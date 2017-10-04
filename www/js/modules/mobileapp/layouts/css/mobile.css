@@ -151,7 +151,7 @@ header #logo img{width:60%; padding-top:7px;}
 nav.menu-principal{display:none; border-bottom:10px solid #5ab946; margin-top:-15px; background-color:rgba(255,255,255,0.9); padding:30px 0; font-size:90%; color:#367036; text-transform: uppercase; font-weight: bold; position: absolute; z-index: 999; width:100%;}
 /*FIM DO MENU PRINCIPAL*/
 
-div.compare-os-deputados{background-color:#d2d2d2; padding-top:15px; padding-bottom: 15px; }
+div.compare-os-deputados{background: linear-gradient(180deg, #dfdfdf 10%, #cbcbcb 100%); padding-top:15px; padding-bottom: 15px; }
 div.compare-os-deputados img{width:100%; border:2px dashed #dcdcdc; background-color:white;}
 div.compare-os-deputados .btn-comparar{margin-top:2%;}
 div.compare-os-deputados .btn-comparar p{font-size: 11px; margin-top:8px;}
@@ -168,7 +168,7 @@ div.filtros-conheca input[type=text]{width:100%; background-image:url(../imagens
 div.filtros-conheca input[type=radio]{color:white; border:none; background-color:white; width:15px; height: 15px; float: left;}
 div.filtros-conheca select{width:50%; margin-top:10px; font-size:12px; float: left;}
 
-div.lista-deputados{background-color:#e6e6e6; padding-top:15px; padding-bottom: 15px; height:210px; position: relative; width:100%; overflow: hidden; background-image:url(../imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; background-size: contain; overflow-x: scroll}
+div.lista-deputados{background-color:#fbfbfb; padding-top:15px; padding-bottom: 15px; height:225px; position: relative; width:100%; overflow: hidden; background-image:url(../imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; background-size: contain; overflow-x: scroll}
 div.lista-deputados .div-interna{width:800px; position:relative; overflow: hidden; display:block;}
 div.lista-deputados .box-deputado{font-family: "Open Sans Condensed", sans-serif; font-weight: bold; text-transform: uppercase; width:80px; text-align: center; float:left; margin-left:10px; margin-right:10px;}
 div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; background-color:white; width:100%;}
