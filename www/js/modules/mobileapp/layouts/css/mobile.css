@@ -144,7 +144,7 @@ header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display
 header #btn-menu{position:relative; width:60px; height: 60px; background-color:white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: -15%; z-index: 400;}
 header #btn-menu span{font-size: 30px; color:#5ab946;}
 header #logo{font-size: 30px; color:#9ae588;}
-header #logo img{width:48%;}
+header #logo img{width:60%;}
 /*FIM DA BARRA DE NAVEGAÇÃO - MENU*/ 
 
 /*MENU PRINCIPAL*/
