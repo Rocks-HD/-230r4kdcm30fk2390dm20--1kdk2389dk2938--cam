@@ -152,7 +152,7 @@ angular.module('camara')
                 } else {
                     $timeout(function() {
                         $scope.infoRelatorioDespesas();
-                    }, 10000);
+                    }, 5000);
                 }
             } else {
                 $("canvas").parent().html('Erro no webservice...');

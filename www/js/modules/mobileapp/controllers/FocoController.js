@@ -141,6 +141,11 @@ angular.module('camara')
          */
         $(document).on('click', '.infoComissao', function() {
             var coComissao      = $(this).attr('data-id');
+            var corMembro       = { 'Presidente' : 'vermelho', 
+                                    'PrimeiroVice-Presidente' : 'verde', 
+                                    'SegundoVice-Presidente' : 'roxo', 
+                                    'TerceiroVice-Presidente' : 'azul-escuro', 
+                                    'Titular' : 'cinza-escuro'};
             
             if (!$(".linha"+coComissao).is(":visible")) {
                 var infoComissao    = ModelGeral.obterMembrosOrgao(coComissao),
@@ -150,20 +155,33 @@ angular.module('camara')
                 $.when(infoComissao).then(function(r) {
                     var membro = $.xml2json(r)['#document']['orgao']['membros'];
                     for (var i in membro) {
-                        console.log(i);
                         if (i !== 'Suplente' && i !== 'Titular' && i != '$') {
-                            html  += '<div class="col-xs-6 fundo-preto padding-vertical texto-branco text-center">'+
-                                        '<p>'+ membro[i]['nome'] +' <br> '+ membro[i]['partido'] +'/'+ membro[i]['uf'] +'</p>'+
+                            html  += '<div class="col-xs-6 fundo-'+ corMembro[i] +' padding-vertical texto-branco text-center">'+
+                                        '<a href="#/conheca/'+ membro[i]['ideCadastro'] +'" class="texto-branco">'+
+                                            '<p>'+ membro[i]['nome'] +' <br> '+ membro[i]['partido'] +'/'+ membro[i]['uf'] +'</p>'+
+                                        '</a>'+
                                     '</div>';
                         }
-
                         $(".linha"+coComissao).html('').append(html);
+                        
+                        if (i == 'Titular') {
+                            for (var t in membro[i]) {
+                                html  += '<div class="col-xs-6 padding-vertical texto-branco text-center">'+
+                                            '<a href="#/conheca/'+ membro[i][t]['ideCadastro'] +'" class="texto-branco">'+
+                                                '<p>'+ membro[i][t]['nome'] +' <br> '+ membro[i][t]['partido'] +'/'+ membro[i][t]['uf'] +'</p>'+
+                                            '</a>'+
+                                        '</div>';
+
+                                $(".linha"+coComissao).html('').append(html);
+                            }
+                        }
                     }
                 });
             } else {
                 $(".linha"+coComissao).hide(); 
             }
         });
+
 
         //Se o usuário clicar sobre um bloco será informado sobre os partidos que existem internamente
         $(document).on('click', '.btnBlocosPartidarios', function() {
