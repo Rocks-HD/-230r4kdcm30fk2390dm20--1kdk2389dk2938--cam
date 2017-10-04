@@ -39,6 +39,8 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .ausente{border:2px solid white; background-color:#b3b3b3; background-image:url(../imagens/background/background-ausente.svg); background-size: contain; background-repeat: no-repeat;}
 .ausente h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#FFFFFF; font-size: 130%;}
 .ausente h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#666;}
+.texto-centralizado{text-align: center !important;}
+.borda-inferior{border-bottom: 1px solid #cbcbcb;}
 
 .background-opine{background-image:url(../imagens/background/background-opiniao.svg); background-size: contain; background-repeat: no-repeat;}
 
@@ -183,8 +185,8 @@ div.conteudo-opine-titulo h2 span{color:#77b2e0;}
 div.texto-opine{padding:15px; color:white; font-family:"Open Sans Condensed"; font-size:12px; background:#599fd6; text-align:center;}
 div.texto-opine p{text-align: justify;}
 
-div.camara-em-foco{}
-div.camara-em-foco{}
+.camara-em-foco{}
+.tela10 .posicionamento-mao{width: 25%; top:22%; right:3%;}
 
 div.rodape{display: flex; align-items: center; background:blue; margin-top:20px; background-image: linear-gradient(135deg, #8ac53f 10%, #469543 100%); padding:15px;}
 div.rodape img{width:100%;}
