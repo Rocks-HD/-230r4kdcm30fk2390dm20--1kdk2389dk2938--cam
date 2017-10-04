@@ -81,6 +81,12 @@ h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; fon
 .texto-grande{font-size:180%;}
 .texto-escuro{color:#666;}
 
+.texto-vermelho{color:#b21f24}
+.texto-roxo{color:#601B58}
+.texto-azul{color:#184071}
+.texto-verde{color:#5AB946}
+.texto-cinza-escuro{color:#333}
+
 .fundo-cinza-claro{background-color:#f5f5f5;}
 .fundo-cinza-escuro{background-color:#dfdfdf;}
 .fundo-preto{background-color:#333;}
