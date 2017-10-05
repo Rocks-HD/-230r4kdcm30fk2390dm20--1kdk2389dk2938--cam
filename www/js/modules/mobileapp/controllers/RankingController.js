@@ -55,7 +55,7 @@ angular.module('camara')
                 
 //                $scope.contador = idOpniao;
                 if (typeof $scope.lstOpiniao[parseInt(idOpniao)+1] != 'undefined') {
-                    console.log($scope.ranking);
+//                    console.log($scope.ranking);
                     $scope.listarRanking(parseInt(idOpniao)+1);
                 } else {
                     var posicao = 0;
