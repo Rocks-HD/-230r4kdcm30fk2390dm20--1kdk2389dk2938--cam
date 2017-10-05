@@ -89,28 +89,27 @@
                 <h2 class="texto-medio line-height"><span>PROPOSIÇÕES</span> PENDENTES DE APROVAÇÃO/VETO</h2> 
             </div>
         </div>
-        <div class="row fundo-dfdfdf">
-            <div class="col-xs-10 fundo-cinza-claro padding-vertical"><h3>PROPOSIÇÃO 1</h3></div>
-            <div class="col-xs-2 text-center fundo-cinza-escuro padding-vertical"><i class="material-icons">arrow_drop_down_circle</i></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 fundo-preto padding-vertical texto-branco">
-                <p>Nos envie sua opinião sobre a proposição, basta preencher o campo abaixo e enviar para nós.</p>
-                <br>
-                <form>
-                    <textarea class="img-100"></textarea><br><br>
-                    <button class="btn-verde">ENVIAR</button>
-                </form>
+        <div class="row fundo-preto filtro">
+            <div class="col-xs-4">
+                <p>ANO</p>
+                <select name="ano" id="ano">
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                </select>
             </div>
-        </div>
-        <div class="row fundo-dfdfdf">
-            <div class="col-xs-10 fundo-cinza-claro padding-vertical"><h3>PROPOSIÇÃO 2 </h3></div>
-            <div class="col-xs-2 text-center fundo-cinza-escuro padding-vertical"><i class="material-icons">arrow_drop_down_circle</i></div>
-        </div>
-        <div class="row fundo-dfdfdf">
-            <div class="col-xs-10 fundo-cinza-claro padding-vertical"><h3>PROPOSIÇÃO 3 </h3></div>
-            <div class="col-xs-2 text-center fundo-cinza-escuro padding-vertical"><i class="material-icons">arrow_drop_down_circle</i></div>
-        </div>
+            <div class="col-xs-8">
+                <p>FILTROS</p>
+                <select name="filtro" id="filtro">
+                    <option value="todos">Mostrar todos</option>
+                    <option value="votados">Mostrar apenas os que votei</option>
+                    <option value="naoVotados">Mostrar apenas os que não votei</option>
+                </select>
+            </div>
+        </div> 
+        <div class="areaProposicoes"></div>
+        
     </div>    
 </div>
 

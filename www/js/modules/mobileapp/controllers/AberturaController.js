@@ -23,7 +23,7 @@ angular.module('camara')
          * INIT: 
          */
         angular.element(document).ready(function() {
-            localStorage.clear();
+            //localStorage.clear();
             var lstDeputados = ModelDeputados.listarDeputados(1);
             $(".glyphicon-menu-hamburger").parent().hide();
 

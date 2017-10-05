@@ -8,7 +8,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('FocoController', ['$scope', '$timeout', 'ModelDeputados', 'ModelGeral', function FocoController($scope, $timeout, ModelDeputados, ModelGeral) {
+    .controller('FocoController', ['$scope', '$timeout', 'ModelDeputados', 'ModelGeral', 'ModelProposicoes', function FocoController($scope, $timeout, ModelDeputados, ModelGeral, ModelProposicoes) {
         $scope.lstEstados       = new Array();
         $scope.lstPartidos      = new Array();
         
@@ -137,6 +137,75 @@ angular.module('camara')
 
 
         /**
+         * lista as proposições existentes de acordo com o filtro selecionado
+         * 
+         * @returns {undefined}
+         */
+        $scope.listarProposicoes = function() 
+        {
+            try {
+                var ano                 = $("#ano").val(),
+                    filtro              = $("#filtro").val(),
+                    listarProposicoes   = ModelProposicoes.listarProposicoesVotadasEmPlenario(ano),
+                    lstCodProposicao    = {},
+                    lstOpiniao          = '',
+                    contador            = 0;
+
+
+                $(".areaProposicoes").html('');
+                $.when(listarProposicoes).then(function(prop1) {
+                    var proposicoes = prop1 instanceof XMLDocument ? $.xml2json(prop1)['#document']['proposicoes']['proposicao'] : prop1;
+                    for (var i in proposicoes) {
+                        lstCodProposicao[proposicoes[i]['codProposicao']] = proposicoes[i]['nomeProposicao'];
+                        if (++contador == 100) { break };
+                    }
+                    
+                    var detalhesProposicoes = ModelProposicoes.detalhesProposicoes(lstCodProposicao);
+                    $.when(detalhesProposicoes).then(function(detalhes) {
+                        var html = '';
+                        for (var i in detalhes['dados']) {
+                            console.log(detalhes['dados'][i]);
+                            html =  '<div class="row fundo-dfdfdf" data-id="'+ detalhes['dados'][i]['id'] +'">'+
+                                        '<div class="col-xs-10 fundo-cinza-claro padding-vertical">'+
+                                            '<h3>'+ lstCodProposicao[detalhes['dados'][i]['id']] +'</h3>'+
+                                            '<h6>'+ detalhes['dados'][i]['ementa'] +'</h6>'+
+                                        '</div>'+
+                                        '<div class="col-xs-2 text-center fundo-cinza-escuro padding-vertical">'+
+                                            '<i class="material-icons">arrow_drop_down_circle</i>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="row proposicao'+ detalhes['dados'][i]['id'] +'" style="display:none;">'+
+                                        '<div class="col-xs-12 fundo-preto padding-vertical texto-branco">'+
+                                            '<p>Nos envie sua opinião sobre a proposição, basta preencher o campo abaixo e enviar para nós.</p>'+
+                                            '<br>'+
+                                            '<form>'+
+                                                '<textarea class="img-100"></textarea><br><br>'+
+                                                '<button class="btn-verde">ENVIAR</button>'+
+                                            '</form>'+
+                                        '</div>'+
+                                    '</div>';
+                            $(".areaProposicoes").append(html);
+                        }
+//                        lstOpiniao = $scope.listarOpinioes();
+                        
+                        if (filtro == 'votados') {
+                            $(".areaProposicoes .linha-zebrada").addClass('hidden');
+//                            for (var i in lstOpiniao) {
+//                                $(".item"+lstOpiniao[i]['coProposicao']).removeClass('hidden');
+//                            }
+                        } else if (filtro == 'naoVotados') {
+//                            for (var i in lstOpiniao) {
+//                                $(".item"+lstOpiniao[i]['coProposicao']).addClass('hidden');
+//                            }
+                        }
+                    });
+                });
+    
+            } catch (e) {window.location.reload();}           
+        };
+
+
+        /**
          * 
          */
         $(document).on('click', '.infoComissao', function() {
@@ -204,6 +273,14 @@ angular.module('camara')
             $("#systemModal .modal-body").html(html);
             $("#systemModal").modal();
         });
+
+        //CHANGE: quando modificar o ano/filtro da área de comissões
+        $(document).on("change", "#ano", function() {
+            $scope.listarProposicoes();
+        }).on("change", "#filtro", function() {
+            $scope.listarProposicoes();
+        });
+
 
         /**
          * Garantir uma nova model

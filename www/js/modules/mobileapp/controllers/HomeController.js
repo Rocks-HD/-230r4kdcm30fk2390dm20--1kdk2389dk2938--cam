@@ -48,8 +48,8 @@ angular.module('camara')
                 }
 
                 $(".div-interna").css('width', ((typeof data.length != 'undefined' && data.length != 0 ? data.length : 100)*100) +'px');
-            } catch (e) {}
-
+                
+            } catch (e) {console.log(e);}
         };
         
         

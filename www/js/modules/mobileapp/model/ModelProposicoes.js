@@ -76,20 +76,9 @@ angular.module('camara')
          * @param {type} coProposicao
          * @returns {undefined}
          */
-        this.obterVotacaoProposicaoPorId = function(arrProposicoes, coProposicao) 
+        this.obterVotacaoProposicaoPorId = function(coProposicao) 
         {
-            var infoProposicao  = TGProposicoes.obterVotacaoProposicaoPorId(coProposicao);
-            
-            $.when(infoProposicao).then(function(prop1) {
-                this.proposicoes = prop1 instanceof XMLDocument ? $.xml2json(prop1)['#document']['proposicao']['Votacoes']['Votacao'] : prop1;
-
-                if (typeof arrProposicoes[++this.contador] != 'undefined') {
-                    
-                    this.obterVotacaoProposicaoPorId(arrProposicoes, arrProposicoes[this.contador]['coProposicao']);
-                } else {
-                    localStorage.setItem('ranking', JSON.stringify(this.proposicoes));
-                };
-            });
+            return TGProposicoes.obterVotacaoProposicaoPorId(coProposicao);
         };
         
         
