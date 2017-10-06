@@ -58,7 +58,7 @@ angular.module('camara')
                     break;
                 }
             }
-        }
+        };
         
         
         /**
@@ -115,7 +115,7 @@ angular.module('camara')
             });
 
             return lstResultado;
-        }
+        };
         
         
         /**
@@ -127,7 +127,7 @@ angular.module('camara')
         this.obterMembrosOrgao = function(coOrgao) 
         {
             return TGGeral.obterMembrosOrgao(coOrgao);
-        }
+        };
     }]);
         
 

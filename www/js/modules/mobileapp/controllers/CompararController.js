@@ -106,7 +106,6 @@ angular.module('camara')
                         var despesasDep2    = ModelDespesas.gerarEstatistica(coDeputado2);
 
                         $.when(despesasDep2).then(function(data2) {
-                            console.log('akljflkajsfçlksjflçksjflçksaf');
                             if (typeof data2['DGM']['undefined'] == 'undefined') {
                                 for (var i in data1['GTA']) { $scope.data1[0] += parseFloat(data1['GTA'][i]); }
                                 $scope.data1[0] = number_format($scope.data1[0], 2, '.', '');
@@ -141,7 +140,6 @@ angular.module('camara')
         {
             $timeout(function() {
                 $scope.preencherGrafico(coDeputado1, coDeputado2);
-                console.log('aqui');
             }, 5000);
         };
         
@@ -228,9 +226,7 @@ angular.module('camara')
                     var propCand1 = prop1 instanceof XMLDocument ? $.xml2json(prop1)['#document']['proposicoes']['proposicao'] : prop1;
                     var propCand2 = prop2 instanceof XMLDocument ? $.xml2json(prop2)['#document']['proposicoes']['proposicao'] : prop2;
 
-    //                    console.log(prop1);
                     $(".proposicoes1").html(propCand1.length);
-    //                    console.log(prop2);
                     $(".proposicoes2").html(propCand2.length);
                 });    
             } catch (e) {window.location.reload();}

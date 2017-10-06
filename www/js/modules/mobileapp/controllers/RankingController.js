@@ -24,7 +24,7 @@ angular.module('camara')
             $scope.lstOpiniao = ModelProposicoes.listarOpinioes();
         
             if ($scope.lstOpiniao == null || $scope.lstOpiniao.length == 0) {
-                $(".areaRanking").html('<div class="margin-top-15">Você ainda não deu sua opnião em nenhuma proposição!</div>');
+                $(".areaRanking").html('<div class="margin-top-15">Você ainda não deu sua opinião em nenhuma proposição!</div>');
             } else {
                 $scope.ranking = {};
                 $scope.listarRanking(0);
@@ -35,9 +35,9 @@ angular.module('camara')
          * 
          * @returns {undefined}
          */
-        $scope.listarRanking = function(idOpniao)
+        $scope.listarRanking = function(idopiniao)
         {
-            var infoProposicao  = ModelProposicoes.obterVotacaoProposicaoPorId($scope.lstOpiniao[idOpniao]['coProposicao']);
+            var infoProposicao  = ModelProposicoes.obterVotacaoProposicaoPorId($scope.lstOpiniao[idopiniao]['coProposicao']);
             $(".contentCarregando").show();
             $('.areaRanking').html('');
             
@@ -49,7 +49,7 @@ angular.module('camara')
                     if (typeof lstVotacoes[i]['votos'] != 'undefined') {
                         var deputado = lstVotacoes[i]['votos']['Deputado'];
                         for (var v in deputado) {
-                            if ((deputado[v]['$']['Voto'] == 'Não            ' && $scope.lstOpiniao[idOpniao]['tpVoto'] == 'contra') || (deputado[v]['$']['Voto'] == 'Sim            ' && $scope.lstOpiniao[idOpniao]['tpVoto'] == 'favor')) {
+                            if ((deputado[v]['$']['Voto'] == 'Não            ' && $scope.lstOpiniao[idopiniao]['tpVoto'] == 'contra') || (deputado[v]['$']['Voto'] == 'Sim            ' && $scope.lstOpiniao[idopiniao]['tpVoto'] == 'favor')) {
                                 $scope.ranking[deputado[v]['$']['ideCadastro']] = parseInt(typeof $scope.ranking[deputado[v]['$']['ideCadastro']] != 'undefined' ? $scope.ranking[deputado[v]['$']['ideCadastro']] : 0) + 1;
 //                                if (++contador >= 5) {break;}
                             }
@@ -57,9 +57,9 @@ angular.module('camara')
                     }
                 }
                 
-//                $scope.contador = idOpniao;
-                if (typeof $scope.lstOpiniao[parseInt(idOpniao)+1] != 'undefined') {
-                    $scope.listarRanking(parseInt(idOpniao)+1);
+//                $scope.contador = idopiniao;
+                if (typeof $scope.lstOpiniao[parseInt(idopiniao)+1] != 'undefined') {
+                    $scope.listarRanking(parseInt(idopiniao)+1);
                 } else {
                     var posicao = 0;
                     var estado  = $("#ds_estado").val();
@@ -92,6 +92,10 @@ angular.module('camara')
                         if (i == 14) {
                             break;
                         }
+                    }
+                    
+                    if ($('.areaRanking').html() == '') {
+                        $('.areaRanking').html('<div class="text-center margin-top-10"><h3>Nenhum deputado encontrado com o filtro informado</h3></div>');
                     }
                     
                     $(".contentCarregando").hide();

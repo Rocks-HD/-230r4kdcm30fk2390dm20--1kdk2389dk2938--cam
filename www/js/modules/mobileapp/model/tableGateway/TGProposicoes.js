@@ -121,34 +121,51 @@ angular.module('camara')
         
         
         /**
+         * Salva as opiniões do usuário
          * 
-         * @param {type} opniao
-         * @returns {undefined}
+         * @param {object} lstOpinioes
+         * @returns {void}
          */
-        this.salvarOpiniao = function(opniao) 
+        this.salvaropinioes = function(lstOpinioes) 
+        {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('opiniao', JSON.stringify(lstOpinioes));
+            } else {
+                console.log('O dispositivo não permite salvar informações!');
+            }
+        };
+        
+        
+        /**
+         * Salva uma opinião na lista de opiniões
+         *  
+         * @param {array} opiniao
+         * @returns {object}
+         */
+        this.salvarOpiniao = function(opiniao) 
         {
             var lstOpinioes     = this.listarOpinioes(),
-                itensOpnioes    = new Array();
+                itensopinioes    = new Array();
             
             if (typeof(Storage) !== "undefined") {
                 if (lstOpinioes == null || lstOpinioes.length == 0) {
-                    itensOpnioes.push(opniao);
+                    itensopinioes.push(opiniao);
                 } else {
                     for (var i in lstOpinioes) {
-                        if (opniao['coProposicao'] == lstOpinioes[i]['coProposicao']) {
+                        if (opiniao['coProposicao'] == lstOpinioes[i]['coProposicao']) {
                             delete lstOpinioes[i];
                         }
                     }
                     
-                    lstOpinioes.push(opniao);
+                    lstOpinioes.push(opiniao);
                     
                     for (var i in lstOpinioes) {
                         if (typeof lstOpinioes[i]['coProposicao'] != 'undefined') {
-                            itensOpnioes.push(lstOpinioes[i]);
+                            itensopinioes.push(lstOpinioes[i]);
                         }
                     }
                 }                
-                localStorage.setItem('opiniao', JSON.stringify(itensOpnioes));
+                localStorage.setItem('opiniao', JSON.stringify(itensopinioes));
 
             } else {
                 console.log('O dispositivo não permite salvar informações!');

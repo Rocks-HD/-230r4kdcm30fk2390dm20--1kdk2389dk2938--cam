@@ -52,12 +52,22 @@ angular.module('camara')
         
         /**
          * 
-         * @param {type} opniao
+         * @param {type} opiniao
          * @returns {undefined}
          */
-        this.salvarOpiniao = function(opniao) 
+        this.salvarOpiniao = function(opiniao) 
         {
-            return TGProposicoes.salvarOpiniao(opniao);
+            return TGProposicoes.salvarOpiniao(opiniao);
+        };
+        
+        /**
+         * 
+         * @param {type} opiniao
+         * @returns {void}
+         */
+        this.salvarOpinioes = function(lstOpinioes) 
+        {
+            return TGProposicoes.salvarOpiniao(lstOpinioes);
         };
         
         /**

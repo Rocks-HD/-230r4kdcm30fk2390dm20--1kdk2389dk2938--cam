@@ -11,6 +11,22 @@ angular.module('camara')
     .controller('AberturaController', ['$scope', '$timeout', 'ModelDeputados', function AberturaController($scope, $timeout, ModelDeputados) {
 
 
+        $scope.inicializacao = function() 
+        {
+            try {
+                //localStorage.clear();
+                var lstDeputados = ModelDeputados.listarDeputados(1);
+                $(".glyphicon-menu-hamburger").parent().hide();
+
+                $.when(lstDeputados).then(function(r) {
+                    $timeout(function() {
+                        $(".glyphicon-menu-hamburger").parent().show();
+                        window.location.hash = 'home';
+                    }, 10000);
+                });                        
+            } catch (e) {console.log(e);}
+        };
+
         /**
          * Garantir uma nova model
          * @returns {undefined}
@@ -23,16 +39,7 @@ angular.module('camara')
          * INIT: 
          */
         angular.element(document).ready(function() {
-            //localStorage.clear();
-            var lstDeputados = ModelDeputados.listarDeputados(1);
-            $(".glyphicon-menu-hamburger").parent().hide();
-
-            $.when(lstDeputados).then(function(r) {
-                $timeout(function() {
-                    $(".glyphicon-menu-hamburger").parent().show();
-                    window.location.hash = 'home';
-                }, 10000);
-            });
+            $scope.inicializacao();
         });
 
     }]);

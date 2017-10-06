@@ -164,46 +164,64 @@ angular.module('camara')
                     $.when(detalhesProposicoes).then(function(detalhes) {
                         var html = '';
                         for (var i in detalhes['dados']) {
-                            console.log(detalhes['dados'][i]);
-                            html =  '<div class="row fundo-dfdfdf" data-id="'+ detalhes['dados'][i]['id'] +'">'+
-                                        '<div class="col-xs-10 fundo-cinza-claro padding-vertical">'+
-                                            '<h3>'+ lstCodProposicao[detalhes['dados'][i]['id']] +'</h3>'+
-                                            '<h6>'+ detalhes['dados'][i]['ementa'] +'</h6>'+
+                            html =  '<div class="linha-zebrada item'+ detalhes['dados'][i]['id'] +'" data-id="'+ detalhes['dados'][i]['id'] +'">'+
+                                        '<div class="row fundo-dfdfdf">'+
+                                            '<div class="col-xs-10 fundo-cinza-claro padding-vertical">'+
+                                                '<h3>'+ lstCodProposicao[detalhes['dados'][i]['id']] +'</h3>'+
+                                                '<h6>'+ detalhes['dados'][i]['ementa'] +'</h6>'+
+                                            '</div>'+
+                                            '<div class="col-xs-2 text-center fundo-cinza-escuro padding-vertical">'+
+                                                '<i class="material-icons">arrow_drop_down_circle</i>'+
+                                            '</div>'+
                                         '</div>'+
-                                        '<div class="col-xs-2 text-center fundo-cinza-escuro padding-vertical">'+
-                                            '<i class="material-icons">arrow_drop_down_circle</i>'+
-                                        '</div>'+
-                                    '</div>'+
-                                    '<div class="row proposicao'+ detalhes['dados'][i]['id'] +'" style="display:none;">'+
-                                        '<div class="col-xs-12 fundo-preto padding-vertical texto-branco">'+
-                                            '<p>Nos envie sua opinião sobre a proposição, basta preencher o campo abaixo e enviar para nós.</p>'+
-                                            '<br>'+
-                                            '<form>'+
-                                                '<textarea class="img-100"></textarea><br><br>'+
-                                                '<button class="btn-verde">ENVIAR</button>'+
-                                            '</form>'+
+                                        '<div class="row proposicao'+ detalhes['dados'][i]['id'] +'" style="display:none;">'+
+                                            '<div class="col-xs-12 fundo-preto padding-vertical texto-branco">'+
+                                                '<p>Nos envie sua opinião sobre a proposição, basta preencher o campo abaixo e enviar para nós.</p>'+
+                                                '<br>'+
+                                                '<form>'+
+                                                    '<textarea class="img-100"></textarea><br><br>'+
+                                                    '<button class="btn-verde">ENVIAR</button>'+
+                                                '</form>'+
+                                            '</div>'+
                                         '</div>'+
                                     '</div>';
                             $(".areaProposicoes").append(html);
                         }
-//                        lstOpiniao = $scope.listarOpinioes();
+                        lstOpiniao = $scope.listarOpinioes();
                         
                         if (filtro == 'votados') {
                             $(".areaProposicoes .linha-zebrada").addClass('hidden');
-//                            for (var i in lstOpiniao) {
-//                                $(".item"+lstOpiniao[i]['coProposicao']).removeClass('hidden');
-//                            }
+                            for (var i in lstOpiniao) {
+                                $(".item"+lstOpiniao[i]['coProposicao']).removeClass('hidden');
+                            }
                         } else if (filtro == 'naoVotados') {
-//                            for (var i in lstOpiniao) {
-//                                $(".item"+lstOpiniao[i]['coProposicao']).addClass('hidden');
-//                            }
+                            for (var i in lstOpiniao) {
+                                $(".item"+lstOpiniao[i]['coProposicao']).addClass('hidden');
+                            }
                         }
                     });
                 });
     
             } catch (e) {window.location.reload();}           
         };
-
+        
+        
+        /**
+         * 
+         * @returns {undefined}
+         */
+        $scope.listarOpinioes = function() 
+        {
+            var lstopinioes = ModelProposicoes.listarOpinioes();
+            
+            for (var i in lstopinioes) {
+                var tpEscolha = lstopinioes[i]['tpVoto'] == 'favor' ? '.icon-ico-a-favor-1' : '.icon-ico-contra-2';
+                
+                $(".item"+lstopinioes[i]['coProposicao']+" "+tpEscolha).addClass('active');
+            }
+            
+            return lstopinioes;
+        };
 
         /**
          * 
