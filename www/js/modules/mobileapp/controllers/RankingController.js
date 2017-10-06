@@ -75,7 +75,7 @@ angular.module('camara')
                                                     '<h3>'+ ++posicao +'º</h3>'+
                                                 '</div>'+
                                                 '<div class="col-xs-4 texto-maiusculo">'+
-                                                    '<img src="'+ $scope.lstDeputados[d]['urlFoto'] +'" alt="'+ $scope.lstDeputados[d]['nome'] +'" class="borda-roxa-clara img-100"/>'+
+                                                    '<a href="#/conheca/'+ keys[i] +'"><img src="'+ $scope.lstDeputados[d]['urlFoto'] +'" alt="'+ $scope.lstDeputados[d]['nome'] +'" class="borda-roxa-clara img-100"/></a>'+
                                                     '<br>'+
                                                     '<p><strong>'+ $scope.lstDeputados[d]['nome'] +'</strong>'+
                                                     '<br>'+ $scope.lstDeputados[d]['siglaUf'] +'/'+ $scope.lstDeputados[d]['siglaPartido'] +'</p>'+
