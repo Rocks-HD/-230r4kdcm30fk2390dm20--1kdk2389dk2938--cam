@@ -8,7 +8,7 @@
  * @author Bruno da Costa Monteiro <brunodacostamonteiro@gmail.com>
  */
 angular.module('camara')
-    .controller('DeputadoController', ['$scope', '$location', '$timeout', 'ModelDespesas', 'ModelDeputados', function DeputadoController($scope, $location, $timeout, ModelDespesas, ModelDeputados) {
+    .controller('DeputadoController', ['$scope', '$location', '$timeout', 'ModelDespesas', 'ModelDeputados', 'ModelProposicoes', function DeputadoController($scope, $location, $timeout, ModelDespesas, ModelDeputados, ModelProposicoes) {
         $scope.selfUrl = $location.url();
         $scope.labels1 = [];
         $scope.data1 = [];
@@ -186,6 +186,14 @@ angular.module('camara')
                 
             } catch (e) {console.log(e);}
         };
+
+        
+        /**
+         * ON: verifica se o usuário esta digitando alguma palavra
+         */
+        $(document).on("change", "#ds_ano", function() {
+            $scope.layoutPreencherPosicaoVotacao();
+        });
 
 
         /**
