@@ -35,47 +35,47 @@ angular.module('camara')
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/abertura.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/abertura.html',
             controller: 'AberturaController',
             noReload: false
         }).when('/home', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/home.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/home.html',
             controller: 'HomeController',
             noReload: false
         }).when('/opiniao', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/opiniao.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/opiniao.html',
             controller: 'OpiniaoController',
             noReload: false
         }).when('/camara-em-foco', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/camara-em-foco.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/camara-em-foco.html',
             controller: 'FocoController',
             noReload: false
         }).when('/ranking', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/ranking.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/ranking.html',
             controller: 'RankingController',
             noReload: false
         }).when('/conheca/:item', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/conheca.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/conheca.html',
             controller: 'DeputadoController',
             noReload: false
         }).when('/comparar/:item', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/comparar.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/comparar.html',
             controller: 'CompararController',
             noReload: false
         }).when('/abertura', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/abertura.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/abertura.html',
             controller: 'HomeController',
             noReload: false
         }).when('/carregando', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/carregando.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/carregando.html',
             controller: 'HomeController',
             noReload: false
          }).when('/processo', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/processo.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/processo.html',
             controller: 'ProcessoController',
             noReload: false
         }).when('/creditos', {
-            templateUrl: './js/modules/mobileapp/views/scripts/home/creditos.html',
+            templateUrl: './js/modules/mobileapp/views/scripts/creditos.html',
             controller: 'CreditosController',
             noReload: false
         })
