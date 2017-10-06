@@ -89,7 +89,7 @@ angular.module('camara')
                                 break;
                             }
                         }
-                        if (i == 15) {
+                        if (i == 14) {
                             break;
                         }
                     }
