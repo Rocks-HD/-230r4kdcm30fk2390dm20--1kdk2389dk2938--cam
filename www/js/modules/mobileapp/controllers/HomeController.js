@@ -38,8 +38,8 @@ angular.module('camara')
                     for (var i in data) {
                         var dsNome      = $scope.filter['ds_nome'] ? $scope.filter['ds_nome'].toUpperCase() : '';
                         var filtroTotal = (dsNome == '' || removerAcento(data[i]['nome']).search(removerAcento(dsNome)) !== -1) && 
-                                          ($scope.filter['ds_estado'] == '' || $scope.filter['ds_estado'] == data[i]['siglaUf']) && 
-                                          ($scope.filter['ds_partido'] == '' || $scope.filter['ds_partido'] == data[i]['siglaPartido']);
+                                          ($scope.filter['ds_estado'] == '' || $scope.filter['ds_estado'] == null || $scope.filter['ds_estado'] == data[i]['siglaUf']) && 
+                                          ($scope.filter['ds_partido'] == '' || $scope.filter['ds_partido'] == null || $scope.filter['ds_partido'] == data[i]['siglaPartido']);
 
                         if (filtroTotal == true) {
                             $(".div-interna").append($scope.layoutItemDeputado(data[i]));
