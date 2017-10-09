@@ -144,7 +144,7 @@ angular.module('camara')
          */
         $scope.timeOutInfoRelatorioDespesas = function() 
         {
-            if (++$scope.count <= 4) {
+            if (++$scope.count <= 3) {
                 if ($(".ajaxCarregando").length == 0) {
                     $timeout(function() {
                         $scope.timeOutInfoRelatorioDespesas();

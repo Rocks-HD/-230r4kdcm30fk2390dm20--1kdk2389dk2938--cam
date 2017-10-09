@@ -46,7 +46,7 @@ angular.module('camara')
                                 }
                             }
                         }, 'json').fail(function() {
-                            console.log('Erro no webservice');
+                            $(".contentCarregando").html('Erro no webservice da Câmara dos Deputados.');
                             this.erroLstDespesas = true;
                         });
                     } else {
