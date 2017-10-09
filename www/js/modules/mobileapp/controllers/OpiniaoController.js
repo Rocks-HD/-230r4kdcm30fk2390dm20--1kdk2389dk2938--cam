@@ -37,7 +37,10 @@ angular.module('camara')
                         var html = '';
                         for (var i in detalhes['dados']) {
                             html =  '<div class="row linha-zebrada text-center padding-vertical item'+ detalhes['dados'][i]['id'] +'" data-id="'+ detalhes['dados'][i]['id'] +'">'+
-                                        '<div class="col-xs-3"><h3><a href="'+detalhes['dados'][i]['uri']+'" target="_blank">'+ lstCodProposicao[detalhes['dados'][i]['id']] +'</a></h3>'+
+                                        '<div class="col-xs-3">'+
+                                            '<h3>'+
+                                                '<a href="'+detalhes['dados'][i]['uri']+'" target="_blank">'+ lstCodProposicao[detalhes['dados'][i]['id']] +'</a>'+
+                                            '</h3>'+
                                             '<img src="./js/modules/mobileapp/layouts/imagens/icones/ico-mao-clique.svg" alt="clique e saiba mais" class="posicionamento-mao"/>'+
                                         '</div>'+
                                         '<div class="col-xs-6"><h6>'+ detalhes['dados'][i]['ementa'] +'</h6></div>'+

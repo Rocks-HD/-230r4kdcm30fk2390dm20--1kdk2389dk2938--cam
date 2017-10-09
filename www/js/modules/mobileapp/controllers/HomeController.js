@@ -47,6 +47,7 @@ angular.module('camara')
                     }
                 }
 
+                $(".lista-deputados").scrollLeft(0);
                 $(".div-interna").css('width', ((typeof data.length != 'undefined' && data.length != 0 ? data.length : 100)*100) +'px');
                 
             } catch (e) {console.log(e);}
