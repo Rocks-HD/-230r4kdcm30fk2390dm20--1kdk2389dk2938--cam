@@ -22,7 +22,7 @@ angular.module('camara')
                     $timeout(function() {
                         $(".glyphicon-menu-hamburger").parent().show();
                         window.location.hash = 'home';
-                    }, 10000);
+                    }, 5000);
                 });                        
             } catch (e) {console.log(e);}
         };
