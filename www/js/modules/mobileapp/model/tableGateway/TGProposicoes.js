@@ -111,7 +111,7 @@ angular.module('camara')
             var lstId = Object.keys(arrayCod).join('&id=');
             console.log(lstId);
             
-            var url = 'https://dadosabertos.camara.leg.br/api/v2/proposicoes?id='+lstId+'&itens=100&ordem=ASC&ordenarPor=id';
+            var url = 'https://dadosabertos.camara.leg.br/api/v2/proposicoes?id='+lstId+'&itens=100&ordem=ASC&ordenarPor=id&dataInicio=2015-01-01';
             var data = {};
 
             return $.get(url, data, function(r) {
