@@ -6,6 +6,7 @@ and open the template in the editor.
 /* 
     Created on : 24/07/2017, 11:08:56
     Author     : FABRICIO LOPES DANTAS
+    Author     : BRUNO DA COSTA MONTEIRO
 */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
@@ -178,7 +179,7 @@ div.filtros-conheca select{width:50%; margin-top:10px; font-size:12px; float: le
 div.lista-deputados{background-color:#fbfbfb; padding-top:15px; padding-bottom: 15px; height:225px; position: relative; width:100%; overflow: hidden; background-image:url(../imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; background-size: contain; overflow-x: scroll}
 div.lista-deputados .div-interna{width:800px; position:relative; overflow: hidden; display:block;}
 div.lista-deputados .box-deputado{font-family: "Open Sans Condensed", sans-serif; font-weight: bold; text-transform: uppercase; width:80px; text-align: center; float:left; margin-left:10px; margin-right:10px; background-image: '../imagens/background/background-deputado.svg';}
-div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; background-color:white; width:100%; max-height: 104px; }
+div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; background-color:white; width:80px; max-height: 104px; }
 div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
 div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
 
@@ -349,7 +350,7 @@ div.rodape img{width:100%;}
     h2{font-size:270%;}
     div.lista-deputados .box-deputado h3{font-size:19px;}
     div.lista-deputados .box-deputado h4{font-size:17px;}
-    div.lista-deputados .box-deputado img{width:100%;}
+    div.lista-deputados .box-deputado img{width:80px;}
     .conheca-seu-deputado .dados-do-deputado{font-size:25px;}
     .conheca-seu-deputado .foto-conheca-seu-deputado{width:20%;}
     .linha-zebrada h3{font-size:200%;}
