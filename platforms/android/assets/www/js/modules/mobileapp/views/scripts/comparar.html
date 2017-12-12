@@ -1,0 +1,109 @@
+<div class="content carregandoConteudo hidden">
+    <div class="nuvem1"></div>
+    <div class="nuvem2"></div>
+    <div class="carregando-pai">
+        <div class="ico-carregando-1"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-1.svg" alt="Projeto Legislar"/></div>
+        <div class="ico-carregando-2"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-2.svg" alt="Projeto Legislar"/></div>
+        <div class="ico-carregando-3"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-3.svg" alt="Projeto Legislar"/></div>
+        <div class="ico-carregando-4"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-4.svg" alt="Projeto Legislar"/></div>
+    </div>
+    <img src="./js/modules/mobileapp/layouts/imagens/icones/img-congresso.svg" alt="" class="img-100 congresso"/>
+</div>
+
+
+<div class="tela4" style="display: block;">
+    <div class="container-fluid compara-deputados">
+        <div class="row">
+            <div class="col-xs-12 padding-vertical titulo-cinza">
+                <h2><span>COMPARAÇÃO</span> DE DEPUTADOS</h2> 
+            </div>
+        </div>
+ 
+        <div class="row">
+            <div class="col-xs-6 fundo-cinza-claro padding-vertical text-center texto-maiusculo areaDep1">
+                <img src="./js/modules/mobileapp/layouts/imagens/fotos/01.jpg" alt="" class="borda-azul-clara img-50 imgCandidato1"/><br><br>
+                <strong class="nomeCandidato1">Carregando...</strong><br>
+                <span class="partidoCandidato1">--/--</span>
+            </div>
+            <div class="col-xs-6 padding-vertical text-center texto-maiusculo areaDep2">
+                <img src="./js/modules/mobileapp/layouts/imagens/fotos/01.jpg" alt="" class="borda-verde-clara img-50 imgCandidato2"/><br><br>
+                <strong class="nomeCandidato2">Carregando...</strong><br>
+                <span class="partidoCandidato2">--/--</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 text-center texto-grande">
+                <h3 style="margin-top:-50px; color: #999">X</h3>
+            </div>
+        </div>
+
+        <div class="row informativo-deputado"> 
+            <div class="col-xs-12">
+                <p>Caso queira visualizar informações mais detalhadas de um dos Deputados(as) acima, dê um <span class="text-verde"><b>CLIQUE SIMPLES</b></span> na foto.</p>
+            </div>
+        </div>
+
+        <div class="row caixa-muda-mes padding-vertical text-center">
+            <div class="col-xs-12">
+                2015/2018 - MANDATO ATUAL - GASTOS COM VERBA PARLAMENTAR
+            </div>
+        </div>
+
+        
+        
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 graficos padding-vertical text-center">
+                <div class="contentCarregando carregandoGrafico1">
+                    <div class="carregando-pai">
+                        <div class="ico-carregando-1"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-1.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-2"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-2.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-3"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-3.svg" alt="Projeto Legislar"/></div>
+                        <div class="ico-carregando-4"><img src="./js/modules/mobileapp/layouts/imagens/icones/ico-carregando-4.svg" alt="Projeto Legislar"/></div>
+                    </div>
+                </div>
+                <div class="grafico1" style="display: none;">
+                    <canvas id="pie" class="chart chart-pie" chart-data="data1" options="options1" chart-options="options1" chart-legend="true" chart-labels="labels1"></canvas>
+                </div>
+            </div>
+        </div>
+
+<!--        <div class="row margin-vertical">
+            <div class="col-xs-6 text-center fundo-cinza-claro padding-vertical"><h3>Assiduidade no mês</h3><span class="texto-azul-claro assiduidade1"></span></div>
+            <div class="col-xs-6 text-center fundo-cinza-escuro padding-vertical"><h3>Assiduidade no mês</h3><span class="texto-verde-claro assiduidade2"></span></div>
+        </div>-->
+
+        <div class="row margin-vertical">
+            <div class="col-xs-6 text-center fundo-cinza-claro padding-vertical"><h3>Quantidade de Mandatos exercidos*</h3><span class="texto-azul-claro mandatos1"></span></div>
+            <div class="col-xs-6 text-center fundo-cinza-escuro padding-vertical"><h3>Quantidade de Mandatos exercidos*</h3><span class="texto-verde-claro mandatos2"></span></div>
+        </div>
+        <div class="row margin-vertical">
+            <div class="col-xs-6 text-center fundo-cinza-claro padding-vertical"><h3>Proposições apresentadas**</h3><span class="texto-azul-claro proposicoes1"></span></div>
+            <div class="col-xs-6 text-center fundo-cinza-escuro padding-vertical"><h3>Proposições apresentadas**</h3><span class="texto-verde-claro proposicoes2"></span></div>
+        </div>
+        <div class="row margin-vertical">
+            <div class="col-xs-6 text-center fundo-cinza-claro padding-vertical"><h3>Situação do Parlamentar</h3><span class="texto-azul-claro situacao1"></span></div>
+            <div class="col-xs-6 text-center fundo-cinza-escuro padding-vertical"><h3>Situação do Parlamentar</h3><span class="texto-verde-claro situacao2"></span></div>
+        </div>
+        <div class="row margin-vertical">
+            <div class="col-xs-6 text-center fundo-cinza-claro padding-vertical"><h3>Escolaridade</h3><span class="texto-azul-claro escolaridade1"></span></div>
+            <div class="col-xs-6 text-center fundo-cinza-escuro padding-vertical"><h3>Escolaridade</h3><span class="texto-verde-claro escolaridade2"></span></div>
+        </div>
+        <div class="row margin-vertical">
+            <div class="col-xs-6 text-center fundo-cinza-claro padding-vertical"><h3>Quant. de comissões (Titular)</h3><span class="texto-azul-claro qntComissoesTitular1"></span></div>
+            <div class="col-xs-6 text-center fundo-cinza-escuro padding-vertical"><h3>Quant. de comissões (Titular)</h3><span class="texto-verde-claro qntComissoesTitular2"></span></div>
+        </div>
+        <div class="row margin-vertical">
+            <div class="col-xs-6 text-center fundo-cinza-claro padding-vertical"><h3>Quant. de cargos ocupados</h3><span class="texto-azul-claro qntCargosOcupados1"></span></div>
+            <div class="col-xs-6 text-center fundo-cinza-escuro padding-vertical"><h3>Quant. de cargos ocupados</h3><span class="texto-verde-claro qntCargosOcupados2"></span></div>
+        </div>
+
+        <div class="row observacoes"> 
+            <div class="col-xs-12">
+                <p>* Mandato(s) de Deputado(a) Federal.</p>
+                <p>** Proposições apresentadas (abrange todos os anos).</p>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,372 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/07/2017, 11:08:56
+    Author     : FABRICIO LOPES DANTAS
+    Author     : BRUNO DA COSTA MONTEIRO
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+html, body{min-height: 100%; margin:0; padding: 0; font-family: "Open Sans", sans-serif;}
+p{margin:0;}
+
+h2{font-family: "Open Sans Condensed"; font-weight: 700; color: white; margin:5px 0; font-size:170%;}
+h3{font-family: "Open Sans"; font-weight: 700; color: #323232; margin:5px 0; font-size:90%; text-transform: uppercase; position: relative; z-index: 300}
+.btn-verde{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#469543; border:1px solid #3f7f3c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+.btn-verde:focus{background-color:#3f7f3c; border:1px solid #2d5d2b;}
+.btn-roxo{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#601b58; border:1px solid #3f123c; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+.btn-roxo:focus{background-color:#3f123c; border:1px solid #3f123c;}
+.btn-azul-escuro{padding:7px 12px; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:white; background-color:#07546B; border:1px solid #143454; border-radius: 5px; text-transform: uppercase; font-size: 12px;}
+.btn-azul-escuro:focus{background-color:#133454; border:1px solid #071c31;}
+.ver-mais-azul{background-color:#07546B; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-azul:hover{background-color:#073D49;} 
+.ver-mais-verde{background-color:#2B6230; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-verde:hover{background-color:#1B3F1D;}
+.ver-mais-roxo{background-color:#601b58; text-transform: uppercase; color:white; font-family: "Open Sans", sans-serif; font-weight: 800; padding:15px; text-align: center;}
+.ver-mais-roxo:hover{background-color:#3f123c;}
+.div-flex{display: flex; align-items: center;}
+
+/*CLASSES GENÉRICAS*/
+.a-favor{border:2px solid white; background-color:#cce4b4; background-image:url(../imagens/background/background-a-favor.svg); background-size: contain; background-repeat: no-repeat;}
+.a-favor h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#5AB946; font-size: 130%;}
+.a-favor h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#2B6230;}
+.contra{border:2px solid white; background-color:#f9c5ca; background-image:url(../imagens/background/background-contra.svg); background-size: contain; background-repeat: no-repeat;}
+.contra h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#ed1f24; font-size: 130%;}
+.contra h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#b21f24;}
+.ausente{border:2px solid white; background-color:#b3b3b3; background-image:url(../imagens/background/background-ausente.svg); background-size: contain; background-repeat: no-repeat;}
+.ausente h3{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#FFFFFF; font-size: 130%;}
+.ausente h6{font-family: "Open Sans Condensed", sans-serif; font-weight: 700; color:#666;}
+.texto-centralizado{text-align: center !important;}
+.borda-inferior{border-bottom: 1px solid #cbcbcb;}
+
+.background-opine{background-image:url(../imagens/background/background-opiniao.svg); background-size: contain; background-repeat: no-repeat;}
+
+.min-height{min-height: 35%;}
+
+.img-100{width:100%; height: auto;}
+.img-75{width:75%; height: auto;}
+.img-50{width:50%; height: auto;}
+
+.margin-top-10 {margin-top: 10px;}
+.margin-left-10 {margin-left: 10px;}
+.padding-left-10 {padding-left: 10px;}
+
+.icon-ico-a-favor-1, .icon-ico-contra-2{color:#b3b3b3; font-size:4.6em;}
+.icon-ico-a-favor-1.active {color:#8AC53F;}
+.icon-ico-contra-2.active {color:#ED1F24;}
+
+.caixa-muda-mes{background-color:#333; color:white; font-family: "Open Sans Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size:150%;}
+.caixa-muda-mes span{margin: 0 10px;}
+.caixa-muda-mes span:hover{color:#5AB946;}
+
+.borda-verde-clara{border: 5px solid #5AB946;}
+.borda-azul-clara{border: 5px solid #0FB7EB;}
+.borda-roxa-clara{border: 5px solid #C449B2;}
+
+.muda-cor-btn-menu{color:#2B6230 !important;}
+
+.texto-maiusculo{text-transform: uppercase;} 
+.line-height{line-height: 1.6em;}
+.texto-azul-escuro{color:#184071; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700;}
+.texto-azul-claro{color:#0FB7EB; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700;  line-height:1;}
+.texto-verde-escuro{color:#2B6230; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700;}
+.texto-verde-claro{color:#5AB946; font-family: "Open Sans Condensed", sans-serif; font-size:170%; font-weight: 700; line-height:1;}
+.texto-branco{color:#fff; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
+.texto-cinza{color:#999; font-family: "Open Sans Condensed", sans-serif; font-size:90%; font-weight: 700;}
+.texto-explicativo{color:#111; font-size:12px; text-align: justify;}
+.texto-pequeno{font-size:80%;}
+.texto-medio{font-size:110%;}
+.texto-grande{font-size:180%;}
+.texto-escuro{color:#666;}
+
+.texto-vermelho{color:#b21f24}
+.texto-roxo{color:#601B58}
+.texto-azul{color:#184071}
+.texto-verde{color:#5AB946}
+.texto-cinza-escuro{color:#333}
+
+.fundo-cinza-claro{background-color:#f5f5f5;}
+.fundo-cinza-escuro{background-color:#dfdfdf;}
+.fundo-preto{background-color:#333;}
+.fundo-azul-escuro{background-color:#07546B;}
+.fundo-verde{background-color:#5AB946;}
+.fundo-verde{background-color:#5AB946;}
+.fundo-roxo{background-color:#601B58;}
+.fundo-vermelho{background-color:#b21f24;}
+.fundo-roxo-claro{background-color:#a93b95;}
+.fundo-dfdfdf{background-color:#dfdfdf;}
+
+.graficos{}
+.graficos h2{color:#111; font-size:18px; text-transform: uppercase;}
+
+.posicionamento-mao{position: absolute; right:-15%; width:40%; top:35%;}
+
+.filtro{padding-top:15px; padding-bottom: 30px;}
+.filtro p{color:white; text-transform: uppercase; font-weight: bolder;}
+.filtro select{width:100%;}
+
+.linha-zebrada{display: flex; align-items: center; background:#f5f5f5;}
+.linha-zebrada:nth-child(2n+1){background-color:#dfdfdf;}
+
+.linha-zebrada h3{font-size:100%;}
+
+.titulo-cinza{background-color:#333;}
+.titulo-cinza h2 span{color:#ccc;}
+.titulo-azul{background-color:#07546B}
+.titulo-azul h2 span{color:#0FB7EB}
+.titulo-roxo{background-color:#601B58;}
+.titulo-roxo h2 span{color:#C449B2;}
+.titulo-verde{background-color:#2B6230;}
+.titulo-verde h2 span{color:#8AC53F;}
+
+.padding-vertical{padding-top:15px; padding-bottom: 15px;}
+.margin-vertical{margin-top:10px; margin-bottom: 10px;}
+.margin-right-15{margin-right: 15px;}
+.margin-top-15{margin-top: 15px;}
+/*FIM DE CLASSES GENÉRICAS*/
+
+/*TELAS*/
+.conheca-seu-deputado{}
+.conheca-seu-deputado .dados-do-deputado{word-wrap: break-word; font-size: 12px; display:flow-root;}
+.conheca-seu-deputado .posicao-do-deputado{border: 2px solid white;}
+.conheca-seu-deputado .foto-conheca-seu-deputado{width:45%;}
+.ranking-deputados .linha-zebrada p{margin-top:5px;}
+.ranking-deputados .texto-branco{font-size:1.2em;}
+.creditos{margin-bottom: -20px; background-image:url(../imagens/background/background-creditos.svg); background-size:cover; background-repeat: no-repeat; background-position: center center;}
+.creditos p{font-size: 16px;}
+.creditos .fundo-cinza-claro{background:transparent;}
+.processo{font-size:12px; color:white; }
+.processo .processo-2{background-image:url(../imagens/background/background-congresso.svg); background-size:cover; background-position: bottom; background-repeat: no-repeat;  }
+.processo h3{color:white; line-height: 1.7em; margin:0; margin-bottom:5px;}
+.processo .flutua-seta-esquerda{position: absolute; width:25%; margin-top:-30px; left:10px; z-index: 3000; opacity:0.15; }
+.processo .flutua-seta-direita{position: absolute; width:25%; margin-top:-30px; right:10px; z-index: 3001;  opacity:0.15;}
+
+/*FIM DE TELAS*/
+
+/*BARRA DE NAVEGAÇÃO - MENU*/
+header{background-color:#5ab946; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center; margin-bottom:15px;}
+header #btn-menu{position:relative; width:60px; height: 60px; background-color:white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: -15%; z-index: 400;}
+header #btn-menu span{font-size: 30px; color:#5ab946;}
+header #logo{font-size: 30px; color:#9ae588;}
+header #logo img{width:60%;}
+/*FIM DA BARRA DE NAVEGAÇÃO - MENU*/ 
+
+/*MENU PRINCIPAL*/
+nav.menu-principal{display:none; border-bottom:10px solid #5ab946; margin-top:-15px; background-color:rgba(255,255,255,0.9); padding:30px 0; font-size:90%; color:#367036; text-transform: uppercase; font-weight: bold; position: absolute; z-index: 999; width:100%;}
+/*FIM DO MENU PRINCIPAL*/
+
+div.compare-os-deputados{background: linear-gradient(180deg, #dfdfdf 10%, #cbcbcb 100%); padding-top:15px; padding-bottom: 15px; }
+div.compare-os-deputados img{width:100%; border:2px dashed #dcdcdc; background-color:white;}
+div.compare-os-deputados .btn-comparar{margin-top:2%;}
+div.compare-os-deputados .btn-comparar p{font-size: 11px; margin-top:8px;}
+div.compare-os-deputados .btn-comparar .btn-verde{width:100%}
+div.compare-os-deputados h4{display:none;}
+
+div.conteudo-conheca-titulo{background-color:#323232; margin-top:15px;}
+div.conteudo-conheca-titulo h2 span{color:#8cc061;}
+div.filtros-conheca{background-color:#4d4d4d; padding-top:15px; padding-bottom: 15px; display: flex; align-items: center;  background-image:url(../imagens/background/background-filtro.svg); background-repeat: no-repeat; background-position: center right; background-size:contain;}
+div.filtros-conheca .option{color:white; font-size:14px; text-transform: uppercase; line-height: 2.1em; margin-top:10px; text-align: center;}
+div.filtros-conheca .option .text-option{font-size:11px; float: left; display: block; margin-top: -4px; margin-left:4px;}
+div.filtros-conheca input,select{padding:5px; font-size:12px; font-family: "Open Sans", sans-serif; border:1px solid #dfdfdf;}
+div.filtros-conheca input[type=text]{width:100%; background-image:url(../imagens/icones/ico-lupa.svg); background-repeat: no-repeat; background-position: center right;}
+div.filtros-conheca input[type=radio]{color:white; border:none; background-color:white; width:15px; height: 15px; float: left;}
+div.filtros-conheca select{width:50%; margin-top:10px; font-size:12px; float: left;}
+
+div.lista-deputados{background-color:#fbfbfb; padding-top:15px; padding-bottom: 15px; height:225px; position: relative; width:100%; overflow: hidden; background-image:url(../imagens/background/background-dedo.svg); background-repeat: no-repeat; background-position: bottom center; background-size: contain; overflow-x: scroll}
+div.lista-deputados .div-interna{width:800px; position:relative; overflow: hidden; display:block;}
+div.lista-deputados .box-deputado{font-family: "Open Sans Condensed", sans-serif; font-weight: bold; text-transform: uppercase; width:80px; text-align: center; float:left; margin-left:10px; margin-right:10px; background-image: '../imagens/background/background-deputado.svg';}
+div.lista-deputados .box-deputado img{border:2px solid #dfdfdf; padding:3px; background-color:white; width:80px; max-height: 104px; }
+div.lista-deputados .box-deputado h3{font-size:12px; font-weight: bold; margin-top:5px; margin-bottom:2px;}
+div.lista-deputados .box-deputado h4{font-size:10px; font-weight: bold; color:#666; margin-top:2px; margin-bottom:0;}
+
+div.informativo-deputado{background-color:#1d1d1d; padding-top:15px; padding-bottom:15px; text-align: center; font-family: "Open Sans Condensed", sans-serif; color:white; font-size:12px; font-style: italic; text-transform: uppercase; letter-spacing: 1px; line-height: 1.7em;}
+div.informativo-deputado .text-verde{color:#90C73E;}
+
+div.observacoes{background-color:#5d5d5d; padding-top:15px; padding-bottom:15px; font-family: "Open Sans Condensed", sans-serif; color:#fff; font-size:14px; letter-spacing: 1px; line-height: 1.4em;}
+
+div.conteudo-opine-titulo{background-color:#184071; margin-top:15px;}
+div.conteudo-opine-titulo h2 span{color:#77b2e0;}
+div.texto-opine{padding:15px; color:white; font-family:"Open Sans Condensed"; font-size:12px; background:#599fd6; text-align:center;}
+div.texto-opine p{text-align: justify;}
+
+.camara-em-foco{}
+.tela10 .posicionamento-mao{width: 25%; top:22%; right:3%;}
+
+div.rodape{display: flex; align-items: center; background:blue; margin-top:20px; background-image: linear-gradient(135deg, #8ac53f 10%, #469543 100%); padding:15px;}
+div.rodape img{width:100%;}
+
+.abertura{}
+.abertura .logos{display: flex; align-items: center; background-image: linear-gradient(135deg, #f2f2f2 10%, #dfdfdf 100%); padding:15px; position: relative; z-index: 999;}
+.abertura .logos img{width:100%;}
+.content{background-image:url(../imagens/background/background-dedo.svg); background-image: linear-gradient(#ccc,#fff); min-height: 58%;}
+.content img.congresso{position:absolute; bottom:0;}
+.content .logo{position:absolute; width: 100%; text-align: center; margin-top:31%; z-index: 888;}
+.content .logo img{animation-name: anima-logo; animation-duration: 1.5s; width:80%; animation-timing-function: ease-in;}
+.content .nuvem1{animation-name: anima-nuvem-1; animation-duration: 15s; background-image:url(../imagens/png/nuvem1.png); background-repeat: no-repeat; height: 25%;  background-size: 80%; background-position: right;}
+.content .nuvem2{animation-name: anima-nuvem-2; animation-duration: 10s; background-image:url(../imagens/png/nuvem2.png); background-repeat: no-repeat; height: 15%;  background-size:55%; background-position: left; }
+.content .carregando-pai{position:relative; z-index: 1001; text-align: center; margin-top:-33%; padding:30px; background-color:rgba(255,255,255,0.7); border-top:2px solid #dfdfdf; border-bottom: 2px solid #dfdfdf;}
+.content .carregando-pai .ico-carregando-1{animation: ico-carregando-1 3s linear infinite; }
+.content .carregando-pai .ico-carregando-2{animation:ico-carregando-2 2s linear infinite; margin-top:-139px; }
+.content .carregando-pai .ico-carregando-3{animation:ico-carregando-3 1s ease-in infinite; margin-top:-74px; animation-direction: alternate; }
+.content .carregando-pai .ico-carregando-4{margin-top:75px;}
+
+.contentCarregando .carregando-pai{position:relative; z-index: 1001; text-align: center; padding:30px; background-color:rgba(255,255,255,0.7); border-top:2px solid #dfdfdf; border-bottom: 2px solid #dfdfdf;}
+.contentCarregando .carregando-pai .ico-carregando-1{animation: ico-carregando-1 3s linear infinite; }
+.contentCarregando .carregando-pai .ico-carregando-2{animation:ico-carregando-2 2s linear infinite; margin-top:-139px; }
+.contentCarregando .carregando-pai .ico-carregando-3{animation:ico-carregando-3 1s ease-in infinite; margin-top:-74px; animation-direction: alternate; }
+.contentCarregando .carregando-pai .ico-carregando-4{margin-top:75px;}
+
+.ajaxCarregando{background-color: #00ff00; color: #FFFFFF; display: none; font-size: 13px; font-weight: bold; height: 5px; left: 0px; line-height: 35px; margin: 0; position: fixed; text-align: center; top: 0px; width: 100%; z-index: 100000;}
+
+.processo-1{animation: processo-1 1s linear;}
+.processo-2{animation: processo-2 1.25s linear;}
+.processo-3{animation: processo-3 1.5s linear;}
+.processo-4{animation: processo-4 1.75s linear;}
+
+@keyframes processo-1 {
+    from{opacity:0}
+}
+@keyframes processo-2 {
+    from{opacity:0}
+}
+@keyframes processo-3 {
+    from {opacity:0; }
+}
+@keyframes processo-4 {
+    from {opacity:0; }
+}
+
+@keyframes ico-carregando-1 {
+    to {transform:rotate(359deg); }
+}
+@keyframes ico-carregando-2 {
+    to {transform:rotate(-359deg); }
+}
+
+@keyframes ico-carregando-3 {
+    to {transform:scale(1.2); }
+}
+
+@keyframes anima-logo {
+    from {opacity:0; }
+    to {opacity:1; }
+}
+
+@keyframes anima-nuvem-1 {
+    from {background-position:left; }
+    to {background-position:right;}
+}
+@keyframes anima-nuvem-2 {
+    from {background-position:right;}
+    to {background-position:left}
+}
+
+@media screen and (max-width: 575px) {
+    div.compare-os-deputados .btn-comparar p{font-size: 12px;}
+}
+
+@media screen and (min-width: 576px) and (max-width:767px) {
+    .processo .flutua-seta-direita{width:10%;}
+    .processo .flutua-seta-esquerda{width:10%;}
+    div.compare-os-deputados img{width:50%}
+    div.rodape img{width:50%;}
+    div.filtros-conheca input[type=radio]{width:30px; height: 30px;}
+    div.filtros-conheca .option .text-option{font-size:18px; margin-top:3px;}
+    div.filtros-conheca input, select{font-size:20px;}
+    div.informativo-deputado{font-size:20px;}
+    div.filtros-conheca select{font-size:20px;}
+    div.lista-deputados .box-deputado{width:125px;}
+    div.lista-deputados{height:260px;}
+    div.compare-os-deputados img{width:65%;}
+    .btn-verde, .btn-azul-escuro{font-size:25px;}
+    .texto-explicativo{font-size:14px;}
+    h2{font-size:260%;}
+    .conheca-seu-deputado .dados-do-deputado{font-size:16px;}
+    .conheca-seu-deputado .foto-conheca-seu-deputado{width:30%;}
+    .linha-zebrada h3{font-size:130%;}
+    .linha-zebrada h6{font-size:15px;}
+    .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:6.6em;}
+    .ranking-deputados .linha-zebrada p{font-size:18px;}
+    .ranking-deputados .texto-branco{font-size:1.4em;}
+    header #btn-menu{width:100px; height:100px; margin-bottom:-10%;}
+    header #btn-menu span{font-size:50px;}
+    div.compare-os-deputados .btn-comparar p{font-size:13px;}
+}
+
+@media (min-width: 768px) and (max-width:991px) {
+    .processo .flutua-seta-direita{width:9%;}
+    .processo .flutua-seta-esquerda{width:9%;}
+    .a-favor{min-height: 105px; background-position: center;}
+    .contra{min-height: 105px; background-position: center;}
+    .ausente{min-height: 105px; background-position: center;}
+    div.compare-os-deputados img{width:50%}
+    div.rodape img{width:50%;}
+    div.filtros-conheca input[type=radio]{width:30px; height: 30px;}
+    div.filtros-conheca .option .text-option{font-size:18px; margin-top:3px;}
+    div.filtros-conheca input, select{font-size:20px;}
+    div.informativo-deputado{font-size:20px;}
+    div.filtros-conheca select{font-size:20px;}
+    div.lista-deputados .box-deputado{width:125px;}
+    div.lista-deputados{height:260px;}
+    div.compare-os-deputados img{width:65%;}
+    .btn-verde, .btn-azul-escuro{font-size:25px;}
+    .texto-explicativo{font-size:14px;}
+    h2{font-size:260%;}
+    .conheca-seu-deputado .dados-do-deputado{font-size:20px;}
+    .conheca-seu-deputado .foto-conheca-seu-deputado{width:25%;}
+    .texto-medio{font-size:170%;}
+    .linha-zebrada h3{font-size:160%;}
+    .linha-zebrada h6{font-size:18px;}
+    .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.6em;}
+    .ranking-deputados .linha-zebrada p{font-size:22px;}
+    .ranking-deputados .texto-branco{font-size:1.6em;}
+    header #btn-menu{width:120px; height:120px; margin-bottom:-5%;}
+    header #btn-menu span{font-size:60px;}
+    div.compare-os-deputados .btn-comparar p{font-size:14px;}
+}
+
+@media (min-width: 992px) and (max-width:1199px) {
+    .processo .flutua-seta-direita{width:8%;}
+    .processo .flutua-seta-esquerda{width:8%;}
+    div.filtros-conheca input[type=radio]{width:30px; height: 30px;}
+    .a-favor{min-height: 135px; background-position: center;}
+    .contra{min-height: 135px; background-position: center;}
+    .ausente{min-height: 135px; background-position: center;}
+    div.compare-os-deputados img{width:50%}
+    div.rodape img{width:50%;}
+    div.filtros-conheca .option .text-option{font-size:18px; margin-top:3px;}
+    div.filtros-conheca input, select{font-size:20px;}
+    div.informativo-deputado{font-size:20px;}
+    div.filtros-conheca select{font-size:20px;}
+    div.lista-deputados .box-deputado{width:150px;}
+    div.lista-deputados{height:325px; background-size:75%;}
+    div.compare-os-deputados img{width:50%;}
+    .btn-verde, .btn-azul-escuro{font-size:25px;}
+    .texto-explicativo{font-size:18px;}
+    h2{font-size:270%;}
+    div.lista-deputados .box-deputado h3{font-size:19px;}
+    div.lista-deputados .box-deputado h4{font-size:17px;}
+    div.lista-deputados .box-deputado img{width:80px;}
+    .conheca-seu-deputado .dados-do-deputado{font-size:25px;}
+    .conheca-seu-deputado .foto-conheca-seu-deputado{width:20%;}
+    .linha-zebrada h3{font-size:200%;}
+    .linha-zebrada h6{font-size:22px;}
+    .icon-ico-a-favor-1, .icon-ico-contra-2{font-size:7.9em;}
+    .posicionamento-mao{top:-20%; right:0;}
+    .ranking-deputados .posicionamento-mao{top:55%; right:-20%;}
+    .ranking-deputados .linha-zebrada p{font-size:25px;}
+    .ranking-deputados .texto-branco{font-size:1.8em;}
+    header #btn-menu{width:130px; height:130px; margin-bottom:-5%;}
+    header #btn-menu span{font-size:70px;}
+    div.compare-os-deputados .btn-comparar p{font-size:18px;}
+}
+
+@media (min-width: 1200px){
+    header #btn-menu span{font-size:70px;}
+    header #btn-menu{width:130px; height:130px; margin-bottom:0;}
+}
+

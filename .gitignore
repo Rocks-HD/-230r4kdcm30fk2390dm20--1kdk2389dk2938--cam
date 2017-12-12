@@ -1,9 +1,1 @@
-/plugins/
-/plataforms/
-/node_modules/
-/nbproject/
-/platforms/
-/img-apk/
-/public/bower_components/
-/www/nbproject/private/
-/www/js/library/
+/www/nbproject/
